@@ -1,0 +1,28 @@
+﻿Build started 8/2/2011 7:43:59 PM.
+     1>Project "C:\Users\willy\Documents\School Stuff\Semester 4\Compilers\Assignment 4 - Parser\vs_ass4\ass4\ass4\ass4.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Touching "Debug\ass4.unsuccessfulbuild".
+       ClCompile:
+         All outputs are up-to-date.
+       ManifestResourceCompile:
+         All outputs are up-to-date.
+       Link:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\willy\Documents\School Stuff\Semester 4\Compilers\Assignment 4 - Parser\vs_ass4\ass4\Debug\ass4.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\ass4.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\willy\Documents\School Stuff\Semester 4\Compilers\Assignment 4 - Parser\vs_ass4\ass4\Debug\ass4.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\willy\Documents\School Stuff\Semester 4\Compilers\Assignment 4 - Parser\vs_ass4\ass4\Debug\ass4.lib" /MACHINE:X86 Debug\ass4.exe.embed.manifest.res
+         Debug\buffer.obj
+         Debug\parser.obj
+         Debug\scanner.obj
+         Debug\stable.obj
+         Debug\stack.obj
+         Debug\stack_test.obj
+     1>parser.obj : error LNK2001: unresolved external symbol _str_LTBL
+     1>scanner.obj : error LNK2019: unresolved external symbol _str_LTBL referenced in function _malpar_next_token
+     1>parser.obj : error LNK2001: unresolved external symbol _sym_table
+     1>scanner.obj : error LNK2001: unresolved external symbol _sym_table
+     1>stable.obj : error LNK2001: unresolved external symbol _sym_table
+     1>scanner.obj : error LNK2001: unresolved external symbol _scerrnum
+     1>C:\Users\willy\Documents\School Stuff\Semester 4\Compilers\Assignment 4 - Parser\vs_ass4\ass4\Debug\ass4.exe : fatal error LNK1120: 3 unresolved externals
+     1>Done Building Project "C:\Users\willy\Documents\School Stuff\Semester 4\Compilers\Assignment 4 - Parser\vs_ass4\ass4\ass4\ass4.vcxproj" (build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.11

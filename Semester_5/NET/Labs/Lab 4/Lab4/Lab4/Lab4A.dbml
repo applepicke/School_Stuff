@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Lab4" Class="Lab4ADataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=WILLY-LAPTOP\SQLEXPRESS;Initial Catalog=Lab4;Integrated Security=True" SettingsObjectName="Lab4.Properties.Settings" SettingsPropertyName="Lab4ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.[File]" Member="Files">
+    <Type Name="File">
+      <Column Name="FileId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Path" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Length" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

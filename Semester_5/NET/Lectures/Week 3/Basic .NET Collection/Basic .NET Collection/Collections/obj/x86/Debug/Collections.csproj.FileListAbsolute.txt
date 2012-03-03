@@ -1,0 +1,7 @@
+C:\Users\justin\Desktop\Collections\Collections\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\justin\Desktop\Collections\Collections\bin\Debug\Collections.exe
+C:\Users\justin\Desktop\Collections\Collections\bin\Debug\Collections.pdb
+C:\Users\justin\Desktop\Collections\Collections\obj\x86\Debug\Collections.exe
+C:\Users\justin\Desktop\Collections\Collections\obj\x86\Debug\Collections.pdb
+C:\Users\Public\School_Stuff\Semester_5\NET\Lectures\Week 3\Basic .NET Collection\Basic .NET Collection\Collections\obj\x86\Debug\Collections.exe
+C:\Users\Public\School_Stuff\Semester_5\NET\Lectures\Week 3\Basic .NET Collection\Basic .NET Collection\Collections\obj\x86\Debug\Collections.pdb

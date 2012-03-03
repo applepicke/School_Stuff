@@ -1,0 +1,151 @@
+import java.util.InputMismatchException;
+import java.util.Scanner;
+/**
+ * @author William Collins / 040652633
+ *  CST8132 Section 313
+ *	Method Main
+ */
+
+public class Test {
+	public static void main(String args[]) {
+		
+		Scanner input = new Scanner(System.in);
+		Planner planner = new Planner();
+		
+		//Control Variables
+		int controlMain = -1;
+		int controlAdd = 0;
+		int controlView = 0;
+		
+		//Temp variables
+		int maxIndex;
+		
+		System.out.print("\n\tWelcome to Willy's Personal Planner");
+		System.out.print("\n\t***********************************");
+		
+		//Main Loop
+		do {	
+			System.out.print("\n\n\tMain Menu");
+			System.out.print("\n\t**********");
+			System.out.print("\n1 - Add an event");
+			System.out.print("\n2 - Delete an event");
+			System.out.print("\n3 - View events");	
+			System.out.print("\n0 - Exit program");
+			
+			
+			//Get input for main menu
+			do {
+				try {	
+					input = new Scanner(System.in);
+					controlMain = input.nextInt();
+				}
+				catch (InputMismatchException e) {
+					System.out.print("\nNot a valid input!!\n");
+					System.out.print("Enter something valid: ");
+				}
+			}
+			while (controlMain < 0 || controlMain > 3);
+			
+			//Add Event
+			if (controlMain == 1){
+				do {
+					controlAdd = 1;
+					System.out.print("\n\n\tAdd an Event");
+					System.out.print("\n\t************");
+					System.out.print("\n1 - Add a Generic Event");
+					System.out.print("\n2 - Add a Work Event");
+					System.out.print("\n3 - Add a Social Event");
+					System.out.print("\n4 - Add an Assignment Due");
+					System.out.print("\n5 - Add a Meeting");
+					System.out.print("\n0 - Exit");
+					
+					do {
+						try {
+							input = new Scanner(System.in);
+							controlAdd = input.nextInt();
+						}
+						catch (InputMismatchException e) {
+							System.out.print("\n\nEnter a valid input: ");
+						}
+					}
+					while(controlAdd < 0 || controlAdd > 5);
+					
+					if (controlAdd > 0 && controlAdd < 6){
+						maxIndex = planner.getMaxIndex();
+						//Add Events
+						try {
+							if (controlAdd == 1)
+								planner.addEvent(maxIndex);
+							if (controlAdd == 2)
+								planner.addWork(maxIndex);
+							if (controlAdd == 3)
+								planner.addSocial(maxIndex);
+							if (controlAdd == 4)
+								planner.addAssignment(maxIndex);
+							if (controlAdd == 5)
+								planner.addMeeting(maxIndex);	
+						}
+						catch (InputMismatchException e) {
+							System.out.print("\n\nInvalid Number");
+						}
+						catch (Exception e) {
+							System.out.print("\nError - Conflicting Date and Time!");
+						}	
+					}
+				}
+				while (controlAdd != 0);
+			}
+			
+			//Delete an Event
+			if (controlMain == 2) {
+				System.out.print("\n\n\tDelete an Event");
+				System.out.print("\n\t***************");
+				try {
+					planner.setUserDate();
+					planner.setUserTime();
+					planner.removeEvent(planner.getIndex());
+				}
+				catch (InputMismatchException e) {
+					System.out.print("\n\nInvalid Number!!");
+				}
+				catch (Exception e) {
+					System.out.print("\n\nThere is no Event of that date and time! ");
+				}
+			}
+			
+			//Display an Event
+			if (controlMain == 3) {
+				do {
+					System.out.print("\n\n\tView Options");
+					System.out.print("\n\t************");
+					System.out.print("\n1 - Display for 1 day");
+					System.out.print("\n2 - Display for 7 days");
+					System.out.print("\n0 - Exit");
+					try {
+						input = new Scanner(System.in);
+						controlView = input.nextInt();
+						
+						if (controlView == 1) {
+							planner.setUserDate();
+							planner.display();
+						}
+						if (controlView == 2) {
+							planner.setUserDate();
+							planner.displaySeven();
+						}
+						
+					}
+					catch (InputMismatchException e) {
+						System.out.print("\n\nInvalid Number!!");
+					}
+					catch (Exception e) {
+						System.out.print("\n\nThere are no events to display!");
+					}
+				}
+				while(controlView != 0);
+			}
+		}
+		while (controlMain != 0); //End of main loop
+		System.out.print("\n\nToodles!!");
+	}
+}

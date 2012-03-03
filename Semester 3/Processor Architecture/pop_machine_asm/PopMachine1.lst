@@ -1,0 +1,98 @@
+
+as12, an absolute assembler for Motorola MCU's, version 1.2h
+
+                        ; PopMachine1.asm
+                        ;
+                        ;Authors:               Curtis Collins & Nicolas Castilloux
+                        ;Student Number         000000000 & 040600517
+                        ;Date                   29 Nov 2010
+                        ;Purpose:               Dispense fizzy drinks which cost 3 coins each!
+                        
+                        
+0003                    COST    equ     3                       ; Cost of pop in coins
+000f                    NUMPOP  equ     15                      ; Maximum number of pop in pop machine
+0000                    ZERO    equ     0                       ; Initial number of coins inserted
+0001                    ON      equ     1                       ; System Status Indicator ON
+0000                    OFF     equ     0                       ; System Status Indicator OFF
+                        
+1000                            org     $1000
+1000                    PopLeft ds      1                       ; Number of units of pop left in machine
+1001                    CoinsIn ds      1                       ; Number of coins inserted so far
+1002                    OK      ds      1                       ; System Status Indicator: OK
+1003                    OffLine ds      1                       ; System Status Indicator: off line
+                        
+2000                            org     $2000
+                        
+                        ; *********************************************
+                        ; Initialize the System for Correct Operation *
+                        ; *********************************************
+                        
+                        ; Fill Pop Machine
+                        
+2000 86 0f                      ldaa    #NUMPOP                 ; Acc A is the Number of Pop remaining
+2002 8b 06                      adda    #6                      ; Show correct BCD value
+2004 7a 10 00                   staa    PopLeft                 ; Running total for pop left
+                        
+                        ; Set Coins Inserted = 0
+                        
+2007 c6 00                      ldab    #ZERO                   ; Acc B is the Number of Coins display
+2009 7b 10 01                   stab    CoinsIn                 ; Running total for #coins inserted
+                        
+                        ; Turn on OK
+                        
+200c 86 01                      ldaa    #ON                     ; OK is on once the pop machine is filled
+200e 7a 10 02                   staa    OK
+2011 20 0c                      bra     Next
+                        
+                        ; Turn off OffLIne
+                        
+2013 86 01              offl    ldaa    #ON
+2015 7a 10 03                   staa    OffLine                 ;
+2018 86 00                      ldaa    #OFF                    ; The value showing a light is off
+201a 7a 10 02                   staa    OK                      ; OK turns off when no pop left
+201d 20 24                      bra     Empty
+                        ; ***************************
+                        ; Is the pop machine empty? *
+                        ; ***************************
+                        
+201f b6 10 00           Next    ldaa    PopLeft                 ;Load Pop remaining into accumulator a
+2022 81 00                      cmpa    #$0                     ;Check to see if any pop is remaining
+2024 27 ed                      beq     Offl                    ;If no pop left, Turn machine off
+                        
+                        
+                        
+                        ; ***************
+                        ; Get the coins *
+                        ; ***************
+2026 52                 InsCoin incb                            ;insert coin
+2027 7b 10 01                   stab 	CoinsIn                    ;Store inserted coins into CoinsIn
+202a c1 03                      cmpb	#COST                      ;Check to see if right amount of coins
+202c 27 02                      beq  	Dispnse                    ;Dispense pop and reset coins
+202e 20 f6                      bra 	InsCoin
+                        
+                        
+                        ; *******************************************
+                        ; Dispense the pop and reset coins inserted *
+                        ; *******************************************
+2030 81 10              Dispnse cmpa 	#$10
+2032 27 0b              	beq     AdjustA                    ;Adjust the display to reflect BCD
+2034 43                 	deca                               ;Dispense one pop
+2035 7a 10 00           Cont	staa 	PopLeft                    ;Store remaining pop into PopLeft
+2038 c6 00                      ldab 	#ZERO                      ;Reset coins to 0
+203a 7b 10 01                   stab 	CoinsIn                    ;Store amount of coins into CoinsIn
+203d 20 e0                      bra  	Next                       ;Continue
+                                
+203f 80 07              AdjustA suba 	#7
+2041 20 f2                      bra     Cont
+                        
+                        ; **********************
+                        ; Pop Machine is empty *
+                        ; **********************
+2043 0b                 Empty   rti
+                        
+                        
+                                end
+
+Executed: Sun Nov 28 17:58:39 2010
+Total cycles: 91, Total bytes: 68
+Total errors: 0, Total warnings: 0

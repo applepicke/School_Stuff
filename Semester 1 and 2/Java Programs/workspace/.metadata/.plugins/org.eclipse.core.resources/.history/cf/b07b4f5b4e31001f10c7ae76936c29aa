@@ -1,0 +1,12 @@
+
+
+public class ValidateString {
+	String string = new String();
+	
+	public ValidateString() {
+		
+	}
+	public ValidateString(String string){
+		this.string = new String(string);
+	}
+}

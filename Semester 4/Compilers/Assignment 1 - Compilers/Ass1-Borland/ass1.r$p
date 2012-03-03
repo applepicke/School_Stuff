@@ -1,0 +1,11 @@
+/Tde/x/l/v/c/k /V3.10 /LC:\PROGRAMFILES(X86)\BC5\LIB +
+-v+ C:\PROGRA~2\BC5\LIB\c0l.obj+
+-v+ platy_bt.obj+
+-v+ buffer.obj
+ass1.exe
+
+-v+ C:\PROGRA~2\BC5\LIB\bidsl.lib+
+-v+ C:\PROGRA~2\BC5\LIB\emu.lib+
+-v+ C:\PROGRA~2\BC5\LIB\mathl.lib+
+-v+ C:\PROGRA~2\BC5\LIB\cl.lib
+

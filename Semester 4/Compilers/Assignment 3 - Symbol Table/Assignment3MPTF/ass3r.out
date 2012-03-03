@@ -1,0 +1,50 @@
+Reading file ass3r.pls ....Please wait
+
+Printing input buffer parameters:
+
+The capacity of the buffer is:  365
+The current size of the buffer is:  364
+The reallocation flag is:   0
+
+Printing input buffer contents:
+
+!< This program calculates the sum and the average
+!< of 5 numbers
+PLATYPUS {
+day5 = 5.;
+day4 = 4.;
+day3 = 3.;
+day2 = 2.;
+day1 = 1.;
+sum = day1 + day2 + day3 + day4 + day5; 
+avg = 0.0;
+temp = sum;
+USING(temp=sum,temp > 5.0 .OR. temp == 5.0,temp=temp)REPEAT {
+  temp = temp - 5.0;
+  avg = avg + 1.0;
+};
+res# = "Results:";
+OUTPUT(res#);
+OUTPUT(sum);
+OUTPUT(avg);
+}
+
+
+Scanning source file...
+
+
+Symbol Table
+____________
+
+Line Number Variable Identifier
+ 4          day5
+ 5          day4
+ 6          day3
+ 7          day2
+ 8          day1
+ 9          sum
+10          avg
+11          temp
+16          res#
+
+Collecting garbage...

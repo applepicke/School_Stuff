@@ -1,0 +1,16 @@
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+
+public class CalculatorView extends JPanel{
+	
+	public CalculatorView(){
+		
+		private JTextField display; // the calculator display field
+		private JLabel error; // the error display label
+		private JButton dotButton; // the decimal point (dot) button
+	}
+	
+}

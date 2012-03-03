@@ -1,0 +1,101 @@
+1.
+
+A.	Start - 1
+	Increment - 1 
+	Cycle - NOCYCLE
+	Cache - NOCACHE
+	
+B.	CREATE TABLE curtis_students (
+		S#		char(9),
+		fName	varchar2(20),
+		lName	varchar2(20),
+		CONSTRAINT stu_pk PRIMARY KEY (S#));
+		
+	CREATE TABLE curtis_courses (
+		C#			char(7),
+		cName		varchar(20),
+		description varchar(100),
+		CONSTRAINT course_pk PRIMARY KEY (C#));
+		
+	CREATE TABLE curtis_grades(
+		S#		char(9),
+		C#		char(7),
+		grades	number(5,2),
+		CONSTRAINT grades_pk PRIMARY KEY (S#,C#),
+		CONSTRAINT grades_stu_fk FOREIGN KEY (S#) REFERENCES curtis_students(S#),
+		CONSTRAINT grades_course_fk FOREIGN KEY (C#) REFERENCES curtis_courses(C#));
+		
+C.	SELECT USER FROM DUAL;
+	USER
+	------------------------------
+	COLL0300
+	
+	SELECT * FROM Session_Roles;
+	ROLE
+	------------------------------
+	SR_CST8215_310
+	SR_GENERIC
+	
+	SELECT * FROM Session_Privs;
+	PRIVILEGE
+	----------------------------------------
+	CREATE SESSION
+	ALTER SESSION
+	ALTER USER
+	CREATE TABLE
+	CREATE CLUSTER
+	CREATE SYNONYM
+	CREATE VIEW
+	CREATE SEQUENCE
+	CREATE DATABASE LINK
+	CREATE PROCEDURE
+	CREATE TRIGGER
+	CREATE TYPE
+
+	
+D.	CREATE SEQUENCE curtis_students_seq
+	START WITH 1000
+	INCREMENT BY 5
+	NOCACHE
+	NOCYCLE;
+	
+	CREATE SEQUENCE curtis_courses_seq
+	START WITH 10
+	INCREMENT BY 1
+	NOCACHE
+	NOCYCLE;
+	
+	INSERT INTO curtis_students VALUES(curtis_students_seq.nextVal, 'Curtis', 'Collins');
+	INSERT INTO curtis_courses VALUES(curtis_courses_seq.nextVal, 'Java', 'Program things.');
+	INSERT INTO curtis_grades VALUES(curtis_students_seq.currval, curtis_courses_seq.currVal, 090.00); 
+
+	INSERT INTO curtis_students VALUES(curtis_students_seq.nextVal, 'Mother', 'Collins');
+	INSERT INTO curtis_courses VALUES(curtis_courses_seq.nextVal, 'C Programming', 'program stuff.');
+	INSERT INTO curtis_grades VALUES(curtis_students_seq.currval, curtis_courses_seq.currVal, 089.00); 
+	
+	INSERT INTO curtis_students VALUES(curtis_students_seq.nextVal, 'Father', 'Collins');
+	INSERT INTO curtis_courses VALUES(curtis_courses_seq.nextVal, 'Math', 'Calculate things.');
+	INSERT INTO curtis_grades VALUES(curtis_students_seq.currval, curtis_courses_seq.currVal, 095.00); 
+
+	
+E.	SELECT curtis_students_seq.currval FROM DUAL;
+   CURRVAL
+----------
+      1010
+	  
+	SELECT curtis_students_seq.nextval FROM DUAL;
+	  NEXTVAL
+---------
+     1015
+	
+	SELECT curtis_courses_seq.currval FROM DUAL;
+	  CURRVAL
+---------
+       12
+	   
+	SELECT curtis_courses_seq.nextval FROM DUAL;
+	  NEXTVAL
+---------
+       13
+	
+	

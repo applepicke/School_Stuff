@@ -1,0 +1,3 @@
+PLATYPUS {
+	OUTPUT("HEYA!!");
+}

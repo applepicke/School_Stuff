@@ -1,0 +1,40 @@
+
+as12, an absolute assembler for Motorola MCU's, version 1.2h
+
+                        ; BCD_Counter.asm
+                        ;
+                        ; Author: William Collins
+                        ; Student Number: 040652633
+                        ;
+                        ; Purpose: This program will count from 0 to 99 in BCD values, resetting
+                        ;          when it reaches 99. It will use Accumulator B as a display
+                        ;
+1000                            org     $1000   	;area to start storing data
+1000                    TEMP:   ds      1       	;area to store temporary results
+                        
+2000                            org     $2000   	;start code here
+2000 86 00              START:  ldaa    #$0     	;load A with starting value
+2002 c6 00                      ldab    #$0     	;load B with starting value
+                                
+2004 42                 TEST1:  inca            	;A is incremented
+2005 7a 10 00                   staa    TEMP:   	;store incremented value in memory
+2008 84 0f                      anda    #%00001111      ;mask out lower nibble
+200a 81 0a                      cmpa    #%00001010      ;test if value is too high
+200c 24 08                      bhs     TEST2:          ;if too high, go to second test
+200e f6 10 00                   ldab    TEMP:           ;store incremented value in B
+2011 b6 10 00                   ldaa    TEMP:           ;return the original value of A
+2014 20 ee                      bra     TEST1:          ;increment and test again
+                                
+2016 b6 10 00           TEST2:  ldaa    TEMP:           ;load incremented value
+2019 8b 06                      adda    #%00000110      ;skip invalid BCD digits
+201b 7a 10 00                   staa    TEMP:
+201e 84 f0                      anda    #%11110000      ;mask out upper nibble
+2020 81 a0                      cmpa    #%10100000      ;test if upper nibble is too high
+2022 24 dc                      bhs     START:          ;return to start if value too high
+2024 f6 10 00                   ldab    TEMP:           ;store new proper result into B
+2027 20 db                      bra     TEST1:          ;increment and test again
+                                
+
+Executed: Tue Nov 02 12:47:34 2010
+Total cycles: 49, Total bytes: 41
+Total errors: 0, Total warnings: 0

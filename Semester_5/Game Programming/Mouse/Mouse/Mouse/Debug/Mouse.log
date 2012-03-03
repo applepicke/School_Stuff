@@ -1,0 +1,32 @@
+﻿Build started 1/30/2012 1:36:21 PM.
+     1>Project "C:\Users\Public\School_Stuff\Semester_5\Game Programming\Mouse\Mouse\Mouse\Mouse.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Touching "Debug\Mouse.unsuccessfulbuild".
+       ClCompile:
+         c:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt FilledShapes.cpp
+         FilledShapes.cpp
+     1>c:\users\public\school_stuff\semester_5\game programming\mouse\mouse\mouse\filledshapes.cpp(18): warning C4101: 'hMenu' : unreferenced local variable
+       ResourceCompile:
+         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /D _UNICODE /D UNICODE /l"0x0409" /nologo /fo"Debug\Mouse.res" Mouse.rc 
+       ManifestResourceCompile:
+         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\Mouse.exe.embed.manifest.res" Debug\Mouse_manifest.rc 
+       Link:
+         c:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Public\School_Stuff\Semester_5\Game Programming\Mouse\Mouse\Debug\Mouse.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\Mouse.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Public\School_Stuff\Semester_5\Game Programming\Mouse\Mouse\Debug\Mouse.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Public\School_Stuff\Semester_5\Game Programming\Mouse\Mouse\Debug\Mouse.lib" /MACHINE:X86 Debug\Mouse.res
+         Debug\Mouse.exe.embed.manifest.res
+         Debug\FilledShapes.obj
+       Manifest:
+         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\Mouse.exe.embed.manifest" /manifest Debug\Mouse.exe.intermediate.manifest
+         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\Mouse.exe.embed.manifest.res" Debug\Mouse_manifest.rc 
+       LinkEmbedManifest:
+         c:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Public\School_Stuff\Semester_5\Game Programming\Mouse\Mouse\Debug\Mouse.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\Mouse.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Public\School_Stuff\Semester_5\Game Programming\Mouse\Mouse\Debug\Mouse.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Public\School_Stuff\Semester_5\Game Programming\Mouse\Mouse\Debug\Mouse.lib" /MACHINE:X86 Debug\Mouse.res
+         Debug\Mouse.exe.embed.manifest.res
+         Debug\FilledShapes.obj
+         Mouse.vcxproj -> C:\Users\Public\School_Stuff\Semester_5\Game Programming\Mouse\Mouse\Debug\Mouse.exe
+       FinalizeBuildStatus:
+         Deleting file "Debug\Mouse.unsuccessfulbuild".
+         Touching "Debug\Mouse.lastbuildstate".
+     1>Done Building Project "C:\Users\Public\School_Stuff\Semester_5\Game Programming\Mouse\Mouse\Mouse\Mouse.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.71

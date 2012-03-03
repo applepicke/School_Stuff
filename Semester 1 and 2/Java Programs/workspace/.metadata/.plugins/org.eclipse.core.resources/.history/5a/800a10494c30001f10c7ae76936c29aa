@@ -1,0 +1,26 @@
+import java.lang.String;
+
+public class Event {
+	OurDate date;
+	Time time;
+	String event;
+	
+	public Event () {
+		date = new OurDate();
+		time = new Time();
+	}
+	
+	public Event(int year, int month, int day, int hour, int minute) {
+		date = new OurDate(day, month, year);
+		time = new Time(hour, minute);		
+	}
+	
+	public void setEvent(String event) {
+		this.event = new String(event);
+	}
+	
+	public String getEvent() {
+		return event;
+	}
+	
+}

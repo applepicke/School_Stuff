@@ -1,0 +1,6 @@
+C:\Users\Public\School_Stuff\Semester_5\NET\Labs\Lab 4\Lab4\Lab4\bin\Debug\Lab4.exe
+C:\Users\Public\School_Stuff\Semester_5\NET\Labs\Lab 4\Lab4\Lab4\bin\Debug\Lab4.pdb
+C:\Users\Public\School_Stuff\Semester_5\NET\Labs\Lab 4\Lab4\Lab4\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Public\School_Stuff\Semester_5\NET\Labs\Lab 4\Lab4\Lab4\obj\x86\Debug\Lab4.exe
+C:\Users\Public\School_Stuff\Semester_5\NET\Labs\Lab 4\Lab4\Lab4\obj\x86\Debug\Lab4.pdb
+C:\Users\Public\School_Stuff\Semester_5\NET\Labs\Lab 4\Lab4\Lab4\bin\Debug\Lab4.exe.config

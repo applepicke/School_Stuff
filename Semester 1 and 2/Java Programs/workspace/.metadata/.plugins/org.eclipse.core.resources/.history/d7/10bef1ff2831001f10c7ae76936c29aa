@@ -1,0 +1,42 @@
+import java.lang.String;
+import java.util.Scanner;
+
+public class Event {
+	private OurDate date;
+	private Time time;
+	private String event;
+	private Scanner input;
+	
+	public Event () {
+		date = new OurDate();
+		time = new Time();
+	}
+	
+	public Event(int day, int month, int year, int hour, int minute) {
+		date = new OurDate(day, month, year);
+		time = new Time(hour, minute);		
+	}
+	
+	public void setDate(OurDate date) {
+		this.date = new OurDate(date);
+	}
+	
+	public void setEvent(String event) {
+		this.event = new String(event);
+	}
+	
+	public String getEvent() {
+		return event;
+	}
+	
+	public String toString() {
+		return date + " - " + time + " - " + event + "\n";
+	}
+	
+	public void inputFromKeyboard() {
+		input = new Scanner(System.in);
+		System.out.print("\nEnter new event: ");
+		event = new String(input.nextLine());
+	}
+	
+}

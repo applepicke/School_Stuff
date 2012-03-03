@@ -1,0 +1,16 @@
+
+public class Event {
+	OurDate date;
+	Time time;
+	
+	public Event () {
+		date = new OurDate();
+		time = new Time();
+	}
+	
+	public Event(int year, int month, int day, int hour, int minute) {
+		date = new OurDate(day, month, year);
+		
+	}
+	
+}

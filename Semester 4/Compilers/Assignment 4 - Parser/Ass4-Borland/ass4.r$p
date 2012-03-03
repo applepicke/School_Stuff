@@ -1,0 +1,14 @@
+/Tde/x/l/v/c/k /V3.10 /LC:\BC5\LIB +
+-v+ C:\BC5\LIB\c0l.obj+
+-v+ parser.obj+
+-v+ stable.obj+
+-v+ scanner.obj+
+-v+ buffer.obj+
+-v+ platy.obj
+ass4.exe
+
+-v+ C:\BC5\LIB\bidsl.lib+
+-v+ C:\BC5\LIB\emu.lib+
+-v+ C:\BC5\LIB\mathl.lib+
+-v+ C:\BC5\LIB\cl.lib
+

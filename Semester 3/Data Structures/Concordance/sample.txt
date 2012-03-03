@@ -1,0 +1,4 @@
+This is a sample document that has paragraphs.
+These are delimited by the "Newline" character, and things happen.
+What is that? This is where stuff happens; Just don't worry about it.
+This is also cool.

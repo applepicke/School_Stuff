@@ -1,0 +1,64 @@
+import java.util.*;
+/**
+ * @author William Collins / 040652633
+ *  CST8132 Section 313
+ *	Methods: Set and Get methods
+ *			inputFromKeyboard
+ *			toString
+ */
+public class Time {
+	private int hour;
+	private int minute;
+	
+	public Time() {
+	}
+	
+	public Time(Time time) {
+		this.hour = time.getHour();
+		this.minute = time.getMinute();
+	}
+	public Time (int hour, int minute){
+		this.setHour(hour);
+		this.setMinute(minute);
+	}
+	
+	// get methods
+	public int getHour() { return hour; }
+	public int getMinute() { return minute; }
+	
+	// set methods
+	public void setHour (int hour){
+		if (hour < 0 || hour > 23)
+			this.hour = 0;
+		else this.hour = hour;
+	}
+	public void setMinute (int minute){
+		if (minute < 0 || minute > 59)
+			this.minute = 0;
+		else this.minute = minute;
+	}
+	
+	// accessors and mutators
+	public String toString () { return new String ("" + hour + ":" + minute); }
+	
+	public void inputFromKeyboard() {
+		Scanner in = new Scanner (System.in);
+		
+		System.out.print ("\nEnter hour (0-23): ");
+		this.hour = in.nextInt();
+		while (this.hour< 0 || this.hour > 23) {
+			System.out.print ("Invalid hour...reenter between 0 and 23: ");
+			this.hour = in.nextInt();
+		}
+		System.out.print ("Enter minute: ");
+		this.minute = in.nextInt();
+		while (this.minute < 0 || this.minute > 59) {
+			System.out.print ("Invalid minutes...reenter between 1 and 59: ");
+			this.minute = in.nextInt();
+		}
+	}
+	public boolean isSame (Time time){
+		if (this.hour == time.hour && this.minute == time.minute) return true;
+		else return false;
+	}
+}

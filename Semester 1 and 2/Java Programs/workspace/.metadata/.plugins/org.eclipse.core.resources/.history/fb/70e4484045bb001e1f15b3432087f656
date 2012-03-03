@@ -1,0 +1,16 @@
+
+public class example01 {
+	public static void main(String args[]) {
+	
+		
+		
+		num = 1;
+		if (num) 
+			System.out.println("boobies");
+		else System.out.println("doubles");
+		
+		
+	
+	}
+
+}

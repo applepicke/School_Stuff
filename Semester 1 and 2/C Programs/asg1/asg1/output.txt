@@ -1,0 +1,33 @@
+Script started on Thu Jan 28 09:02:15 2010
+bash: /Users/Willy/.bashrc: is a directory
+bash-3.2$ ./calc base=2 8
+usage: calc base=b num1 op num2
+   where b is the base (from 2 to 16), and op is one of @+-x/
+bash-3.2$ ./calc base=2 8[1P 81 87 8[C[C + 3
+base 17 too small (below 2) or too large (over 16)
+bash-3.2$ ./calc base=17 8 + 3[1P
+base 1 too small (below 2) or too large (over 16)
+bash-3.2$ ./calc base=1 8 + 3[4h6[4l[C[C[1P[4hG[4l[C[C[C[C[KF
+num1 G is invalid for base 16
+bash-3.2$ ./calc base=16 G + F[C[1P[4hF[4l[C[C[1P Fg F
+invalid operation "g"
+bash-3.2$ ./calc base=16 F g F[C[C[1P F/ F[C[C[K0
+F / 0: divide by zero
+calc base 16: F / 0 = -7FFFFFFF
+calc decimal: 15 / 0 = -2147483647
+bash-3.2$ ./calc base=16 F / 0[C[1P 0+ 0[C[C[K3
+calc base 16: F + 3 = 12
+calc decimal: 15 + 3 = 18
+bash-3.2$ ./calc base=16 F + 3[C[C[C[K[K[K[K[Kb - 4
+calc base 16: b - 4 = 7
+calc decimal: 11 - 4 = 7
+bash-3.2$ ./calc base=16 b - 4[K[K[K[K[Kc / 2
+calc base 16: c / 2 = 6
+calc decimal: 12 / 2 = 6
+bash-3.2$ ./calc base=16 c / 2[K[K[K[K[Ka x b
+calc base 16: a x b = 6E
+calc decimal: 10 x 11 = 110
+bash-3.2$ exit
+exit
+
+Script done on Thu Jan 28 09:04:32 2010

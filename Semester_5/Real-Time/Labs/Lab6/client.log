@@ -1,0 +1,21 @@
+Thread 1: Connecting to server prod_server_ch1...
+Thread 2: Connecting to server prod_server_ch1...
+Successfully connected.
+Successfully connected.
+Thread 1: The product of 16838 and 5758 is 96953204
+Thread 2: The product of 10113 and 17515 is 177129195
+Thread 1: The product of 31051 and 5627 is 174723977
+Thread 2: The product of 23010 and 7419 is 170711190
+Thread 1: The product of 16212 and 4086 is 66242232
+Thread 1: The product of 2749 and 12767 is 35096483
+Thread 2: The product of 9084 and 12060 is 109553040
+Thread 1: The product of 32225 and 17543 is 565323175
+Thread 2: The product of 25089 and 21183 is 531460287
+Thread 1: The product of 25137 and 25566 is 642652542
+Thread 2: The product of 26966 and 4978 is 134236748
+Thread 1: The product of 20495 and 10311 is 211323945
+Thread 1: The product of 11367 and 30054 is 341623818
+Thread 2: The product of 17031 and 13145 is 223872495
+Thread 1: The product of 19882 and 25736 is 511683152
+Thread 2: The product of 30524 and 28505 is 870086620
+Thread 1: The product of 28394 and 22102 is 627564188

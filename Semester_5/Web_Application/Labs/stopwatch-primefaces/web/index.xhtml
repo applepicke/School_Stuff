@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+    Document   : index
+    Created on : 3/2/2012
+    Author     : William Collins
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.prime.com.tr/ui">
+    
+    <body>
+        
+        <ui:composition template="./WEB-INF/templates/template.xhtml">
+            
+            <ui:define name="content">
+                <h:form id="stopwatchForm">
+                    <h:panelGrid columns="2">
+                        <h:outputText id="display"
+                                      value="${controller.model}" />
+                        <p:commandButton id="startButton"
+                                         action="#{controller.doStart}"
+                                         disabled="${controller.model.isRunning == true}"
+                                         image="ui-icon-play"
+                                         onclick="timer.start();"
+                                         style="background-color: green"
+                                         update="startButton,stopButton"
+                                         value="${msgs.start}" />
+                        <p:commandButton id="resetButton"
+                                         action="#{controller.doReset}"
+                                         style="background-color: black; color: white"
+                                         update="display"
+                                         value="${msgs.reset}" />
+
+                        <p:commandButton id="stopButton"
+                                         action="#{controller.doStop}"
+                                         disabled="#{controller.model.isRunning == false}"
+                                         image="ui-icon-pause"
+                                         onclick="timer.stop()"
+                                         style="background-color: red"
+                                         update="startButton,stopButton"
+                                         value="#{msgs.stop}" />                      
+
+                    </h:panelGrid>
+
+                    <p:poll autoStart="false"
+                            interval="1"
+                            listener="#{controller.model.handleTimer}"
+                            update="display"
+                            widgetVar="timer"/>
+    
+                </h:form>
+            </ui:define>
+
+        </ui:composition>
+        
+    </body>
+</html>

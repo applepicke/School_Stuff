@@ -1,0 +1,1 @@
+cmd_/media/FLASHWILLY/ndiswrapper-1.56/driver/usb_exports.h := /bin/sh /media/FLASHWILLY/ndiswrapper-1.56/driver/mkexport.sh /media/FLASHWILLY/ndiswrapper-1.56/driver/usb.c /media/FLASHWILLY/ndiswrapper-1.56/driver/usb_exports.h

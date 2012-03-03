@@ -1,0 +1,7 @@
+C:\Users\justin\Desktop\LINQ Again\LINQ Again\bin\Debug\LINQ Again.exe
+C:\Users\justin\Desktop\LINQ Again\LINQ Again\bin\Debug\LINQ Again.pdb
+C:\Users\justin\Desktop\LINQ Again\LINQ Again\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\justin\Desktop\LINQ Again\LINQ Again\obj\x86\Debug\LINQ Again.exe
+C:\Users\justin\Desktop\LINQ Again\LINQ Again\obj\x86\Debug\LINQ Again.pdb
+C:\Users\Public\School_Stuff\Semester_5\NET\Lectures\Week 4\LINQ Again\LINQ Again\LINQ Again\obj\x86\Debug\LINQ Again.exe
+C:\Users\Public\School_Stuff\Semester_5\NET\Lectures\Week 4\LINQ Again\LINQ Again\LINQ Again\obj\x86\Debug\LINQ Again.pdb

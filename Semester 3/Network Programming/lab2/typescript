@@ -1,0 +1,25 @@
+Script started on Wed 15 Sep 2010 09:08:04 AM EDT
+]0;coll0300@wt127-11:~[?1034h[coll0300@wt127-11 ~]$ ipcs -mcp
+
+------ Shared Memory Creator/Last-op --------
+shmid      owner      cpid       lpid      
+0          root       1696       1700      
+131073     coll0300   1890       3996      
+163842     coll0300   1938       2432      
+196611     coll0300   1890       3996      
+229380     coll0300   1892       3822      
+262149     coll0300   1892       3822      
+294918     coll0300   1937       1696      
+327687     coll0300   2240       4131      
+360456     coll0300   1884       4044      
+393225     coll0300   1884       4044      
+425994     coll0300   2377       2509      
+589835     coll0300   1871       4231      
+
+]0;coll0300@wt127-11:~[coll0300@wt127-11 ~]$ ps -p1890 1890[C
+  PID TTY          TIME CMD
+ 1890 ?        00:00:03 gnome-panel
+]0;coll0300@wt127-11:~[coll0300@wt127-11 ~]$ exit
+exit
+
+Script done on Wed 15 Sep 2010 09:16:23 AM EDT

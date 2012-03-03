@@ -1,0 +1,7 @@
+
+public class Orc extends Actor {
+	
+	actorType = 'o';
+	
+
+}

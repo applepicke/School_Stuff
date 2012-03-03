@@ -1,0 +1,20 @@
+
+
+public class ValidateString {
+	String string = new String();
+	
+	public ValidateString() {
+		
+	}
+	public ValidateString(String string){
+		this.string = new String(string);
+	}
+	
+	public boolean isInt() {
+		for (int i = 0; 1 < string.length(); i++) {
+			if (Character.isDigit(string.charAt(i)) == false) 
+				return false;
+		}
+		return true;		
+	}
+}

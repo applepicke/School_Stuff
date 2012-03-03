@@ -1,0 +1,34 @@
+
+public class Elf extends Actor{
+	
+	protected char actorType = ' ';
+	protected int strength;
+	private int magic;
+	
+	// constructors
+	public Elf(Elf actor ){
+		if (actorType == 'e' || actorType == 'o' || actorType == 'h' || actorType == 'w')
+			this.actorType = actor.actorType;
+		else this.actorType = ' ';
+
+		if (actor.strength >= 0 && actor.strength <= 10)
+			this.strength = actor.strength;
+		else this.strength = 0;	
+	}
+	public Elf(char actorType, int strength, int magic){
+		if (actorType == 'e' || actorType == 'o' || actorType == 'h' || actorType == 'w')
+			this.actorType = actorType;
+		else this.actorType = ' ';
+
+		if (strength >= 0 && strength <= 10)
+			this.strength = strength;
+		else this.strength = 0;
+		
+		if (magic >= 0 && magic <= 5) 
+			this.strength *= magic;
+	}
+	public Elf ( ){
+		
+	}
+
+}

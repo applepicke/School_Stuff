@@ -1,0 +1,165 @@
+Reading file ass2lc.pls ....Please wait
+
+Printing buffer parameters:
+
+The capacity of the buffer is:  577
+The current size of the buffer is:  576
+
+Printing buffer contents:
+
+!< This program calculates the sum of 32767 even numbers.
+!< The program is "lexically" and "syntactically" correct
+!< and should not produce any error
+PLATYPUS {
+ 
+ a=+0.0;
+ 
+ sum008 = 7.87050 ;
+ INPUT(a,sum008); 
+ USING(i = 0,i < 32767 .OR. i == 077777,i = i + 02 )REPEAT{
+   a=
+   a*i/0.5
+   ;
+   sum008 = sum008 + a - 1 ;
+ };
+ IF(text# == "")THEN
+   text# = "prog" << "ram";
+ ELSE {
+   text# = text# << "ram";
+ };
+ OUTPUT("\* This is a platypus -:)-<-<-- \*");
+ OUTPUT(text#);
+ 
+ IF(text# == "program".OR.sum008!=8..AND.i>012)THEN
+  OUTPUT(sum008);
+  OUTPUT();
+ ELSE{};
+}
+
+Scanning source file...
+
+Token		Attribute
+----------------------------------
+KW_T		PLATYPUS
+LBR_T
+AVID_T		a
+ASS_OP_T
+ART_OP_T	0
+FPL_T		0.000000
+EOS_T
+AVID_T		sum008
+ASS_OP_T
+FPL_T		7.870500
+EOS_T
+KW_T		INPUT
+LPR_T
+AVID_T		a
+COM_T
+AVID_T		sum008
+RPR_T
+EOS_T
+KW_T		USING
+LPR_T
+AVID_T		i
+ASS_OP_T
+IL_T		0
+COM_T
+AVID_T		i
+REL_OP_T	3
+IL_T		32767
+LOG_OP_T	1
+AVID_T		i
+REL_OP_T	0
+IL_T		32767
+COM_T
+AVID_T		i
+ASS_OP_T
+AVID_T		i
+ART_OP_T	0
+IL_T		2
+RPR_T
+KW_T		REPEAT
+LBR_T
+AVID_T		a
+ASS_OP_T
+AVID_T		a
+ART_OP_T	2
+AVID_T		i
+ART_OP_T	3
+FPL_T		0.500000
+EOS_T
+AVID_T		sum008
+ASS_OP_T
+AVID_T		sum008
+ART_OP_T	0
+AVID_T		a
+ART_OP_T	1
+IL_T		1
+EOS_T
+RBR_T
+EOS_T
+KW_T		IF
+LPR_T
+SVID_T		text#
+REL_OP_T	0
+STR_T		0	 
+RPR_T
+KW_T		THEN
+SVID_T		text#
+ASS_OP_T
+STR_T		1	 prog
+SCC_OP_T
+STR_T		6	 ram
+EOS_T
+KW_T		ELSE
+LBR_T
+SVID_T		text#
+ASS_OP_T
+SVID_T		text#
+SCC_OP_T
+STR_T		10	 ram
+EOS_T
+RBR_T
+EOS_T
+KW_T		OUTPUT
+LPR_T
+STR_T		14	 \* This is a platypus -:)-<-<-- \*
+RPR_T
+EOS_T
+KW_T		OUTPUT
+LPR_T
+SVID_T		text#
+RPR_T
+EOS_T
+KW_T		IF
+LPR_T
+SVID_T		text#
+REL_OP_T	0
+STR_T		49	 program
+LOG_OP_T	1
+AVID_T		sum008
+REL_OP_T	1
+FPL_T		8.000000
+LOG_OP_T	0
+AVID_T		i
+REL_OP_T	2
+IL_T		10
+RPR_T
+KW_T		THEN
+KW_T		OUTPUT
+LPR_T
+AVID_T		sum008
+RPR_T
+EOS_T
+KW_T		OUTPUT
+LPR_T
+RPR_T
+EOS_T
+KW_T		ELSE
+LBR_T
+RBR_T
+EOS_T
+RBR_T
+SEOF_T
+ prog ram ram \* This is a platypus -:)-<-<-- \* program
+  

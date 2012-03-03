@@ -1,0 +1,192 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <body>
+
+        <ui:composition template="./WEB-INF/templates/template.xhtml">
+            <ui:define name="content">
+                <h:form id="calculatorForm" >
+
+                    <!--************-->
+                    <!-- INPUT AREA -->
+                    <!--************-->
+
+                    <h:panelGrid id="addressPanel" border="1" columns="2">
+                        <h:panelGroup>
+                            <div class="title">
+                                <h:outputText id="ipAddress"
+                                              value="#{msg.ipAddress}"/>
+                            </div>
+
+                            <h:inputText id="octet1"
+                                         label="Octet 1"
+                                         class="ipoctet"
+                                         required="true"
+                                         requiredMessage="Octet 1 is required."
+                                         maxlength="3"
+                                         value="#{controller.ip.octet1}">
+                                <f:validateLongRange minimum="0" maximum="223"/>
+                            </h:inputText>
+
+                            <h:inputText id="octet2"
+                                         label="Octet 2"
+                                         class="ipoctet"
+                                         required="true"
+                                         requiredMessage="Octet 2 is required."
+                                         maxlength="3"
+                                         value="#{controller.ip.octet2}">
+                                <f:validateLongRange minimum="0" maximum="255"/>
+                            </h:inputText>
+
+                            <h:inputText id="octet3"
+                                         label="Octet 3"
+                                         class="ipoctet"
+                                         required="true"
+                                         requiredMessage="Octet 3 is required."
+                                         maxlength="3"
+                                         value="#{controller.ip.octet3}">
+                                <f:validateLongRange minimum="0" maximum="255"/>
+                            </h:inputText>
+                            <h:inputText id="octet4"
+                                         label="Octet 4"
+                                         class="ipoctet"
+                                         required="true"
+                                         requiredMessage="Octet 4 is required."
+                                         maxlength="3"
+                                         value="#{controller.ip.octet4}">
+                                <f:validateLongRange minimum="0" maximum="255"/>
+                            </h:inputText>
+                        </h:panelGroup>
+
+                        <h:panelGroup>
+                            <div class="title">
+                                <h:outputText id="prefix"
+                                              value="#{msg.prefix}"/>
+                            </div>
+                            <h:selectOneMenu value="#{controller.ip.mask}">
+                                <f:selectItems value="#{controller.prefixValues}"/>
+                            </h:selectOneMenu>
+                        </h:panelGroup>
+                    </h:panelGrid>
+
+                    <p/>
+
+                    <h:commandButton id="calculateButton" 
+                                     value="#{msg.calculate}" 
+                                     action="#{controller.calculateIpInformation()}"/>
+
+                    <h:messages errorClass="errors"/>                           
+                    <hr/>
+                </h:form>
+
+                <!--************-->
+                <!-- OUTPUT AREA-->
+                <!--************-->
+                <p/>
+                <h:panelGrid columns="2">
+                    <h:panelGrid id="majorPanel" border="1" columns="3">
+
+                        <h:outputText value="#{msg.baseAddress}"/>
+                        <h:outputText value="#{controller.baseAddressString}"/>
+                        <h:outputText value="#{controller.baseAddressBinary}"/>
+                        <h:outputText value="#{msg.mask}"/>
+                        <h:outputText value="#{controller.maskString}"/>
+                        <h:outputText value="#{controller.maskBinary}"/>
+                        <h:outputText value="#{msg.broadcastAddress}"/>
+                        <h:outputText value="#{controller.broadcastAddressString}"/>
+                        <h:outputText value="#{controller.broadcastAddressBinary}"/>
+
+                    </h:panelGrid>
+                    <h:panelGrid id="classPanel" border="1" columns="2">
+                        <h:outputText value="#{msg.class}"/>
+                        <h:outputText value="#{controller.addressClass}"/>
+                        <h:outputText value="#{msg.hostBits}"/>
+                        <h:outputText value="#{controller.numberOfHostBits}"/>
+                        <h:outputText value="#{msg.usableHosts}"/>
+                        <h:outputText value="#{controller.numberOfHosts}"/>
+
+                    </h:panelGrid>
+                </h:panelGrid>
+
+                <!--CHECKBOXES-->
+                <p/>
+                <h:panelGrid id="ipAttributePanel" border="1" columns="5">                  
+                    <h:outputLabel value="#{msg.privateAddress}">
+                        <h:selectBooleanCheckbox disabled="true" 
+                                                 value="#{controller.isPrivateAddress}"/>   
+                    </h:outputLabel>
+                    <h:outputLabel value="#{msg.defaultRoute}">
+                        <h:selectBooleanCheckbox disabled="true"
+                                                 value="#{controller.isDefaultRoute}"/>   
+                    </h:outputLabel>
+                    <h:outputLabel value="#{msg.loopback}">
+                        <h:selectBooleanCheckbox disabled="true"
+                                                 value="#{controller.isLoopback}"/>   
+                    </h:outputLabel>
+                    <h:outputLabel value="#{msg.linkLocal}">
+                        <h:selectBooleanCheckbox disabled="true"
+                                                 value="#{controller.isLinkLocal}"/>   
+                    </h:outputLabel>
+                    <h:outputLabel value="#{msg.testNet}">
+                        <h:selectBooleanCheckbox disabled="true"
+                                                 value="#{controller.isTestNet}"/>   
+                    </h:outputLabel>
+                </h:panelGrid>
+
+                <!--SUBNET INFORMATION-->
+                <p/>
+                <h:panelGrid id="subnetPanel" columns="3">
+
+                    <h:panelGrid border="1" columns="3">
+                        <h:outputText value="#{msg.subnetMask}"/>
+                        <h:outputText value="#{controller.subnetMaskString}"/>
+                        <h:outputText value="#{controller.subnetMaskBinary}"/>
+                        <h:outputText value="#{msg.wildcardMask}"/>
+                        <h:outputText value="#{controller.wildcardMaskString}"/>
+                        <h:outputText value="#{controller.wildcardMaskBinary}"/>
+                    </h:panelGrid>
+
+                    <h:panelGrid border="1" columns="2">
+                        <h:outputText value="#{msg.subnetBits}"/>
+                        <h:outputText value="#{controller.subnetBits}"/>
+                        <h:outputText value="#{msg.usableSubnets}"/>
+                        <h:outputText value="#{controller.useableSubnets}"/>
+                    </h:panelGrid>
+
+                    <h:panelGrid border="1" columns="2">
+                        <h:outputText value="#{msg.hostBitsPerSubnet}"/>
+                        <h:outputText value="#{controller.hostBitsPerSubnet}"/>
+                        <h:outputText value="#{msg.hostsPerSubnet}"/>
+                        <h:outputText value="#{controller.usableHostsPerSubnet}"/>
+                    </h:panelGrid>
+
+                </h:panelGrid>
+
+                <!--ADDRESS INFORMATION-->
+                <p/>
+                <h:panelGrid id="addressInfoPanel" border="1" columns="3">
+
+                    <h:outputText value="#{msg.subnetForThisIp}"/>
+                    <h:outputText value="#{controller.subnetAddressString}"/>
+                    <h:outputText value="#{controller.subnetAddressBinary}"/>
+                    <h:outputText value="#{msg.firstHost}"/>
+                    <h:outputText value="#{controller.firstHostString}"/>
+                    <h:outputText value="#{controller.firstHostBinary}"/>
+                    <h:outputText value="#{msg.lastHost}"/>
+                    <h:outputText value="#{controller.lastHostString}"/>
+                    <h:outputText value="#{controller.lastHostBinary}"/>
+                    <h:outputText value="#{msg.broadcastForThisSubnet}"/>
+                    <h:outputText value="#{controller.subnetBroadcastAddressString}"/>
+                    <h:outputText value="#{controller.subnetBroadcastAddressBinary}"/>
+
+                </h:panelGrid>
+
+
+            </ui:define>
+        </ui:composition>
+
+    </body>
+</html>

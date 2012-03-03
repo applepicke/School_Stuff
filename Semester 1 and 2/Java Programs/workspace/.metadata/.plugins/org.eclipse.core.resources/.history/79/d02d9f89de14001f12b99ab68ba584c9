@@ -1,0 +1,13 @@
+import java.util.Random;
+
+public class Orc extends Actor {
+	
+	@Override
+	public void setStrength (int strength) {
+		if (strength >= 0 && strength <= 10)
+			this.strength = strength;
+		else this.strength = 0;
+	}
+	
+
+}

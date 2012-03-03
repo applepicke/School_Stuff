@@ -1,0 +1,26 @@
+﻿Build started 1/20/2012 2:11:09 PM.
+     1>Project "C:\Users\Public\School_Stuff\Semester_5\Game Programming\Windows_Book\Windows_Book\Windows_Book.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Touching "Debug\Windows_Book.unsuccessfulbuild".
+       ClCompile:
+         c:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TC /analyze- /errorReport:prompt HelloWin.c
+         HelloWin.c
+       ManifestResourceCompile:
+         All outputs are up-to-date.
+       Link:
+         c:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Public\School_Stuff\Semester_5\Game Programming\Windows_Book\Debug\Windows_Book.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\Windows_Book.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Public\School_Stuff\Semester_5\Game Programming\Windows_Book\Debug\Windows_Book.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Public\School_Stuff\Semester_5\Game Programming\Windows_Book\Debug\Windows_Book.lib" /MACHINE:X86 Debug\Windows_Book.exe.embed.manifest.res
+         Debug\HelloWin.obj
+       Manifest:
+         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\Windows_Book.exe.embed.manifest" /manifest Debug\Windows_Book.exe.intermediate.manifest
+         All outputs are up-to-date.
+       LinkEmbedManifest:
+         All outputs are up-to-date.
+         Windows_Book.vcxproj -> C:\Users\Public\School_Stuff\Semester_5\Game Programming\Windows_Book\Debug\Windows_Book.exe
+       FinalizeBuildStatus:
+         Deleting file "Debug\Windows_Book.unsuccessfulbuild".
+         Touching "Debug\Windows_Book.lastbuildstate".
+     1>Done Building Project "C:\Users\Public\School_Stuff\Semester_5\Game Programming\Windows_Book\Windows_Book\Windows_Book.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.57

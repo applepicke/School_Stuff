@@ -1,0 +1,89 @@
+TAss1
+v7
+r0
+t328385261.341603
+cCheck dependencies
+cCompileC build/Ass1.build/Debug/Ass1.build/Objects-normal/x86_64/Ass1.o "/Volumes/FLASHWILLY/School Stuff/Semester 4/Numerical Computing/Ass1/Ass1.c" normal x86_64 c com.apple.compilers.gcc.4_2
+cLd "/Volumes/FLASHWILLY/School Stuff/Semester 4/Numerical Computing/Ass1/build/Debug/Ass1" normal x86_64
+
+N/Developer/SDKs/MacOSX10.6.sdk
+c000000004B99A23900000000000000EE
+t1268359737
+s238
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/stdio.h
+c000000004AC326060000000000004174
+t1254303238
+s16756
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/stdlib.h
+c000000004AC326060000000000002DF5
+t1254303238
+s11765
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/string.h
+c000000004AC326060000000000001731
+t1254303238
+s5937
+
+N/Volumes/FLASHWILLY/School Stuff/Semester 4/Numerical Computing/Ass1/Ass1.c
+c000000004DE28D5C0000000000001035
+t1306692956
+s4149
+i<stdio.h>
+i<stdlib.h>
+i<string.h>
+
+N/Volumes/FLASHWILLY/School Stuff/Semester 4/Numerical Computing/Ass1/build/Ass1.build/Debug/Ass1.build/Objects-normal/x86_64/Ass1.LinkFileList
+c000000004DE14D720000000000000084
+t1306611058
+s132
+
+N/Volumes/FLASHWILLY/School Stuff/Semester 4/Numerical Computing/Ass1/build/Ass1.build/Debug/Ass1.build/Objects-normal/x86_64/Ass1.o
+t1306692460
+s9516
+
+N/Volumes/FLASHWILLY/School Stuff/Semester 4/Numerical Computing/Ass1/build/Ass1.build/Debug/Ass1.build/Objects-normal/x86_64/main.o
+t2
+s0
+
+N/Volumes/FLASHWILLY/School Stuff/Semester 4/Numerical Computing/Ass1/build/Debug/Ass1
+t1306692460
+s10312
+
+N/Volumes/FLASHWILLY/School Stuff/Semester 4/Numerical Computing/Ass1/main.c
+c000000004DE14AC20000000000000089
+t1306610370
+s137
+i<stdio.h>
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies328385261#328385261#0(0"0(0#1#0"8616035104#0"0#
+
+CCompileC build/Ass1.build/Debug/Ass1.build/Objects-normal/x86_64/Ass1.o "/Volumes/FLASHWILLY/School Stuff/Semester 4/Numerical Computing/Ass1/Ass1.c" normal x86_64 c com.apple.compilers.gcc.4_2
+s328385261.264363
+e328385261.323992
+r1
+xCompileC
+xbuild/Ass1.build/Debug/Ass1.build/Objects-normal/x86_64/Ass1.o
+x/Volumes/FLASHWILLY/School Stuff/Semester 4/Numerical Computing/Ass1/Ass1.c
+xnormal
+xx86_64
+xc
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@83"Compile /Volumes/FLASHWILLY/School Stuff/Semester 4/Numerical Computing/Ass1/Ass1.c328385261#328385261#0(0"0(0#0#75"/Volumes/FLASHWILLY/School Stuff/Semester 4/Numerical Computing/Ass1/Ass1.c8615567776#1568"    cd "/Volumes/FLASHWILLY/School Stuff/Semester 4/Numerical Computing/Ass1"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote "/Volumes/FLASHWILLY/School Stuff/Semester 4/Numerical Computing/Ass1/build/Ass1.build/Debug/Ass1.build/Ass1-generated-files.hmap" "-I/Volumes/FLASHWILLY/School Stuff/Semester 4/Numerical Computing/Ass1/build/Ass1.build/Debug/Ass1.build/Ass1-own-target-headers.hmap" "-I/Volumes/FLASHWILLY/School Stuff/Semester 4/Numerical Computing/Ass1/build/Ass1.build/Debug/Ass1.build/Ass1-all-target-headers.hmap" -iquote "/Volumes/FLASHWILLY/School Stuff/Semester 4/Numerical Computing/Ass1/build/Ass1.build/Debug/Ass1.build/Ass1-project-headers.hmap" "-F/Volumes/FLASHWILLY/School Stuff/Semester 4/Numerical Computing/Ass1/build/Debug" "-I/Volumes/FLASHWILLY/School Stuff/Semester 4/Numerical Computing/Ass1/build/Debug/include" "-I/Volumes/FLASHWILLY/School Stuff/Semester 4/Numerical Computing/Ass1/build/Ass1.build/Debug/Ass1.build/DerivedSources/x86_64" "-I/Volumes/FLASHWILLY/School Stuff/Semester 4/Numerical Computing/Ass1/build/Ass1.build/Debug/Ass1.build/DerivedSources" -c "/Volumes/FLASHWILLY/School Stuff/Semester 4/Numerical Computing/Ass1/Ass1.c" -o "/Volumes/FLASHWILLY/School Stuff/Semester 4/Numerical Computing/Ass1/build/Ass1.build/Debug/Ass1.build/Objects-normal/x86_64/Ass1.o"0#
+
+CCompileC build/Ass1.build/Debug/Ass1.build/Objects-normal/x86_64/main.o "/Volumes/FLASHWILLY/School Stuff/Semester 4/Numerical Computing/Ass1/main.c" normal x86_64 c com.apple.compilers.gcc.4_2
+r0
+
+CLd "/Volumes/FLASHWILLY/School Stuff/Semester 4/Numerical Computing/Ass1/build/Debug/Ass1" normal x86_64
+s328385261.324162
+e328385261.341547
+r1
+xLd
+x/Volumes/FLASHWILLY/School Stuff/Semester 4/Numerical Computing/Ass1/build/Debug/Ass1
+xnormal
+xx86_64
+lSLF07#2@90"Link /Volumes/FLASHWILLY/School Stuff/Semester 4/Numerical Computing/Ass1/build/Debug/Ass1328385261#328385261#0(0"0(0#0#0"8616040000#646"    cd "/Volumes/FLASHWILLY/School Stuff/Semester 4/Numerical Computing/Ass1"    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/gcc-4.2 -arch x86_64 -isysroot /Developer/SDKs/MacOSX10.6.sdk "-L/Volumes/FLASHWILLY/School Stuff/Semester 4/Numerical Computing/Ass1/build/Debug" "-F/Volumes/FLASHWILLY/School Stuff/Semester 4/Numerical Computing/Ass1/build/Debug" -filelist "/Volumes/FLASHWILLY/School Stuff/Semester 4/Numerical Computing/Ass1/build/Ass1.build/Debug/Ass1.build/Objects-normal/x86_64/Ass1.LinkFileList" -mmacosx-version-min=10.6 -o "/Volumes/FLASHWILLY/School Stuff/Semester 4/Numerical Computing/Ass1/build/Debug/Ass1"0#
+

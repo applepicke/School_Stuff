@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class Work extends Event{
+	private int length;
+	Scanner input;
+	
+	public Work(){
+		
+	}
+	
+	public Work(int day, int month, int year, int hour, int minute){
+		super(day, month, year, hour, minute);
+	}
+	
+	public int getLength() {
+		return length;
+	}
+	public void setLength(int length) {
+		this.length = length; 
+	}
+	
+	public String toString() {
+		return "\n\tWork Event\n" + super.toString() + "Length: " + length + " hours" + "\n";
+	}
+	
+	public void inputFromKeyboard(){
+		input = new Scanner(System.in);
+		super.inputFromKeyboard();
+		System.out.print("Enter the length of your work shift: ");
+		length = input.nextInt();
+		
+	}
+
+}

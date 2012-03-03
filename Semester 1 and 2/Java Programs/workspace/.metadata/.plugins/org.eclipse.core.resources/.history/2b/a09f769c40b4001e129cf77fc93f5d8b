@@ -1,0 +1,14 @@
+import java.lang.*;
+import java.util.Scanner;
+/** Takes an amount from 1 - 25 and give back change
+  * @version 1.0
+  * @author William Collins
+  */
+
+public class ChangeProgram {
+	public static void main(String args[]) {
+		
+		
+	}
+
+}

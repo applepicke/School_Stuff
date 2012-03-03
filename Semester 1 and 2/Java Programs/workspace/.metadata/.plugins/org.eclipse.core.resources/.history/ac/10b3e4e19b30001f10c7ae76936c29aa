@@ -1,0 +1,14 @@
+
+public class Social extends Event{
+	public Social() {
+		
+	}
+	
+	public Social(int day, int month, int year, int hour, int minute) {
+		super(day, month, year, hour, minute);
+	}
+	
+	public String toString() {
+		return "\n\tNew Social Event\n" + super.toString() + "\n";
+	}
+}

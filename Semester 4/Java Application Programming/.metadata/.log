@@ -1,0 +1,31 @@
+!SESSION 2011-07-05 11:50:49.328 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.6.0_20
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.java.product -data E:\School Stuff\Semester 4\Java Application Programming -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.search 4 0 2011-07-05 13:23:04.372
+!MESSAGE Problems encountered during text search.
+!SUBENTRY 1 org.eclipse.search 4 4 2011-07-05 13:23:04.372
+!MESSAGE File 'Calculator/src/Calculator.java' has been skipped, problem while reading: ('Resource is out of sync with the file system: '/Calculator/src/Calculator.java'.').
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Resource is out of sync with the file system: '/Calculator/src/Calculator.java'.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:664)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:288)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:277)
+	at org.eclipse.search.internal.core.text.FileCharSequenceProvider$FileCharSequence.getInputStream(FileCharSequenceProvider.java:283)
+	at org.eclipse.search.internal.core.text.FileCharSequenceProvider$FileCharSequence.initializeReader(FileCharSequenceProvider.java:277)
+	at org.eclipse.search.internal.core.text.FileCharSequenceProvider$FileCharSequence.reset(FileCharSequenceProvider.java:269)
+	at org.eclipse.search.internal.core.text.FileCharSequenceProvider.newCharSequence(FileCharSequenceProvider.java:40)
+	at org.eclipse.search.internal.core.text.TextSearchVisitor.processFile(TextSearchVisitor.java:260)
+	at org.eclipse.search.internal.core.text.TextSearchVisitor.processFiles(TextSearchVisitor.java:196)
+	at org.eclipse.search.internal.core.text.TextSearchVisitor.search(TextSearchVisitor.java:172)
+	at org.eclipse.search.internal.core.text.TextSearchVisitor.search(TextSearchVisitor.java:184)
+	at org.eclipse.search.core.text.TextSearchEngine$1.search(TextSearchEngine.java:54)
+	at org.eclipse.search.internal.ui.text.FileSearchQuery.run(FileSearchQuery.java:182)
+	at org.eclipse.search2.internal.ui.InternalSearchUI$InternalSearchJob.run(InternalSearchUI.java:91)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 2 org.eclipse.core.resources 4 274 2011-07-05 13:23:04.372
+!MESSAGE Resource is out of sync with the file system: '/Calculator/src/Calculator.java'.

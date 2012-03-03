@@ -1,0 +1,9 @@
+/* File Name: buffer.c
+ * Version: 1.0
+ * Author: William Collins
+ * Date: May 18, 2011
+ *
+ */
+#include "buffer.h"
+
+Buffer *b_create(int init_capacity, char inc_factor, char o_mode);

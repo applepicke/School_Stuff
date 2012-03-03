@@ -1,0 +1,45 @@
+import java.util.ArrayList;
+/**
+ * This class demonstrates how to use
+ * the new Java 5(and later) generic ArrayList container class.
+ * Note: Eclipse must be set to be compliant with Java 1.5. or 1.6.
+ * @author Svillen Ranev
+ * @version 1.5
+ * @see java.util.ArrayList
+ */
+public class GenericAJ5 extends ArrayList <String>{
+  private ArrayList <String> activity; 
+  private String [] date = {"29-06-09","01-07-09"};
+  private String [] whatToDo = {"Learn Java!","Enjoy Java!"};
+  public GenericAJ5(){
+    activity = new ArrayList <String>();	
+  }
+  public static void main (String[]args){
+   GenericAJ5 g = new GenericAJ5();
+   g.runGenericAJ5();
+  }
+  
+  public void runGenericAJ5(){
+//Add dates and activities to an empty ArrayList   
+   this.add(date[0]);
+   activity.add(whatToDo[0]);
+   this.add(1,date[1]);
+   activity.add(1,whatToDo[1]);
+//Replace existing activities
+   activity.set(0,whatToDo[0]);
+   activity.set(1,whatToDo[1]);
+
+   /*The line below will not compile - ArrayList can add Strings only*/
+   //this.add(new Integer(30309));
+   System.out.println(this.get(0) + " " + activity.get(0));
+   System.out.println(this.get(1) + " " + activity.get(1));
+   /*Converting dates stored into this ArrayList to an array */
+   String [] dates = this.toArray(new String[this.size()]);
+   for(String s: dates)
+    System.out.println(s);
+   
+   activity.clear();
+   
+   System.out.print("\n" + activity.indexOf(date));
+ }
+}//end class

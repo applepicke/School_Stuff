@@ -1,0 +1,12 @@
+C:\Users\justin\Documents\Algonquin\Teaching\10F_CST8223\Lectures\Week 4\ADO.NET\ADO.NET\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\justin\Documents\Algonquin\Teaching\10F_CST8223\Lectures\Week 4\ADO.NET\ADO.NET\bin\Debug\ADO.NET.exe
+C:\Users\justin\Documents\Algonquin\Teaching\10F_CST8223\Lectures\Week 4\ADO.NET\ADO.NET\bin\Debug\ADO.NET.pdb
+C:\Users\justin\Documents\Algonquin\Teaching\10F_CST8223\Lectures\Week 4\ADO.NET\ADO.NET\obj\x86\Debug\ADO.NET.exe
+C:\Users\justin\Documents\Algonquin\Teaching\10F_CST8223\Lectures\Week 4\ADO.NET\ADO.NET\obj\x86\Debug\ADO.NET.pdb
+C:\Users\justin\Documents\Algonquin\Teaching\10F_CST8223\Lectures\Week 4\ADO.NET - Complete\ADO.NET\obj\x86\Debug\ADO.NET.exe
+C:\Users\justin\Documents\Algonquin\Teaching\10F_CST8223\Lectures\Week 4\ADO.NET - Complete\ADO.NET\obj\x86\Debug\ADO.NET.pdb
+C:\Users\justin\Documents\Algonquin\Teaching\10F_CST8223\Lectures\Week 4\ADO.NET - Complete\ADO.NET\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\justin\Documents\Algonquin\Teaching\10F_CST8223\Lectures\Week 4\ADO.NET - Complete\ADO.NET\bin\Debug\ADO.NET.exe
+C:\Users\justin\Documents\Algonquin\Teaching\10F_CST8223\Lectures\Week 4\ADO.NET - Complete\ADO.NET\bin\Debug\ADO.NET.pdb
+C:\Users\Public\School_Stuff\Semester_5\NET\Lectures\Week 4\ADO.NET Sample - Complete\ADO.NET - Complete\ADO.NET\obj\x86\Debug\ADO.NET.exe
+C:\Users\Public\School_Stuff\Semester_5\NET\Lectures\Week 4\ADO.NET Sample - Complete\ADO.NET - Complete\ADO.NET\obj\x86\Debug\ADO.NET.pdb

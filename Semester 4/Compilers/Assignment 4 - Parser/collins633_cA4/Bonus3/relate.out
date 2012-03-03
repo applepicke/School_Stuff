@@ -1,0 +1,9 @@
+
+ione == 1
+ifloat > 1
+string == bob
+string != bob
+ifloat == 1.01 .AND. ione == 1
+ifloat < 1 .OR. ione > 0
+nope
+

@@ -1,0 +1,95 @@
+/* automatically generated from src */
+wstdcall void WIN_FUNC(WRITE_PORT_ULONG,2)
+	(ULONG_PTR port, ULONG value);
+wstdcall ULONG WIN_FUNC(READ_PORT_ULONG,1)
+	(ULONG_PTR port);
+wstdcall void WIN_FUNC(WRITE_PORT_USHORT,2)
+	(ULONG_PTR port, USHORT value);
+wstdcall USHORT WIN_FUNC(READ_PORT_USHORT,1)
+	(ULONG_PTR port);
+wstdcall void WIN_FUNC(WRITE_PORT_UCHAR,2)
+	(ULONG_PTR port, UCHAR value);
+wstdcall UCHAR WIN_FUNC(READ_PORT_UCHAR,1)
+	(ULONG_PTR port);
+wstdcall void WIN_FUNC(WRITE_PORT_BUFFER_USHORT,3)
+	(ULONG_PTR port, USHORT *buf, ULONG count);
+wstdcall void WIN_FUNC(READ_PORT_BUFFER_USHORT,3)
+	(ULONG_PTR port, USHORT *buf, ULONG count);
+wstdcall void WIN_FUNC(WRITE_PORT_BUFFER_ULONG,3)
+	(ULONG_PTR port, ULONG *buf, ULONG count);
+wstdcall void WIN_FUNC(READ_PORT_BUFFER_ULONG,3)
+	(ULONG_PTR port, ULONG *buf, ULONG count);
+wstdcall USHORT WIN_FUNC(READ_REGISTER_USHORT,1)
+	(void __iomem *reg);
+wstdcall void WIN_FUNC(WRITE_REGISTER_ULONG,2)
+	(void __iomem *reg, UINT val);
+wstdcall void WIN_FUNC(WRITE_REGISTER_USHORT,2)
+	(void __iomem *reg, USHORT val);
+wstdcall void WIN_FUNC(WRITE_REGISTER_UCHAR,2)
+	(void __iomem *reg, UCHAR val);
+wstdcall void WIN_FUNC(KeStallExecutionProcessor,1)
+	(ULONG usecs);
+wstdcall KIRQL WIN_FUNC(KeGetCurrentIrql,0)
+	(void);
+wfastcall KIRQL WIN_FUNC(KfRaiseIrql,1)
+	(KIRQL newirql);
+wfastcall void WIN_FUNC(KfLowerIrql,1)
+	(KIRQL oldirql);
+wfastcall KIRQL WIN_FUNC(KfAcquireSpinLock,1)
+	(NT_SPIN_LOCK *lock);
+wfastcall void WIN_FUNC(KfReleaseSpinLock,2)
+	(NT_SPIN_LOCK *lock, KIRQL oldirql);
+wfastcall void WIN_FUNC(KefAcquireSpinLockAtDpcLevel,1)
+	(NT_SPIN_LOCK *lock);
+wfastcall void WIN_FUNC(KefReleaseSpinLockFromDpcLevel,1)
+	(NT_SPIN_LOCK *lock);
+#ifdef CONFIG_X86_64
+WIN_FUNC_DECL(KeGetCurrentIrql, 0)
+WIN_FUNC_DECL(KeStallExecutionProcessor, 1)
+WIN_FUNC_DECL(KefAcquireSpinLockAtDpcLevel, 1)
+WIN_FUNC_DECL(KefReleaseSpinLockFromDpcLevel, 1)
+WIN_FUNC_DECL(KfAcquireSpinLock, 1)
+WIN_FUNC_DECL(KfLowerIrql, 1)
+WIN_FUNC_DECL(KfRaiseIrql, 1)
+WIN_FUNC_DECL(KfReleaseSpinLock, 2)
+WIN_FUNC_DECL(READ_PORT_BUFFER_ULONG, 3)
+WIN_FUNC_DECL(READ_PORT_BUFFER_USHORT, 3)
+WIN_FUNC_DECL(READ_PORT_UCHAR, 1)
+WIN_FUNC_DECL(READ_PORT_ULONG, 1)
+WIN_FUNC_DECL(READ_PORT_USHORT, 1)
+WIN_FUNC_DECL(READ_REGISTER_USHORT, 1)
+WIN_FUNC_DECL(WRITE_PORT_BUFFER_ULONG, 3)
+WIN_FUNC_DECL(WRITE_PORT_BUFFER_USHORT, 3)
+WIN_FUNC_DECL(WRITE_PORT_UCHAR, 2)
+WIN_FUNC_DECL(WRITE_PORT_ULONG, 2)
+WIN_FUNC_DECL(WRITE_PORT_USHORT, 2)
+WIN_FUNC_DECL(WRITE_REGISTER_UCHAR, 2)
+WIN_FUNC_DECL(WRITE_REGISTER_ULONG, 2)
+WIN_FUNC_DECL(WRITE_REGISTER_USHORT, 2)
+#endif
+extern struct wrap_export hal_exports[];
+struct wrap_export hal_exports[] = {
+	WIN_SYMBOL(KeGetCurrentIrql, 0),
+	WIN_SYMBOL(KeStallExecutionProcessor, 1),
+	WIN_SYMBOL(KefAcquireSpinLockAtDpcLevel, 1),
+	WIN_SYMBOL(KefReleaseSpinLockFromDpcLevel, 1),
+	WIN_SYMBOL(KfAcquireSpinLock, 1),
+	WIN_SYMBOL(KfLowerIrql, 1),
+	WIN_SYMBOL(KfRaiseIrql, 1),
+	WIN_SYMBOL(KfReleaseSpinLock, 2),
+	WIN_SYMBOL(READ_PORT_BUFFER_ULONG, 3),
+	WIN_SYMBOL(READ_PORT_BUFFER_USHORT, 3),
+	WIN_SYMBOL(READ_PORT_UCHAR, 1),
+	WIN_SYMBOL(READ_PORT_ULONG, 1),
+	WIN_SYMBOL(READ_PORT_USHORT, 1),
+	WIN_SYMBOL(READ_REGISTER_USHORT, 1),
+	WIN_SYMBOL(WRITE_PORT_BUFFER_ULONG, 3),
+	WIN_SYMBOL(WRITE_PORT_BUFFER_USHORT, 3),
+	WIN_SYMBOL(WRITE_PORT_UCHAR, 2),
+	WIN_SYMBOL(WRITE_PORT_ULONG, 2),
+	WIN_SYMBOL(WRITE_PORT_USHORT, 2),
+	WIN_SYMBOL(WRITE_REGISTER_UCHAR, 2),
+	WIN_SYMBOL(WRITE_REGISTER_ULONG, 2),
+	WIN_SYMBOL(WRITE_REGISTER_USHORT, 2),
+	{NULL, NULL}
+};

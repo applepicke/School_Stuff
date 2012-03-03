@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+    <h:head>
+        <meta name="author" content="William Collins" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link href="./resources/css/default.css" rel="stylesheet" type="text/css" />
+        <link href="./resources/css/cssLayout.css" rel="stylesheet" type="text/css" />
+        <link href="./resources/css/ipLayout.css" rel="stylesheet" type="text/css" />
+        <title>IPv4 Calculator (JSF)</title>
+    </h:head>
+
+    <h:body>
+
+        <div id="top">
+            <h2>
+                IPv4 Calculator (JSF)
+            </h2>
+        </div>
+        <div>
+            <div id="left">
+                <h:form id="navigationForm">
+                    <h:commandLink id="indexLink"
+                                   action="index?faces-redirect=true"
+                                   title="Home"
+                                   value="Home" />
+                    <p/>
+                    <h:commandLink id="aboutLink"
+                                   action="about?faces-redirect=true"
+                                   title="About"
+                                   value="About" />
+                    <p/>
+                </h:form>
+            </div>
+            <div id="content" class="left_content">
+                <ui:insert name="content">Content</ui:insert>
+            </div>
+        </div>
+        <div id="bottom">
+            <h6>
+                William Collins (coll0300) - Winter 2012
+            </h6>
+        </div>
+
+    </h:body>
+
+</html>

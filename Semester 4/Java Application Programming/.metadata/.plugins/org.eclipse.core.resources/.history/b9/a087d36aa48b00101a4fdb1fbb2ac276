@@ -1,0 +1,6 @@
+import javax.swing.JPanel;
+
+
+public class CalculatorView extends JPanel{
+	
+}

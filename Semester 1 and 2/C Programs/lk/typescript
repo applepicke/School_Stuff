@@ -1,0 +1,51 @@
+Script started on Sun Mar 28 17:51:03 2010
+bash: /Users/Willy/.bashrc: is a directory
+bash-3.2$ lk [K[K[Kls
+Makefile	in_dir.c	lk.h		top
+check_file.c	lk		main.c		typescript
+bash-3.2$ cd top/
+bash-3.2$ lk -this
+t: invalid option
+bash-3.2$ lk not-a-dir
+24: not-a-dir: broken link
+not-a-dir: not a directory
+bash-3.2$ lk no[Ko-[K[K[Kno[K[Kfile
+file: not a directory
+bash-3.2$ lk .
+1106116: ./blFile: broken link
+bash-3.2$ lk -b
+1106116: ./blFile: broken link
+bash-3.2$ lk
+1106116: ./blFile: broken link
+bash-3.2$ lk ./middle ./middle/bottom1
+1106117: ./middle/blFile2: broken link
+1106130: ./middle/bottom1/blFile3: broken link
+bash-3.2$ lk -bh
+1106116: ./blFile: broken link
+1106096: ./file: hard link
+1106096: ./hlFile: hard link
+bash-3.2$ lk -b[Kh
+1106096: ./file: hard link
+1106096: ./hlFile: hard link
+bash-3.2$ lk -s
+1106239: ./slFile: soft link
+bash-3.2$ lk -r ./middle
+1106117: ./middle/blFile2: broken link
+1106130: ./middle/bottom1/blFile3: broken link
+bash-3.2$ lk -rh ./middle
+1106096: ./middle/bottom2/hlFile3: hard link
+1106096: ./middle/hlFile2: hard link
+bash-3.2$ lk -?
+Syntax: lk [-options] [path]
+
+ -b    show broken soft links					   
+ -h    show hard links
+ -s    show soft links
+ -r    search folders recursively
+					   
+When no arguments are presented, defaults are -b and current directory
+1106116: ./blFile: broken link
+bash-3.2$ exit
+exit
+
+Script done on Sun Mar 28 17:56:08 2010

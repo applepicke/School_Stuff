@@ -1,0 +1,5 @@
+C:\Users\Public\School_Stuff\Semester_5\NET\Assignments\Assignment1\Assignment1\bin\Debug\Assignment1.exe
+C:\Users\Public\School_Stuff\Semester_5\NET\Assignments\Assignment1\Assignment1\bin\Debug\Assignment1.pdb
+C:\Users\Public\School_Stuff\Semester_5\NET\Assignments\Assignment1\Assignment1\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Public\School_Stuff\Semester_5\NET\Assignments\Assignment1\Assignment1\obj\x86\Debug\Assignment1.exe
+C:\Users\Public\School_Stuff\Semester_5\NET\Assignments\Assignment1\Assignment1\obj\x86\Debug\Assignment1.pdb

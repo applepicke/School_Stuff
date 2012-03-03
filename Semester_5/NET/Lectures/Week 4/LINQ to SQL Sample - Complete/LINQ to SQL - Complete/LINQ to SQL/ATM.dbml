@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ATM" Class="ATMDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=playdoh.algonquincollege.com;Initial Catalog=ATM;Persist Security Info=True;User ID=ATM" SettingsObjectName="LINQ_to_SQL.Properties.Settings" SettingsPropertyName="ATMConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.People" Member="Peoples">
+    <Type Name="People">
+      <Column Name="PersonId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Birthday" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

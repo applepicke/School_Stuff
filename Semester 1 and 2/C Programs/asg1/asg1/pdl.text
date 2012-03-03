@@ -1,0 +1,142 @@
+START main
+    IF there are not exactly 5 args
+        PRINT usage
+        EXIT failure
+    ENDIF
+    IF base is improper
+        PRINT error
+        EXIT failure
+    ENDIF
+    FOR num1 and num2
+        IF conversion from string fails
+            PRINT error
+            EXIT failure
+        ENDIF
+    END FOR
+    IF operator is invalid
+        PRINT error
+        EXIT failure
+    ENDIF
+    SWITCH on operator
+        CASE ADD
+            num3 = num1 + num2
+            BREAK
+        CASE SUBTRACT
+            num3 = num1 - num2
+            BREAK
+        CASE MULTIPLY
+            num3 = num1 * num2
+            BREAK
+        CASE DIVIDE
+            IF num2 is zero
+                PRINT divide by zero
+                EXIT failure
+            ENDIF
+            num3 = num1 / num2
+            BREAK
+        DEFAULT
+            PRINT invalid operator
+            EXIT failure
+            BREAK
+    END SWITCH
+    PRINT result in base
+    PRINT result in decimal
+    EXIT success
+END main
+
+BEGIN in_cvt
+    REMOVE leading spaces
+    IF the first character is '-'
+        REMOVE it
+        RECORD sign as negative
+    ENDIF
+    IGNORE trailing spaces
+    FOR each character from the right end of the string
+        IF it's invalid
+            RETURN -INT_MAX
+        END IF
+        ADD the value to the positional value
+        MULTIPLY the positional value by the base
+    END FOR
+    RETURN value * sign
+END in_cvt
+
+/************** WC 1010-01-25 ***************/
+BEGIN hex_in
+    IF hex character is found in input
+	RETURN int 
+END hex_in
+/********************************************/
+
+BEGIN ctob
+    IF base argument is greater then MAX_BASE
+        RETURN -INT_MAX
+    ENDIF
+    IF the value from table is >= MAX_BASE OR == '*'
+        RETURN -INT_MAX
+    ENDIF
+    RETURN value from the table
+END ctob
+
+BEGIN out_cvt
+    SET output string to all '\0' characters
+    IF size is not 2 or more
+        RETURN output string address
+    ENDIF
+    IF the number is negative
+        SET number positive
+        SET sign to negative
+    ELSE IF the number is zero
+        RETURN the string "0"
+    ENDIF
+    WHILE the number is greater than 0
+        IF the temp string is full
+            RETURN pointer to "overflow" or "*"
+        ENDIF
+        GET right-most digit for base
+        SET character for it in temp string (left to right)
+        IF conversion from int to char failed
+            RETURN pointer to "invalid" or "*"
+        ENDIF
+        REMOVE right-most base digit from number
+    END WHILE
+    IF sign was negative
+        SET last character to '-'
+    ENDIF
+    IF size of string is too small for temp string
+        RETURN "small" or "*"
+    ENDIF
+    REVERSE temp string into output string
+    RETURN address of output string
+END out_cvt
+
+/***************WC 1010-01-25***********/
+BEGIN hex_out
+    IF output from calculation is in base 16
+	RETURN as a char hex value
+/**************************************/ 
+
+BEGIN btoc
+    IF digit > base OR base > MAX_BASE
+        RETURN '*' for error
+    ENDIF
+    RETURN character from list
+END btoc
+
+BEGIN get_base
+    IF the string does not begin "base="
+        RETURN error
+    ENDIF
+    GET rest of the string as a base-10 number
+    IF the conversion is complete AND number > 0
+        RETURN base
+    ENDIF
+    RETURN error
+END get_base
+
+BEGIN rev_str
+    FOR each character in the source string, from the right
+        COPY to the dest string, from the left
+    END FOR
+    RETURN pointer to destination string
+END rev_str

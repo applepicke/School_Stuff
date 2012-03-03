@@ -1,0 +1,1 @@
+cmd_/media/FLASHWILLY/ndiswrapper-1.56/driver/ntoskernel_io_exports.h := /bin/sh /media/FLASHWILLY/ndiswrapper-1.56/driver/mkexport.sh /media/FLASHWILLY/ndiswrapper-1.56/driver/ntoskernel_io.c /media/FLASHWILLY/ndiswrapper-1.56/driver/ntoskernel_io_exports.h

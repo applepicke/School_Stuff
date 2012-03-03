@@ -1,0 +1,29 @@
+import java.awt.Button;
+import java.awt.Container;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+
+public class CalculatorView extends JPanel{
+	
+	private JTextField display; // the calculator display field
+	private JLabel error; // the error display label
+	private JButton dotButton; // the decimal point (dot) button
+	
+	public CalculatorView(){
+
+		
+		
+	}
+	
+	private void addButton(Container c, String s, ActionListener handler){
+		
+		Button newButton = new Button(s);
+		
+	}
+	
+}

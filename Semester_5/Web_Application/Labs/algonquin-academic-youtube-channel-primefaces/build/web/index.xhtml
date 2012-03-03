@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+    Document   : index
+    Created on : 3/2/2012
+    Author     : William Collins
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.prime.com.tr/ui">
+
+    <body>
+
+        <ui:composition template="./WEB-INF/templates/template.xhtml">
+
+            <ui:define name="content">
+                <h:form id="youTubeForm">
+                    <p:accordionPanel id="youTubeAccordian">
+
+                        <p:tab title="How to Light a Pilot by Susan Thompson">
+                            <p:media value="http://www.youtube.com/v/ZvVvU4_r_3Y"
+                                     height="344"
+                                     width="425"
+                                     player="flash"/>
+                        </p:tab>
+                        <p:tab title="Introduction to Google Docs by Susan Murphy">
+                            <p:media value="http://www.youtube.com/v/2r0TNxCYVh4" 
+                                     height="344"
+                                     width="425"
+                                     player="flash"/>                          
+                        </p:tab>                       
+                        <p:tab title="The Geology of the Ottawa Area">
+                            <p:media value="http://www.youtube.com/v/2r0TNxCYVh4" 
+                                     height="344"
+                                     width="425"
+                                     player="flash"/>                          
+
+                        </p:tab>
+                    </p:accordionPanel>
+
+
+
+                </h:form>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

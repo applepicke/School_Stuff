@@ -1,0 +1,71 @@
+Reading file a2error.pls ....Please wait
+
+Printing buffer parameters:
+
+The capacity of the buffer is:  1155
+The current size of the buffer is:  1154
+
+Printing buffer contents:
+
+!<This file contains many lexical errors.
+!<It tests mainly the correctness of the accepting functions
+!<5 tabs
+					
+					
+					
+
+
+a1234567
+!<legal, but too long (possible semantic error)
+a1234567MORE
+b1234567MORE#
+!<lexical error: # out of context, allowed only in comments and strings
+#OR$
+!<lexical error: | allowed only in strings and comments
+|
+!<another lexical error: # out of context
+Not#here
+!<another lexical error: .  out of context
+.
+!<another lexical error: ~  illegal symbol
+~
+!<legal FPL (will be rounded to 2.0 when displayed)
+1.999999999999999911111111111111111111111111111111111111111111111111111111111111111
+
+!< big float number (error: out of range)
+999999999999999999999999999999999999999999999999999999999999999999999999999999999.0
+
+!<small float number (error: out of range)
+0.00000000000000000000000000000000000000000000000000000000000000000000000000000000001
+
+!< big decimal int number (error: out of range)
+99999
+!< big octal int number (error: out of range)
+0177777
+!< gigantic decimal int number (error: out of range)
+123456789012345678901234567890
+!< gigantic octal int number (error: out of range)
+0123456701234567012345670
+Scanning source file...
+
+Token		Attribute
+----------------------------------
+AVID_T		a1234567
+AVID_T		a1234567
+SVID_T		b123456#
+ERR_T		#
+AVID_T		OR
+ERR_T		$
+ERR_T		|
+ERR_T		Not#h
+AVID_T		ere
+ERR_T		.
+ERR_T		~
+FPL_T		2.000000
+ERR_T		99999999999999999999
+ERR_T		0.000000000000000000
+ERR_T		99999
+ERR_T		0177777
+ERR_T		12345678901234567890
+ERR_T		01234567012345670123
+SEOF_T

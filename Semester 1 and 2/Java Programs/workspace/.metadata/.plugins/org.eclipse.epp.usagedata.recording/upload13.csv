@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+started,bundle,org.eclipse.ui.editors,3.5.0.v20090527-2000,"org.eclipse.ui.editors",1255028155713
+started,bundle,org.eclipse.ui.forms,3.4.1.v20090714_35x,"org.eclipse.ui.forms",1255028155714
+started,bundle,org.eclipse.ui.ide,3.5.1.M20090826-0800,"org.eclipse.ui.ide",1255028155716
+started,bundle,org.eclipse.ui.net,1.2.1.r35x_20090812-1200,"org.eclipse.ui.net",1255028155716
+started,bundle,org.eclipse.ui.views,3.4.1.M20090826-0800,"org.eclipse.ui.views",1255028155717
+started,bundle,org.eclipse.ui.views.log,1.0.100.v20090731,"org.eclipse.ui.views.log",1255028155719
+started,bundle,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"org.eclipse.ui.workbench",1255028155746
+started,bundle,org.eclipse.ui.workbench.texteditor,3.5.0.v20090603,"org.eclipse.ui.workbench.texteditor",1255028155747
+started,bundle,org.eclipse.update.configurator,3.3.0.v20090312,"org.eclipse.update.configurator",1255028155748
+started,bundle,org.eclipse.wst.common.project.facet.core,1.4.1.v200908111817,"org.eclipse.wst.common.project.facet.core",1255028155748
+started,bundle,org.eclipse.wst.web,1.1.301.v200909021400,"org.eclipse.wst.web",1255028155748
+os,sysinfo,,,"macosx",1255028155766
+arch,sysinfo,,,"x86",1255028155766
+ws,sysinfo,,,"carbon",1255028155766
+locale,sysinfo,,,"en_US",1255028155766
+processors,sysinfo,,,"2",1255028155767
+java.runtime.name,sysinfo,,,"Java(TM) 2 Runtime Environment, Standard Edition",1255028155767
+java.runtime.version,sysinfo,,,"1.5.0_20-b02-315",1255028155767
+java.specification.name,sysinfo,,,"Java Platform API Specification",1255028155767
+java.specification.vendor,sysinfo,,,"Sun Microsystems Inc.",1255028155767
+java.specification.version,sysinfo,,,"1.5",1255028155767
+java.vendor,sysinfo,,,"Apple Inc.",1255028155767
+java.version,sysinfo,,,"1.5.0_20",1255028155767
+java.vm.info,sysinfo,,,"mixed mode",1255028155767
+java.vm.name,sysinfo,,,"Java HotSpot(TM) Client VM",1255028155767

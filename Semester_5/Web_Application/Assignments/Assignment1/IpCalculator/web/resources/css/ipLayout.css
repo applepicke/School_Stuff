@@ -1,0 +1,28 @@
+/* 
+    Document   : ipLayout
+    Created on : Feb 4, 2012, 2:04:12 PM
+    Author     : William Collins
+    Description: Stylings associated with the ip input and output fields
+        
+*/
+
+.ipoctet {
+    width: 3em;
+}
+
+.title {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-weight: bold;
+    font-family: arial;
+}
+
+.errors {
+    color: red;
+}
+
+root { 
+    display: block;
+}
+

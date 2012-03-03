@@ -1,0 +1,56 @@
+import java.awt.Button;
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.event.ActionListener;
+
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.border.BevelBorder;
+
+
+public class CalculatorView extends JPanel{
+	
+	private JTextField display; // the calculator display field
+	private JLabel error; // the error display label
+	private JButton dotButton; // the decimal point (dot) button
+	
+	public final String DOT_BUTTON = ".";
+	public final String CLEAR_BUTTON = "C";
+	public final String EQUALS_BUTTON = "=";
+
+	
+	public CalculatorView(){
+
+		
+		
+	}
+	
+	private void addButton(Container c, String s, ActionListener handler){
+		
+		if (s.equals(DOT_BUTTON)){
+			c.add(dotButton);
+			return;
+		}
+		
+		JButton newButton = new JButton(s);
+		newButton.setBorder(BorderFactory.createBevelBorder(BevelBorder.RAISED));
+		
+		//Take care of certain special buttons
+		if (s.equals(CLEAR_BUTTON)){
+			
+		}
+		else if (s.equals(EQUALS_BUTTON)){
+			
+		}
+		else {
+	
+
+			newButton.setForeground(Color.PINK);
+		
+		}
+	}
+	
+}

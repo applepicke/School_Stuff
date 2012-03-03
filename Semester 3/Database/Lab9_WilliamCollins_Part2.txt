@@ -1,0 +1,73 @@
+A.	
+	a.	SELECT publisher_id, SUM(SALES)
+		FROM titles
+		GROUP BY publisher_id;
+		
+		PUB SUM(SALES)
+	--- ----------
+
+	P01     111887
+	P03    1520233
+	P02      25667
+	P04     317659
+	P99         10
+
+	6 rows selected.
+		
+	b.	SELECT publisher_id, AVG(sales*price)
+		FROM titles
+		WHERE (sales)>1000
+		GROUP BY publisher_id
+		HAVING AVG(sales*price)>50000;
+		
+		PUB AVG(SALES*PRICE)
+	--- ----------------
+	P01       762423,495
+	P03       12144845,7
+	P02       1025396,65
+	P04       486326,752
+		
+B.	Write an Aggregate/Group By query that lists the title_id, title with the most 
+authors. Hints; Put inner subquery SELECT statement within parenthesis (i.e., ( SELECT …
+FROM … ) ). Reduce groups with HAVING clause. You can nest functions (i.e., the function 
+COUNT counts the number of rows in a column th at meet some condition. You can 
+MAX(COUNT(…).
+
+	SELECT DISTINCT title_id
+	FROM authors, author_titles
+	WHERE au_order = ( SELECT MAX(au_order) FROM author_titles )
+	GROUP BY title_id;
+	
+	TIT
+	---
+	T11
+	
+C.	SELECT genre, AVG(sales)
+	FROM titles
+	GROUP BY genre;
+	
+	GENRE      AVG(SALES)
+	---------- ----------
+	psychology 102854,667
+	biography   402882,75
+	children       4547,5
+	history    6866,33333
+	computer        25667
+	
+D.	SELECT fName, lName, MAX(price*sales*royalty_rate)
+	FROM titles, authors, author_titles
+	WHERE author_titles.au_id = authors.au_id
+	AND author_titles.title_id = titles.title_id
+	GROUP BY fName, lName;
+	
+		FNAME           LNAME           MAX(PRICE*SALES*ROYALTY_RATE)
+	--------------- --------------- -----------------------------
+	Christian       Kells                              71777,7655
+	Hallie          Hull                               52642,9939
+	Sarah           Buchman                            18834,3198
+	Wendy           Heydemark                           3952276,9
+	Klee            Hull                                3952276,9
+					Kellsey                            52642,9939
+	
+
+		

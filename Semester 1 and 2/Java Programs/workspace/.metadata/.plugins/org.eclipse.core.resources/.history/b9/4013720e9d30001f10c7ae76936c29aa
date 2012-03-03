@@ -1,0 +1,12 @@
+
+public class Assignment extends Event{
+	
+	public Assignment() {
+		
+	}
+	
+	public Assignment(int day, int month, int year, int hour, int minute) {
+		super(day, month, year, hour, minute);
+	}
+	
+}

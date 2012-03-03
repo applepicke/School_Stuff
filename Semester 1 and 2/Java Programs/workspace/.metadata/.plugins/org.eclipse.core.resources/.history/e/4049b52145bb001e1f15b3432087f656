@@ -1,0 +1,16 @@
+import.util.Scanner;
+public class example01 {
+	public static void main(String args[]) {
+	
+		Scanner input = new Scanner(System.in);
+		
+		num = 1;
+		if (num) 
+			System.out.println("boobies");
+		else System.out.println("doubles");
+		
+		
+	
+	}
+
+}

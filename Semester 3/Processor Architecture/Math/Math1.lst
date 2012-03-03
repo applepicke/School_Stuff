@@ -1,0 +1,32 @@
+
+as12, an absolute assembler for Motorola MCU's, version 1.2h
+
+                        ; Math1.asm
+                        ;
+                        ; Author: 	Willy Collins
+                        ; Student No:   040652633
+                        ;
+                        ; Purpose:      Add three values from even numbered memory, and subtract two
+                        ;               values from odd numbered memory, storing the result in memory.
+                        ;
+1000                            org     $1000 		; Set starting area to store memory
+1000 f2 15 37                   db      $F2,$15,$37     ; An array of numbers to be added or subtracted
+1003 22 22                      fill    $22,$2          ; Numbers that will be added or subtracted
+1020                            org     $1020           ; Area where the result will be stored
+1020                            ds      1               ; Low order byte of result
+1021                            ds      1               ; High order byte of result
+2000                            org     $2000           ; Program to be stored in this area
+2000 b6 10 00                   ldaa    $1000           ; First number loaded into A
+2003 b9 10 02                   adca    $1002           ; Add first value to A
+2006 c6 00                      ldab    #$0             ; Load B so that it is ready to store overflow
+2008 c9 00                      adcb    #$0             ; Add the carry from the first addition
+200a 7b 10 20                   stab    $1020           ; Store high order byte of result
+200d bb 10 04                   adda    $1004           ; Add next value to A
+2010 b0 10 01                   suba    $1001           ; Subtract next value from A
+2013 b0 10 03                   suba    $1003           ; Subtract next value from A
+2016 7a 10 21                   staa    $1021           ; Store low order byte of result
+                                end                     ; END
+
+Executed: Tue Oct 26 10:56:20 2010
+Total cycles: 32, Total bytes: 30
+Total errors: 0, Total warnings: 0

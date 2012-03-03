@@ -1,0 +1,15 @@
+Reading file bigf.pls ....Please wait
+The input file bigf.pls is not completely loaded.
+Input file size: 33609
+
+Printing buffer parameters:
+
+The capacity of the buffer is:  -32754
+The current size of the buffer is:  -32754
+The operational mode of the buffer is:   1
+The increment factor of the buffer is:  15
+The current mark of the buffer is:  0
+
+Printing buffer contents:
+
+

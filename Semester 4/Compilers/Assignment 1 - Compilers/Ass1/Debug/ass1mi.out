@@ -1,0 +1,41 @@
+Reading file ass1.pls ....Please wait
+
+Printing buffer parameters:
+
+The capacity of the buffer is:  21475021
+The current size of the buffer is:  319
+The operational mode of the buffer is:   -1
+The increment factor of the buffer is:  15
+The current mark of the buffer is:  319
+
+Printing buffer contents:
+
+Compilers  are  fundamental  to  modern  computing.
+They  act  as  translators,  transforming  human-oriented
+language  into  computer-oriented  machine-language.
+A compiler allows virtually all computer users to
+ignore the  machine-dependent  details of machine language.
+Isn't that nice?  =:)
+  
+CST8152
+Summer,  2011
+
+Printing buffer parameters:
+
+The capacity of the buffer is:  320
+The current size of the buffer is:  320
+The operational mode of the buffer is:   -1
+The increment factor of the buffer is:  15
+The current mark of the buffer is:  319
+
+Printing buffer contents:
+
+Compilers  are  fundamental  to  modern  computing.
+They  act  as  translators,  transforming  human-oriented
+language  into  computer-oriented  machine-language.
+A compiler allows virtually all computer users to
+ignore the  machine-dependent  details of machine language.
+Isn't that nice?  =:)
+  
+CST8152
+Summer,  2011ÿ

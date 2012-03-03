@@ -1,0 +1,21 @@
+import java.lang.String;
+import java.util.Scanner;
+
+public class Meeting extends Event{
+	String place;
+	Scanner input;
+	
+	public Meeting () {
+		
+	}
+	
+	public Meeting (int day, int month, int year, int hour, int minute, String place) {
+		super(day, month, year, hour, minute);
+		this.place = new String(place);		
+	}
+	
+	public void setPlace() {
+		
+	}
+
+}

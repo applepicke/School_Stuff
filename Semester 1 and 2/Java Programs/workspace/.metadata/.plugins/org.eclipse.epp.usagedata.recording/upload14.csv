@@ -1,0 +1,19 @@
+what,kind,bundleId,bundleVersion,description,time
+java.vm.specification.name,sysinfo,,,"Java Virtual Machine Specification",1255028155767
+java.vm.specification.vendor,sysinfo,,,"Sun Microsystems Inc.",1255028155767
+java.vm.specification.version,sysinfo,,,"1.0",1255028155767
+java.vm.vendor,sysinfo,,,"Apple Inc.",1255028155767
+java.vm.version,sysinfo,,,"1.5.0_20-141",1255028155767
+started,bundle,org.eclipse.emf.ecore,2.5.0.v200906151043,"org.eclipse.emf.ecore",1255028155834
+started,bundle,org.eclipse.jem.util,2.0.200.v200905140200,"org.eclipse.jem.util",1255028155836
+started,bundle,org.eclipse.wst.common.frameworks,1.1.300.v200904160730,"org.eclipse.wst.common.frameworks",1255028155842
+started,bundle,org.eclipse.jst.jsf.common,1.1.7.v20090903,"org.eclipse.jst.jsf.common",1255028155875
+started,bundle,org.eclipse.jst.jsf.core,1.2.2.v20090903,"org.eclipse.jst.jsf.core",1255028155892
+started,bundle,org.eclipse.mylyn.team.ui,3.2.2.v20090912-0400-e3x,"org.eclipse.mylyn.team.ui",1255028155928
+started,bundle,org.eclipse.jst.common.project.facet.core,1.4.1.v200908111817,"org.eclipse.jst.common.project.facet.core",1255028156021
+started,bundle,org.eclipse.update.scheduler,3.2.200.v20081127,"org.eclipse.update.scheduler",1255028156143
+started,bundle,org.eclipse.update.core,3.2.300.v20090525,"org.eclipse.update.core",1255028156196
+started,bundle,org.eclipse.wst.ws.service.policy.ui,1.0.102.v200903070248,"org.eclipse.wst.ws.service.policy.ui",1255028156202
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1255028156727
+started,bundle,org.eclipse.epp.usagedata.ui,1.1.0.R200906100410,"org.eclipse.epp.usagedata.ui",1255028156811
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1255028157199

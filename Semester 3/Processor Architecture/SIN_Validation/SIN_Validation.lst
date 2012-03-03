@@ -1,0 +1,207 @@
+
+as12, an absolute assembler for Motorola MCU's, version 1.2h
+
+                        ; SIN_Validation.asm
+                        ; Authors:      William Collins & Nicolas Castilloux
+                        ; Purpose:      Social Insurance Number Validation
+                        
+                        
+                        ; EQUATE statements: constants to be used throughout the program
+                        ;*****************************************************************************
+1030                    FINALRESULTS    equ     $1030                   ; Final numbers of valid and invalid SINs
+1050                    SUMS                equ        $1050                   ; Area to store the sums
+0006                    NUMBEROFSINS    equ     6                       ; Six SINs to process
+2000                    PROGRAMSTART    equ     $2000                   ; Executable code starts here
+1000                    STORAGE1        equ     $1000                   ; Storage starts here for original SINs
+0030                    THIRTY          equ     $30                     ; Value to be subtracted to convert to integer
+0000                    ZERO            equ     0                       ; the end of SIN
+0007                    LENOFSIN        equ     7                       ; Length of the SINs
+                        ;******************************************************************************
+1000                    SINs            org     STORAGE1
+                        #include MONDAY_LAB_GROUP.txt                   ; Text file with social insurance numbers
+1000 33 33 35 35 37 37  SIN1	fcc	"3355778"
+     38
+1007 39 39 37 37 35 35  SIN2	fcc	"9977554"
+     34
+100e 35 34 33 36 35 34  SIN3	fcc	"5436547"
+     37
+1015 39 39 39 39 39 36  SIN4	fcc	"9999969"
+     39
+101c 38 30 33 30 38 33  SIN5	fcc	"8030838"
+     38
+1023 31 32 33 33 32 31  SIN6	fcc	"1233211"
+     31
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        #endinclude
+
+                        
+                        ; STORAGE AREAS
+                        ;******************************************************************************
+1050                                    org     SUMS
+1050                    ODDSUM          ds      1                       ; Storage for the sum of odd numbers
+1051                    EVENSUM         ds      1                       ; Storage for the sum of even numbers
+1052                    SINCOUNT        ds      1                       ; Storage for loop control
+                        
+1030                                    org     FINALRESULTS
+1030                    InvalidResult   ds      1                       ; Count of Invalid SINs processed
+1031                    ValidResult     ds      1                       ; Count of Valid SINs processed
+                        ;******************************************************************************
+                        
+                        
+                        ; The main program
+                        ;**********************************************************************
+2000                                    org     ProgramStart
+2000 cf 20 00                           lds     #ProgramStart
+2003 87                                 clra
+2004 7a 10 30                           staa    InvalidResult           ; Initialize invalid result memory
+2007 7a 10 31                           staa    ValidResult             ; Initialize valid result memory
+200a ce 10 00                           ldx     #STORAGE1               ; Loop will count form this starting point
+200d 7a 10 52                           staa    SINCOUNT                ; Initialize the count of SINS to zero
+2010 b7 56              GetNext         tfr     x, y                    ; Backup copy of index
+2012 07 3d                              bsr     ToDigit                 ; Convert char to a digit
+2014 b7 65                              tfr     y, x                    ; Restore the copy of index to beginning of current SIN
+2016 07 63                              bsr     ConvertOdd              ; Adjust and convert the odd numbers in the SIN
+2018 b7 65                              tfr     y, x                    ; Restore copy of index
+201a 07 78                              bsr     AddOdd                  ; Add the odd numbers in the SIN
+201c 7a 10 50                           staa    ODDSUM                  ; store the sum of the odd values
+201f b7 65                              tfr     y, x                    ; Restore copy of index
+2021 07 3d                              bsr     AddEven                 ; Add the even numbers in the SIN
+2023 7a 10 51                           staa    EVENSUM                 ; store the sum of the even values
+2026 07 7a                              bsr     Validate                ; Add and divide to find out whether it is valid
+2028 c6 07              ContinueGet     ldab    #LENOFSIN               ; Prepare to center index on next SIN
+202a b7 65                              tfr     y, x                    ; Restore copy of index
+202c 1a e5                              abx                             ; Center index on next SIN
+202e b6 10 52                           ldaa    SINCOUNT                ; Retrieve number of SINs validated
+2031 42                                 inca                            ; Add another SIN to the list of validated
+2032 7a 10 52                           staa    SINCOUNT                ; Save the value for the beginning of the loop
+2035 81 06                              cmpa    #NUMBEROFSINS           ; Are we done?
+2037 25 d7                              blo     GetNext                 ; No, loop again
+2039 20 7c                              bra     Done                    ; Yes, finish program
+                        ;******************************************************************************
+                        
+                        
+                        ; Simple Functions That add or subtract to values in memory
+                        ;******************************************************************************
+203b b6 10 31           AddValidResult  ldaa    ValidResult             ; How many sins are already valid?
+203e 42                                 inca                            ; Add another one to the list
+203f 7a 10 31                           staa    ValidResult             ; Store the list
+2042 20 e4                              bra     ContinueGet             ; Go back
+                                        
+2044 b6 10 30           AddInvalid      ldaa    InvalidResult           ; How many sins are already invalid?
+2047 42                                 inca                            ; Add another one to the list
+2048 7a 10 30                           staa    InvalidResult           ; Store the list
+204b 20 db                              bra     ContinueGet             ; Go Back
+                                        
+204d 8b 06              Add6            adda    #$6                     ; BCD adjusting
+204f 20 34                              bra     AfterAdd6               ; Go back
+                        ;******************************************************************************
+                        
+                        
+                        ; ToDigit: converts the char values into numbers
+                        ;******************************************************************************
+2051 c6 07              ToDigit         ldab    #LENOFSIN               ; Sets the loop counter
+2053 a6 00              Convert         ldaa    0,x                     ; Loads next number to convert
+2055 80 30                              suba    #THIRTY                 ; Converts number
+2057 6a 00                              staa    0,x                     ; Stores the converted value
+2059 08                                 inx                             ; Next value
+205a 53                                 decb                            ; Loop is decremented
+205b c1 00                              cmpb    #ZERO                   ; Is it time to leave?
+205d 26 f4                              bne     Convert                 ; No, do it all again
+205f 3d                                 rts                             ; Yes, get out of here
+                        ;******************************************************************************
+                        
+                        ; AddEven: Adds the even numbers in a single SIN
+                        ;******************************************************************************
+2060 c6 02              AddEven         ldab    #2
+2062 87                                 clra
+2063 08                 ContAddEven     inx                             ;Move to the next digit of the SIN
+2064 ab 00                              adda    0,x                     ;Add the curent SIN digit
+2066 08                                 inx                             ;Move to the next digit of the SIN
+2067 52                                 incb                                        
+2068 52                                 incb        
+2069 c1 07                              cmpb    #LENOFSIN               ;Compare the length Of a SIN number
+                                                                        ;with Current Position
+206b 23 f6                              bls     ContAddEven             ;Continue going through the SIN Number
+206d 3d                                 rts        
+                        ;******************************************************************************
+                        
+                        ;Adjust: takes the upper nibble of a value and adds it to the lower nibble
+                        ;******************************************************************************
+206e 18 0e              Adjust          tab                     	;Make a copy of A
+2070 84 0f                              anda    #%00001111      	;keep lower nibble
+2072 c4 f0                              andb    #%11110000      	;keep upper nibble
+2074 54                                 lsrb                    	;Shift the high nibble of B to match A
+2075 54                                 lsrb
+2076 54                                 lsrb
+2077 54                                 lsrb
+2078 18 06                              aba                     	;Add the first nibble to second nibble
+207a 3d                                 rts
+                        ;******************************************************************************
+                        
+                        ; ConvertOdd: Gets the odd numbers ready to be added together
+                        ;******************************************************************************
+207b c6 07              ConvertOdd      ldab    #LENOFSIN                ;Load the Length of the SIN number into b
+207d a6 00              ContConvertOdd  ldaa    0,x                      ;Load the current SIN digit into a
+207f ab 00                              adda    0,x                      ;Add the current SIN digit to itself
+2081 81 0a                              cmpa    #10                      ;Check if number is BCD
+2083 24 c8                              bhs     Add6                     ;If number is not BCD add 6
+2085 37                 AfterAdd6       pshb                                
+2086 07 e6                              bsr     Adjust          	 ;add upper nibble with lower nibble
+2088 33                                 pulb
+2089 6a 00                              staa    0,x                      ;Store current SIN number
+208b 08                                 inx                              ;Move to the next digit of the SIN
+208c 08                                 inx                              ;Move to the next digit of the SIN
+208d 53                                 decb
+208e 53                                 decb
+208f c1 07                              cmpb    #LENOFSIN                ;Compare the length with Current Position
+2091 23 ea                              bls     ContConvertOdd           ;Continue going through the SIN Number
+2093 3d                                 rts
+                        ;******************************************************************************
+                        
+                        ; AddOdd: adds the odd values together
+                        ;******************************************************************************
+2094 c6 07              AddOdd          ldab    #LENOFSIN                ;Load the Length of the SIN number into b
+2096 87                                     clra
+2097 ab 00              ContAddOdd      adda    0,x                      ;Add the Current SIN digit
+2099 08                                 inx                              ;Move to the next digit of the SIN
+209a 08                                 inx                              ;Move to the next digit of the SIN
+209b 53                                 decb                
+209c 53                                 decb
+209d c1 07                              cmpb    #LENOFSIN                ;Compare the length with Current Position
+209f 23 f6                              bls     ContAddOdd               ;Continue going through the SIN Number
+20a1 3d                                 rts
+                        
+                        ;******************************************************************************
+                        
+                        ; Validate: Do the finishing touches on the validation algorithm
+                        ;******************************************************************************
+20a2 87                 Validate        clra
+20a3 c7                                 clrb
+20a4 f6 10 50                           ldab    ODDSUM                    ;Load the odd sum into b
+20a7 fb 10 51                           addb    EVENSUM                   ;Add the Even sum to the odd sum
+20aa ce 00 0a                           ldx     #10                       ;Divide by 10
+20ad 18 10                              idiv                              ;Divide
+20af b7 40                              tfr     d,a                       ;Store result
+20b1 81 00                              cmpa    #0                        ;If result is 0, SIN IS VALID
+20b3 27 86                              beq     AddValidResult            ;Add 1 to Valid SINs
+20b5 20 8d                              bra     AddInvalid                ;Add 1 to invalid SINs
+                        ;******************************************************************************
+                        
+                        ; All Finished!
+                        
+20b7 3f                 DONE            swi
+                                        end
+
+Executed: Mon Dec 06 10:03:58 2010
+Total cycles: 249, Total bytes: 226
+Total errors: 0, Total warnings: 0

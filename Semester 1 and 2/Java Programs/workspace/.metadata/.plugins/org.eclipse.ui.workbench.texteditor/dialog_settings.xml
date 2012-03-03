@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="762"/>
+		<item key="DIALOG_HEIGHT" value="403"/>
+		<item key="DIALOG_FONT_NAME" value="1|Lucida Grande|11.0|0|CARBON|1|Lucida Grande"/>
+		<item key="DIALOG_Y_ORIGIN" value="293"/>
+		<item key="DIALOG_WIDTH" value="249"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="wholeword" value="false"/>
+		<item key="incremental" value="false"/>
+		<item key="isRegEx" value="false"/>
+		<item key="selection" value="setElfNum"/>
+		<item key="wrap" value="false"/>
+		<item key="casesensitive" value="true"/>
+		<list key="findhistory">
+			<item value="setElfNum"/>
+			<item value="elfNum"/>
+			<item value="elves"/>
+			<item value="setOrcSpace"/>
+			<item value="setActors"/>
+			<item value="setActors("/>
+			<item value="setActo"/>
+			<item value="setActors( "/>
+		</list>
+		<list key="replacehistory">
+			<item value="elves"/>
+			<item value="orcs"/>
+			<item value="Elf"/>
+			<item value="elf"/>
+		</list>
+	</section>
+</section>

@@ -1,0 +1,9 @@
+C:\Users\justin\Desktop\LINQ to SQL\LINQ to SQL\bin\Debug\LINQ to SQL.exe.config
+C:\Users\justin\Desktop\LINQ to SQL\LINQ to SQL\bin\Debug\LINQ to SQL.exe
+C:\Users\justin\Desktop\LINQ to SQL\LINQ to SQL\bin\Debug\LINQ to SQL.pdb
+C:\Users\justin\Desktop\LINQ to SQL\LINQ to SQL\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\justin\Desktop\LINQ to SQL\LINQ to SQL\obj\x86\Debug\LINQ to SQL.exe
+C:\Users\justin\Desktop\LINQ to SQL\LINQ to SQL\obj\x86\Debug\LINQ to SQL.pdb
+C:\Users\Public\School_Stuff\Semester_5\NET\Lectures\Week 4\LINQ to SQL Sample - Complete\LINQ to SQL - Complete\LINQ to SQL\bin\Debug\LINQ to SQL.exe.config
+C:\Users\Public\School_Stuff\Semester_5\NET\Lectures\Week 4\LINQ to SQL Sample - Complete\LINQ to SQL - Complete\LINQ to SQL\obj\x86\Debug\LINQ to SQL.exe
+C:\Users\Public\School_Stuff\Semester_5\NET\Lectures\Week 4\LINQ to SQL Sample - Complete\LINQ to SQL - Complete\LINQ to SQL\obj\x86\Debug\LINQ to SQL.pdb

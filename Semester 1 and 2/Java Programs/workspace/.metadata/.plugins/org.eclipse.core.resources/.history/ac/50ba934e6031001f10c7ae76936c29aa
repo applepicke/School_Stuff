@@ -1,0 +1,91 @@
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class Test {
+	public static void main(String args[]) {
+		
+		Scanner input = new Scanner(System.in);
+		Planner planner = new Planner();
+		
+		//Control Variables
+		int controlMain = -1;
+		int controlAdd = 0;
+		int controlDelete = 0;
+		int controlView = 0;
+		int controlModify = 0;
+		
+		//Temp variables
+		int maxIndex;
+		
+		System.out.print("\n\tWelcome to Willy's Personal Planner");
+		System.out.print("\n\t***********************************");
+		
+		System.out.print("\n\nWhat would you like to do first?");
+		
+		//Main Loop
+		do {	
+			System.out.print("\n\n1 - Add an event");
+			System.out.print("\n2 - Delete an event");
+			System.out.print("\n3 - View events");	
+			//System.out.print("\n4 - Modify an event");
+			System.out.print("\n0 - Exit program");
+			
+			
+			//Get input for main menu
+			do {
+				try {	
+					input = new Scanner(System.in);
+					controlMain = input.nextInt();
+				}
+				catch (InputMismatchException e) {
+					System.out.print("\nNot a valid input!!\n");
+					System.out.print("Enter something valid: ");
+				}
+			}
+			while (controlMain < 0 || controlMain > 3);
+			
+			//Add Event
+			if (controlMain == 1){
+				do {
+					controlAdd = 1;
+					System.out.print("\n\n\tAdd an Event");
+					System.out.print("\n\t************");
+					System.out.print("\n1 - Add a Generic Event");
+					System.out.print("\n2 - Add a Work Event");
+					System.out.print("\n3 - Add a Social Event");
+					System.out.print("\n4 - Add an Assignment Due");
+					System.out.print("\n5 - Add a Meeting");
+					System.out.print("\n0 - Exit");
+					
+					do {
+						try {
+							input = new Scanner(System.in);
+							controlAdd = input.nextInt();
+						}
+						catch (InputMismatchException e) {
+							System.out.print("\n\nEnter a valid input: ");
+						}
+					}
+					while(controlAdd < 0 || controlAdd > 5);
+					
+					if (controlAdd > 0 && controlAdd < 6){
+						maxIndex = planner.getMaxIndex();
+						//Add Generic Event
+						try {
+							if (controlAdd == 1) {	
+								planner.addEvent(maxIndex);
+							
+							}
+						}
+						catch (Exception e) {
+							System.out.print("\nError - Conflicting Dates!");
+						}	
+					}
+				}
+				while (controlAdd != 0);
+			}
+
+		}
+		while (controlMain != 0); //End of main loop
+	}
+}

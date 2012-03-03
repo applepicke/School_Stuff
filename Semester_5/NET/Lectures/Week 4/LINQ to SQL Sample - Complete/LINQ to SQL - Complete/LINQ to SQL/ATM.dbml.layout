@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="ATM">
+  <DataContextMoniker Name="/ATMDataContext" />
+  <nestedChildShapes>
+    <classShape Id="a74f6f40-db6f-4ea9-8a37-945550b76d45" absoluteBounds="2.75, 1.375, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/ATMDataContext/People" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bdae80f2-e366-41d2-8b54-8c0b13684ec1" absoluteBounds="2.765, 1.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

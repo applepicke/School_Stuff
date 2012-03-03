@@ -1,0 +1,31 @@
+import java.lang.*;
+import java.util.Scanner;
+/** Takes an amount from 1 - 25 and give back change
+  * @version 1.0
+  * @author William Collins
+  */
+
+public class ChangeProgram {
+	public static void main(String args[]) {
+		
+		Scanner input = new Scanner (System.in);
+		
+		int pennies = 0;
+		int dimes = 0;
+		int nickels = 0;
+		int quarters = 0;
+		int loonies = 0;
+		int toonies = 0;
+		double amount = 0;
+		
+		System.out.print("\nEnter an amount of money between $0.00 and $5.00: ");
+		amount = input.nextDouble();
+		
+		while (amount < 0.00) (amount > 5.00){
+			System.out.print("\nInvalid input \nEnter an amount of money between $0.00 and $5.00: ");
+		
+			
+		}
+ 	}
+
+}

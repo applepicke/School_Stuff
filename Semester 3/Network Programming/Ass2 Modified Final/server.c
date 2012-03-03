@@ -1,0 +1,148 @@
+/*server.c*/
+/*	Assignment 2 
+	By: William Collins & Nicolas Castilloux
+	Purpose: this is the server that will handle the interaction between clients */
+
+#include "header.h"
+
+/*Based upon code by Mitch White*/
+int main(void)
+{
+	/*socket stuff*/
+    int sockfd, newsockfd, client_len;
+    char buffer[BUF_SIZE], parsed[BUF_SIZE];
+    struct sockaddr_in server_addr, client_addr;
+     
+    /*msg queue stuff*/ 
+    int msqid, key = KEY;
+    
+    /*control stuff*/
+    int n, log_flag = 0, cid;
+    
+    /*username table*/
+    struct username_table usernames[MAX_USERS] = {
+    	{"jim", 1}, {"bill", 2}, {"bob", 3}, {"curtis", 4}, {"sam", 5},
+    	{"doctor", 6}, {"boy", 7}, {"doug", 8}, {"agent", 9}, {"flower", 10},
+    	{"suzy", 11}, {"princess", 12}, {"troll", 13}, {"corporal", 14}, {"big", 15},
+    	{"little", 16}, {"rat", 17}, {"dominator", 18}, {"pulverizer", 19}, {"thing", 20}
+    };
+    long current_mtype = 0;
+    char current_uname[NAME_SIZE];
+    char cmd_name[BUF_SIZE];
+    char returnbuf[BUF_SIZE];
+    
+	/*create message queue*/
+	if ((msqid = msgget(key, 0666 | IPC_CREAT | IPC_EXCL)) == -1)
+	{
+	 	perror("could not create queue: ");
+	 	return 1;
+	};
+
+     /* create new socket of type TCP */
+     sockfd = socket(AF_INET, SOCK_STREAM, 0);
+     if (sockfd < 0) 
+        printf("ERROR: Cannot open socket");
+ 
+     /*  xero values in buffer  */
+     memset (&server_addr, 0, sizeof(server_addr));
+
+     /* set address family */
+     server_addr.sin_family = AF_INET;
+
+     /* set address of server machine  */
+     server_addr.sin_addr.s_addr = INADDR_ANY;
+
+     /* put port number into network byte order */
+     server_addr.sin_port = htons(PORT);
+
+         /* bind socket to an address – fd, current host&port, length */
+     if (bind(sockfd, (struct sockaddr *) &server_addr, sizeof(server_addr)) < 0)
+     {
+    	perror("bind: ");
+    	return 1;
+     }
+
+	listen(sockfd,5);
+	while(1)
+	{
+     	/* listen on port with backlog of 5  */
+     	/* accept new connections        */
+     	/* block until a connect returns */
+     	/* return file descriptor        */
+     	client_len = sizeof(client_addr);
+     
+   		
+   	  	newsockfd = accept(sockfd, (struct sockaddr *) &client_addr,(unsigned int *) &client_len);
+    	if (newsockfd < 0) 
+     		 printf("ERROR: On accept");
+      		 
+  	    /*fork a new process for each attached client*/ 
+   	   	if ((cid = fork()) < 0)
+   	  	{
+     		perror("could not fork: ");
+      	}
+      	else if (cid == 0)
+      	{
+      		/*continue to function while client is logged in*/
+      		while (1)
+      		{	
+      			memset(returnbuf, 0, BUF_SIZE);
+      			memset(buffer, 0, BUF_SIZE);
+      		
+      			/*read message from socket*/
+    			n = read(newsockfd, buffer, BUF_SIZE-1);  
+    			parse(buffer, cmd_name, parsed);
+    			strcpy(buffer, parsed);		
+    			/*determine which command has been entered*/
+    			if (strcmp(cmd_name, "login") == 0 && log_flag == 0)
+    			{
+    				if ((current_mtype = login(buffer, usernames, current_uname)) < 0)
+    					strcpy(returnbuf, "Could not log you in!\n");
+    				else
+    				{
+						/*set login flag to 1*/
+    					log_flag = 1;
+    					strcpy(returnbuf, "You have succesfully logged on!\n");
+    				}
+    			}
+    			else if (strcmp(cmd_name, "login") == 0 && log_flag == 1) strcpy(returnbuf, "You are already logged in!\n");
+    			else if (log_flag == 0) strcpy(returnbuf, "You must log in first!\n");
+    			
+    			/*if logged in, process other commands*/
+    			if (log_flag == 1)
+    			{
+    				if (strcmp(cmd_name, "send") == 0)
+    				{
+    					send_msg(msqid, buffer, returnbuf, usernames);
+    				}
+    				else if (strcmp(cmd_name, "receive") == 0)
+    				{
+    					receive_msg(msqid, returnbuf, current_mtype);	
+    				}
+    				else if (strcmp(cmd_name, "logout") == 0)
+    				{
+    					strcpy(returnbuf, current_uname);
+    					strcat(returnbuf, " logged off.\n");
+    					log_flag = 0;
+    				}
+    				else if (strcmp(cmd_name, "delete") == 0)
+    				{
+    					delete(msqid, returnbuf, current_mtype);
+    				}
+    				else if (strcmp(cmd_name, "exit") == 0)	
+    				{
+    					close(newsockfd);
+    					return 0;
+    				}
+    				else if (strcmp(cmd_name, "login") != 0)
+    					strcpy(returnbuf, "That is not a valid command!\n");
+      			}	
+   				printf("returnbuf: %s", returnbuf);
+				/*return returnbuf to the client */
+    			n = write(newsockfd, returnbuf, BUF_SIZE-1);
+   			
+      		}
+    	}  
+    }   
+    return 0; 
+}

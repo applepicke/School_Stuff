@@ -1,0 +1,221 @@
+Reading file correct.pls ....Please wait
+
+Printing input buffer parameters:
+
+The capacity of the buffer is:  1180
+The current size of the buffer is:  1179
+
+Printing input buffer contents:
+
+!<This file will test the parser for full informal grammar specification
+!<This should be regarded as an error free program
+
+PLATYPUS {
+	
+	!<Initialized variable declarations
+	iInit = 1;
+	jInit = 2;
+	mInit = 010;		!<The number 8 in octal
+	nInit = 4;
+	float = 1.0;
+	anotherFloat = 20.;
+	iVar = iInit;
+	jVar = jInit;
+	
+	!<Switch data type
+	mVar = 2.0;
+	nVar = 0.010;
+	
+	!<String variables
+	iString# = "Pizza";
+	aString# = "Fallsview";
+	
+	!< Some arithmetic statements
+	iInit = (iInit + anotherFloat - 3) * 012 /2.3;		!<Mix of integer and floating point
+	iString#= iString# << aString# << "Billy Jean";
+	
+	!<Selection Statement
+	IF(iString# == aString#) THEN
+		iString# = "GOODLY";
+	ELSE {
+		iString# = "BADLY";
+	};
+	
+	!<Optional Statements
+	IF (iString# == "BADLY") THEN
+	ELSE {     };	
+
+	!<Iteration Statement
+	USING(i = 0, i < jInit, i = i + 1) REPEAT {
+		aString# = aString# << "i";
+	};
+	
+	!<Optional iteration
+	USING(i = 0, i < jInit .AND. jInit != 50 .OR. iGo == 1, i = i + 1) REPEAT { };
+	
+	!<Input and output statements
+	INPUT(iInput1);
+	OUTPUT(iInput1);
+	INPUT(iInput2);
+	OUTPUT(iInput2);
+	INPUT(iInput1, iInput2);
+	OUTPUT();
+	OUTPUT(iInput1, iInput2);
+	OUTPUT("BINGO");
+
+}
+
+Parsing the source file...
+
+PLATY: Primary arithmetic expression parsed
+PLATY: Arithmetic expression parsed
+PLATY: Assignment expression (arithmetic) parsed
+PLATY: Assignment statement parsed
+PLATY: Primary arithmetic expression parsed
+PLATY: Arithmetic expression parsed
+PLATY: Assignment expression (arithmetic) parsed
+PLATY: Assignment statement parsed
+PLATY: Primary arithmetic expression parsed
+PLATY: Arithmetic expression parsed
+PLATY: Assignment expression (arithmetic) parsed
+PLATY: Assignment statement parsed
+PLATY: Primary arithmetic expression parsed
+PLATY: Arithmetic expression parsed
+PLATY: Assignment expression (arithmetic) parsed
+PLATY: Assignment statement parsed
+PLATY: Primary arithmetic expression parsed
+PLATY: Arithmetic expression parsed
+PLATY: Assignment expression (arithmetic) parsed
+PLATY: Assignment statement parsed
+PLATY: Primary arithmetic expression parsed
+PLATY: Arithmetic expression parsed
+PLATY: Assignment expression (arithmetic) parsed
+PLATY: Assignment statement parsed
+PLATY: Primary arithmetic expression parsed
+PLATY: Arithmetic expression parsed
+PLATY: Assignment expression (arithmetic) parsed
+PLATY: Assignment statement parsed
+PLATY: Primary arithmetic expression parsed
+PLATY: Arithmetic expression parsed
+PLATY: Assignment expression (arithmetic) parsed
+PLATY: Assignment statement parsed
+PLATY: Primary arithmetic expression parsed
+PLATY: Arithmetic expression parsed
+PLATY: Assignment expression (arithmetic) parsed
+PLATY: Assignment statement parsed
+PLATY: Primary arithmetic expression parsed
+PLATY: Arithmetic expression parsed
+PLATY: Assignment expression (arithmetic) parsed
+PLATY: Assignment statement parsed
+PLATY: Primary string expression parsed
+PLATY: String expression parsed
+PLATY: Assignment expression (string) parsed
+PLATY: Assignment statement parsed
+PLATY: Primary string expression parsed
+PLATY: String expression parsed
+PLATY: Assignment expression (string) parsed
+PLATY: Assignment statement parsed
+PLATY: Primary arithmetic expression parsed
+PLATY: Primary arithmetic expression parsed
+PLATY: Primary arithmetic expression parsed
+PLATY: Additive arithmetic expression parsed
+PLATY: Additive arithmetic expression parsed
+PLATY: Arithmetic expression parsed
+PLATY: Primary arithmetic expression parsed
+PLATY: Primary arithmetic expression parsed
+PLATY: Primary arithmetic expression parsed
+PLATY: Multiplicative arithmetic expression parsed
+PLATY: Multiplicative arithmetic expression parsed
+PLATY: Arithmetic expression parsed
+PLATY: Assignment expression (arithmetic) parsed
+PLATY: Assignment statement parsed
+PLATY: Primary string expression parsed
+PLATY: Primary string expression parsed
+PLATY: Primary string expression parsed
+PLATY: String expression parsed
+PLATY: Assignment expression (string) parsed
+PLATY: Assignment statement parsed
+PLATY: Primary string expression parsed
+PLATY: Primary s_relational expression parsed
+PLATY: Primary string expression parsed
+PLATY: Primary s_relational expression parsed
+PLATY: Relational expression parsed
+PLATY: Conditional expression parsed
+PLATY: Primary string expression parsed
+PLATY: String expression parsed
+PLATY: Assignment expression (string) parsed
+PLATY: Assignment statement parsed
+PLATY: Primary string expression parsed
+PLATY: String expression parsed
+PLATY: Assignment expression (string) parsed
+PLATY: Assignment statement parsed
+PLATY: IF statement parsed
+PLATY: Primary string expression parsed
+PLATY: Primary s_relational expression parsed
+PLATY: Primary string expression parsed
+PLATY: Primary s_relational expression parsed
+PLATY: Relational expression parsed
+PLATY: Conditional expression parsed
+PLATY: Opt_statements parsed
+PLATY: Opt_statements parsed
+PLATY: IF statement parsed
+PLATY: Primary arithmetic expression parsed
+PLATY: Arithmetic expression parsed
+PLATY: Assignment expression (arithmetic) parsed
+PLATY: Primary a_relational expression parsed
+PLATY: Primary a_relational expression parsed
+PLATY: Relational expression parsed
+PLATY: Conditional expression parsed
+PLATY: Primary arithmetic expression parsed
+PLATY: Primary arithmetic expression parsed
+PLATY: Additive arithmetic expression parsed
+PLATY: Arithmetic expression parsed
+PLATY: Assignment expression (arithmetic) parsed
+PLATY: Primary string expression parsed
+PLATY: Primary string expression parsed
+PLATY: String expression parsed
+PLATY: Assignment expression (string) parsed
+PLATY: Assignment statement parsed
+PLATY: USING statement parsed
+PLATY: Primary arithmetic expression parsed
+PLATY: Arithmetic expression parsed
+PLATY: Assignment expression (arithmetic) parsed
+PLATY: Primary a_relational expression parsed
+PLATY: Primary a_relational expression parsed
+PLATY: Relational expression parsed
+PLATY: Primary a_relational expression parsed
+PLATY: Primary a_relational expression parsed
+PLATY: Relational expression parsed
+PLATY: Logical AND expression parsed
+PLATY: Primary a_relational expression parsed
+PLATY: Primary a_relational expression parsed
+PLATY: Relational expression parsed
+PLATY: Logical OR expression parsed
+PLATY: Conditional expression parsed
+PLATY: Primary arithmetic expression parsed
+PLATY: Primary arithmetic expression parsed
+PLATY: Additive arithmetic expression parsed
+PLATY: Arithmetic expression parsed
+PLATY: Assignment expression (arithmetic) parsed
+PLATY: Opt_statements parsed
+PLATY: USING statement parsed
+PLATY: Variable list parsed
+PLATY: INPUT statement parsed
+PLATY: Variable list parsed
+PLATY: OUTPUT statement parsed
+PLATY: Variable list parsed
+PLATY: INPUT statement parsed
+PLATY: Variable list parsed
+PLATY: OUTPUT statement parsed
+PLATY: Variable list parsed
+PLATY: INPUT statement parsed
+PLATY: Output list (empty) parsed
+PLATY: OUTPUT statement parsed
+PLATY: Variable list parsed
+PLATY: OUTPUT statement parsed
+PLATY: Output list (string literal) parsed
+PLATY: OUTPUT statement parsed
+PLATY: Program parsed
+PLATY: Source file parsed
+
+Collecting garbage...

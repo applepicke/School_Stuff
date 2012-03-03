@@ -1,0 +1,1376 @@
+!SESSION 2009-10-01 16:49:49.604 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_20
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2009-10-01 16:50:16.463
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2009-10-08 14:55:32.766 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_20
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2009-10-08 14:55:52.267
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2009-10-17 13:12:18.475 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_20
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.resources 4 567 2009-10-17 13:12:24.774
+!MESSAGE Workspace restored, but some problems occurred.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2009-10-17 13:12:24.774
+!MESSAGE Could not read metadata for 'ChangeProgram'.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'ChangeProgram' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:714)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:797)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:777)
+	at org.eclipse.core.internal.resources.SaveManager.restore(SaveManager.java:663)
+	at org.eclipse.core.internal.resources.SaveManager.startup(SaveManager.java:1353)
+	at org.eclipse.core.internal.resources.Workspace.startup(Workspace.java:1957)
+	at org.eclipse.core.internal.resources.Workspace.open(Workspace.java:1716)
+	at org.eclipse.core.resources.ResourcesPlugin.start(ResourcesPlugin.java:379)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$1.run(BundleContextImpl.java:783)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.startActivator(BundleContextImpl.java:774)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:755)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:352)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:280)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:408)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:111)
+	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:449)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:211)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:381)
+	at org.eclipse.osgi.internal.loader.SingleSourcePackage.loadClass(SingleSourcePackage.java:33)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:454)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:410)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:398)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:105)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:251)
+	at java.lang.ClassLoader.loadClassInternal(ClassLoader.java:374)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:114)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:194)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:368)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:592)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:559)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:514)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1311)
+!SUBENTRY 2 org.eclipse.core.resources 4 567 2009-10-17 13:12:24.775
+!MESSAGE The project description file (.project) for 'ChangeProgram' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+
+!ENTRY org.eclipse.core.net 1 0 2009-10-17 13:12:36.651
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2009-10-17 13:40:21.814 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_20
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2009-10-17 13:40:28.984
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2009-10-18 14:47:37.769 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_20
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2009-10-18 14:47:55.761
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2009-10-18 16:12:08.969 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_20
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2009-10-18 16:12:19.132
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2009-10-18 16:17:13.259 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_20
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2009-10-18 16:17:20.629
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2009-10-28 15:05:55.339 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_20
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2009-10-28 15:06:14.274
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2009-10-28 16:09:05.279 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_20
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2009-10-28 16:09:13.246
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2009-10-28 16:28:39.460 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_20
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2009-10-28 16:28:47.476
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2009-10-28 22:05:55.802 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_20
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2009-10-28 22:06:03.359
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2009-10-29 23:30:32.331 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_20
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2009-10-29 23:30:49.958
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2009-11-02 21:37:56.725 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_20
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2009-11-02 21:38:14.977
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2009-11-03 08:57:59.059 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_20
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2009-11-03 08:58:17.293
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2009-11-04 16:25:16.670 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_20
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2009-11-04 16:25:33.953
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2009-11-05 21:07:09.841 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_20
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2009-11-05 21:07:26.265
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2009-11-13 08:04:40.870 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_20
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2009-11-13 08:04:59.287
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2009-11-13 08:12:53.258 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_20
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.resources 2 10035 2009-11-13 08:12:55.657
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.core.net 1 0 2009-11-13 08:13:01.075
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2009-11-20 15:12:00.193 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_20
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2009-11-20 15:12:17.808
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2009-11-20 15:14:22.332 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_20
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2009-11-20 15:14:29.657
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2009-11-20 17:18:14.604 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_20
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2009-11-20 17:18:22.386
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2009-11-23 21:39:19.616 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_20
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2009-11-23 21:39:35.542
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2009-11-24 10:17:33.264 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_20
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2009-11-24 10:17:48.434
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2009-11-24 10:57:38.843 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_20
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2009-11-24 10:57:46.536
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2009-11-26 19:48:33.291 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_20
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2009-11-26 19:48:55.861
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2009-11-26 20:14:00.839 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_20
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2009-11-26 20:14:08.930
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2009-11-26 20:34:08.510 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_20
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2009-11-26 20:34:14.238
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2009-12-04 22:35:06.958 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_22
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2009-12-04 22:35:21.958
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.ui 4 0 2009-12-05 11:28:00.939
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.swt.dnd.Clipboard.setContents(Clipboard.java:465)
+	at org.eclipse.swt.dnd.Clipboard.setContents(Clipboard.java:370)
+	at org.eclipse.jdt.internal.ui.actions.CopyQualifiedNameAction.run(CopyQualifiedNameAction.java:207)
+	at org.eclipse.jface.action.Action.runWithEvent(Action.java:498)
+	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:584)
+	at org.eclipse.jface.action.ActionContributionItem.access$2(ActionContributionItem.java:501)
+	at org.eclipse.jface.action.ActionContributionItem$5.handleEvent(ActionContributionItem.java:411)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1598)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1622)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1607)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1396)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3484)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3068)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2405)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2369)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2221)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:500)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:493)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:113)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:194)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:368)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:592)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:559)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:514)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1311)
+!SESSION 2009-12-07 08:05:11.211 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_22
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2009-12-07 08:05:26.344
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2009-12-11 22:54:06.658 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_22
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2009-12-11 22:54:25.676
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2009-12-12 20:53:58.526 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_22
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2009-12-12 20:54:17.749
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2009-12-17 15:34:31.769 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_22
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2009-12-17 15:34:46.373
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2009-12-17 16:17:53.425 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_22
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2009-12-17 16:18:01.525
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2010-01-12 12:44:13.600 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_22
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2010-01-12 12:44:33.352
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2010-01-14 10:50:24.381 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_22
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.resources 4 567 2010-01-14 10:50:29.590
+!MESSAGE Workspace restored, but some problems occurred.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2010-01-14 10:50:29.590
+!MESSAGE Could not read metadata for 'TurtleGame1'.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'TurtleGame1' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:714)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:797)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:777)
+	at org.eclipse.core.internal.resources.SaveManager.restore(SaveManager.java:663)
+	at org.eclipse.core.internal.resources.SaveManager.startup(SaveManager.java:1353)
+	at org.eclipse.core.internal.resources.Workspace.startup(Workspace.java:1957)
+	at org.eclipse.core.internal.resources.Workspace.open(Workspace.java:1716)
+	at org.eclipse.core.resources.ResourcesPlugin.start(ResourcesPlugin.java:379)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$1.run(BundleContextImpl.java:783)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.startActivator(BundleContextImpl.java:774)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:755)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:352)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:280)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:408)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:111)
+	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:449)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:211)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:381)
+	at org.eclipse.osgi.internal.loader.SingleSourcePackage.loadClass(SingleSourcePackage.java:33)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:454)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:410)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:398)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:105)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:252)
+	at java.lang.ClassLoader.loadClassInternal(ClassLoader.java:375)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:114)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:194)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:368)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:592)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:559)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:514)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1311)
+!SUBENTRY 2 org.eclipse.core.resources 4 567 2010-01-14 10:50:29.592
+!MESSAGE The project description file (.project) for 'TurtleGame1' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+
+!ENTRY org.eclipse.core.net 1 0 2010-01-14 10:50:43.621
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2010-01-18 07:15:23.212 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_22
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2010-01-18 07:15:44.426
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2010-01-19 14:57:29.463 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_22
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.resources 4 567 2010-01-19 14:57:34.311
+!MESSAGE Workspace restored, but some problems occurred.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2010-01-19 14:57:34.311
+!MESSAGE Could not read metadata for 'TurtleGame1'.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'TurtleGame1' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:714)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:797)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:777)
+	at org.eclipse.core.internal.resources.SaveManager.restore(SaveManager.java:663)
+	at org.eclipse.core.internal.resources.SaveManager.startup(SaveManager.java:1353)
+	at org.eclipse.core.internal.resources.Workspace.startup(Workspace.java:1957)
+	at org.eclipse.core.internal.resources.Workspace.open(Workspace.java:1716)
+	at org.eclipse.core.resources.ResourcesPlugin.start(ResourcesPlugin.java:379)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$1.run(BundleContextImpl.java:783)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.startActivator(BundleContextImpl.java:774)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:755)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:352)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:280)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:408)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:111)
+	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:449)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:211)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:381)
+	at org.eclipse.osgi.internal.loader.SingleSourcePackage.loadClass(SingleSourcePackage.java:33)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:454)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:410)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:398)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:105)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:252)
+	at java.lang.ClassLoader.loadClassInternal(ClassLoader.java:375)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:114)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:194)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:368)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:592)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:559)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:514)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1311)
+!SUBENTRY 2 org.eclipse.core.resources 4 567 2010-01-19 14:57:34.312
+!MESSAGE The project description file (.project) for 'TurtleGame1' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+
+!ENTRY org.eclipse.core.net 1 0 2010-01-19 14:57:47.219
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2010-01-21 11:46:40.734 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_22
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2010-01-21 11:47:01.091
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2010-01-24 11:16:54.363 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_22
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2010-01-24 11:17:05.899
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2010-01-24 16:09:32.742 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_22
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2010-01-24 16:09:42.110
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2010-01-28 09:46:30.532 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_22
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2010-01-28 09:46:44.251
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2010-01-30 08:15:04.364 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_22
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2010-01-30 08:15:22.777
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2010-02-04 11:18:12.514 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_22
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2010-02-04 11:18:32.110
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2010-02-06 13:17:20.529 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_22
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2010-02-06 13:17:40.387
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2010-02-07 20:42:17.388 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_22
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2010-02-07 20:42:30.773
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2010-02-08 06:20:12.814 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_22
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2010-02-08 06:20:23.341
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2010-02-09 07:23:54.610 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_22
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2010-02-09 07:24:04.681
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2010-02-09 13:25:55.331 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_22
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2010-02-09 13:26:09.282
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2010-02-09 13:56:45.075 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_22
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2010-02-09 13:56:53.720
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2010-02-09 14:09:47.802 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_22
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.resources 4 567 2010-02-09 14:09:49.667
+!MESSAGE Workspace restored, but some problems occurred.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2010-02-09 14:09:49.667
+!MESSAGE Could not read metadata for 'LORD'.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'LORD' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:714)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:797)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:777)
+	at org.eclipse.core.internal.resources.SaveManager.restore(SaveManager.java:663)
+	at org.eclipse.core.internal.resources.SaveManager.startup(SaveManager.java:1353)
+	at org.eclipse.core.internal.resources.Workspace.startup(Workspace.java:1957)
+	at org.eclipse.core.internal.resources.Workspace.open(Workspace.java:1716)
+	at org.eclipse.core.resources.ResourcesPlugin.start(ResourcesPlugin.java:379)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$1.run(BundleContextImpl.java:783)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.startActivator(BundleContextImpl.java:774)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:755)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:352)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:280)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:408)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:111)
+	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:449)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:211)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:381)
+	at org.eclipse.osgi.internal.loader.SingleSourcePackage.loadClass(SingleSourcePackage.java:33)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:454)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:410)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:398)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:105)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:252)
+	at java.lang.ClassLoader.loadClassInternal(ClassLoader.java:375)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:114)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:194)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:368)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:592)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:559)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:514)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1311)
+!SUBENTRY 2 org.eclipse.core.resources 4 567 2010-02-09 14:09:49.669
+!MESSAGE The project description file (.project) for 'LORD' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+
+!ENTRY org.eclipse.core.net 1 0 2010-02-09 14:09:56.269
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.wst.sse.ui 4 4 2010-02-09 14:10:18.852
+!MESSAGE Exceptions occurred while formatting documents
+!SUBENTRY 1 org.eclipse.wst.sse.ui 4 4 2010-02-09 14:10:18.852
+!MESSAGE Exception occurred while formatting document /LORD
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Resource '/LORD' is not open.
+	at org.eclipse.core.internal.resources.Project.checkAccessible(Project.java:116)
+	at org.eclipse.core.internal.resources.Container.members(Container.java:181)
+	at org.eclipse.core.internal.resources.Container.members(Container.java:164)
+	at org.eclipse.wst.sse.ui.internal.handlers.FormatHandler.format(FormatHandler.java:232)
+	at org.eclipse.wst.sse.ui.internal.handlers.FormatHandler.process(FormatHandler.java:274)
+	at org.eclipse.wst.sse.ui.internal.handlers.FormatHandler$FormatJob.run(FormatHandler.java:131)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 2 org.eclipse.core.resources 4 372 2010-02-09 14:10:18.852
+!MESSAGE Resource '/LORD' is not open.
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2010-02-09 14:12:22.881
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [<project root> [in CST8132_Assignment2] is not on its project's build path]
+	at org.eclipse.jdt.internal.core.PackageFragmentRoot.getRawClasspathEntry(PackageFragmentRoot.java:553)
+	at org.eclipse.jdt.internal.corext.buildpath.ClasspathModifier.filtersSet(ClasspathModifier.java:657)
+	at org.eclipse.jdt.internal.ui.wizards.buildpaths.newsourcepage.DialogPackageExplorer$PackageLabelProvider.getForeground(DialogPackageExplorer.java:212)
+	at org.eclipse.jface.viewers.DelegatingStyledCellLabelProvider.getForeground(DelegatingStyledCellLabelProvider.java:137)
+	at org.eclipse.jface.viewers.DecoratingStyledCellLabelProvider.getForeground(DecoratingStyledCellLabelProvider.java:144)
+	at org.eclipse.jface.viewers.DelegatingStyledCellLabelProvider.update(DelegatingStyledCellLabelProvider.java:120)
+	at org.eclipse.jface.viewers.DecoratingStyledCellLabelProvider.update(DecoratingStyledCellLabelProvider.java:134)
+	at org.eclipse.jface.viewers.ViewerColumn.refresh(ViewerColumn.java:145)
+	at org.eclipse.jface.viewers.AbstractTreeViewer.doUpdateItem(AbstractTreeViewer.java:932)
+	at org.eclipse.jface.viewers.AbstractTreeViewer$UpdateItemSafeRunnable.run(AbstractTreeViewer.java:102)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:888)
+	at org.eclipse.ui.internal.JFaceUtil$1.run(JFaceUtil.java:48)
+	at org.eclipse.jface.util.SafeRunnable.run(SafeRunnable.java:175)
+	at org.eclipse.jface.viewers.AbstractTreeViewer.doUpdateItem(AbstractTreeViewer.java:1012)
+	at org.eclipse.jface.viewers.StructuredViewer$UpdateItemSafeRunnable.run(StructuredViewer.java:481)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:888)
+	at org.eclipse.ui.internal.JFaceUtil$1.run(JFaceUtil.java:48)
+	at org.eclipse.jface.util.SafeRunnable.run(SafeRunnable.java:175)
+	at org.eclipse.jface.viewers.StructuredViewer.updateItem(StructuredViewer.java:2111)
+	at org.eclipse.jface.viewers.AbstractTreeViewer.createTreeItem(AbstractTreeViewer.java:827)
+	at org.eclipse.jface.viewers.AbstractTreeViewer$1.run(AbstractTreeViewer.java:802)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.jface.viewers.AbstractTreeViewer.createChildren(AbstractTreeViewer.java:776)
+	at org.eclipse.jface.viewers.TreeViewer.createChildren(TreeViewer.java:639)
+	at org.eclipse.jface.viewers.AbstractTreeViewer.internalInitializeTree(AbstractTreeViewer.java:1490)
+	at org.eclipse.jface.viewers.TreeViewer.internalInitializeTree(TreeViewer.java:828)
+	at org.eclipse.jface.viewers.AbstractTreeViewer$5.run(AbstractTreeViewer.java:1474)
+	at org.eclipse.jface.viewers.StructuredViewer.preservingSelection(StructuredViewer.java:1392)
+	at org.eclipse.jface.viewers.TreeViewer.preservingSelection(TreeViewer.java:402)
+	at org.eclipse.jface.viewers.StructuredViewer.preservingSelection(StructuredViewer.java:1353)
+	at org.eclipse.jface.viewers.AbstractTreeViewer.inputChanged(AbstractTreeViewer.java:1467)
+	at org.eclipse.jface.viewers.ContentViewer.setInput(ContentViewer.java:274)
+	at org.eclipse.jface.viewers.StructuredViewer.setInput(StructuredViewer.java:1634)
+	at org.eclipse.jdt.internal.ui.wizards.buildpaths.newsourcepage.DialogPackageExplorer.setInput(DialogPackageExplorer.java:427)
+	at org.eclipse.jdt.internal.ui.wizards.buildpaths.newsourcepage.NewSourceContainerWorkbookPage.doUpdateUI(NewSourceContainerWorkbookPage.java:137)
+	at org.eclipse.jdt.internal.ui.wizards.buildpaths.newsourcepage.NewSourceContainerWorkbookPage.access$0(NewSourceContainerWorkbookPage.java:136)
+	at org.eclipse.jdt.internal.ui.wizards.buildpaths.newsourcepage.NewSourceContainerWorkbookPage$1.run(NewSourceContainerWorkbookPage.java:130)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:134)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3342)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3071)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.block(ModalContext.java:173)
+	at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:388)
+	at org.eclipse.jface.wizard.WizardDialog.run(WizardDialog.java:944)
+	at org.eclipse.jdt.internal.ui.wizards.NewElementWizard.performFinish(NewElementWizard.java:132)
+	at org.eclipse.jdt.internal.ui.wizards.JavaProjectWizard.performFinish(JavaProjectWizard.java:87)
+	at org.eclipse.jface.wizard.WizardDialog.finishPressed(WizardDialog.java:752)
+	at org.eclipse.jface.wizard.WizardDialog.buttonPressed(WizardDialog.java:373)
+	at org.eclipse.jface.dialogs.Dialog$2.widgetSelected(Dialog.java:624)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:228)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1598)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1622)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1607)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1396)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3484)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3068)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:825)
+	at org.eclipse.jface.window.Window.open(Window.java:801)
+	at org.eclipse.ui.internal.actions.NewWizardShortcutAction.run(NewWizardShortcutAction.java:135)
+	at org.eclipse.jface.action.Action.runWithEvent(Action.java:498)
+	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:584)
+	at org.eclipse.jface.action.ActionContributionItem.access$2(ActionContributionItem.java:501)
+	at org.eclipse.jface.action.ActionContributionItem$5.handleEvent(ActionContributionItem.java:411)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1598)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1622)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1607)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1396)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3484)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3068)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2405)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2369)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2221)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:500)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:493)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:113)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:194)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:368)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:592)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:559)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:514)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1311)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1006 2010-02-09 14:12:22.887
+!MESSAGE <project root> [in CST8132_Assignment2] is not on its project's build path
+
+!ENTRY org.eclipse.ui 4 0 2010-02-09 14:12:31.892
+!MESSAGE Unable to create editor ID org.eclipse.jdt.ui.CompilationUnitEditor: The file does not exist.
+!STACK 1
+org.eclipse.core.runtime.CoreException: The file does not exist.
+	at org.eclipse.core.internal.filebuffers.ResourceFileBuffer.create(ResourceFileBuffer.java:237)
+	at org.eclipse.core.internal.filebuffers.TextFileBufferManager.connect(TextFileBufferManager.java:113)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.createFileInfo(TextFileDocumentProvider.java:559)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitDocumentProvider.createFileInfo(CompilationUnitDocumentProvider.java:962)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.connect(TextFileDocumentProvider.java:478)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitDocumentProvider.connect(CompilationUnitDocumentProvider.java:1198)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.doSetInput(AbstractTextEditor.java:4134)
+	at org.eclipse.ui.texteditor.StatusTextEditor.doSetInput(StatusTextEditor.java:203)
+	at org.eclipse.ui.texteditor.AbstractDecoratedTextEditor.doSetInput(AbstractDecoratedTextEditor.java:1413)
+	at org.eclipse.jdt.internal.ui.javaeditor.JavaEditor.internalDoSetInput(JavaEditor.java:2552)
+	at org.eclipse.jdt.internal.ui.javaeditor.JavaEditor.doSetInput(JavaEditor.java:2525)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.doSetInput(CompilationUnitEditor.java:1371)
+	at org.eclipse.ui.texteditor.AbstractTextEditor$19.run(AbstractTextEditor.java:3115)
+	at org.eclipse.jface.operation.ModalContext.runInCurrentThread(ModalContext.java:464)
+	at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:372)
+	at org.eclipse.jface.window.ApplicationWindow$1.run(ApplicationWindow.java:759)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.jface.window.ApplicationWindow.run(ApplicationWindow.java:756)
+	at org.eclipse.ui.internal.WorkbenchWindow.run(WorkbenchWindow.java:2579)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.internalInit(AbstractTextEditor.java:3133)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.init(AbstractTextEditor.java:3160)
+	at org.eclipse.ui.internal.EditorManager.createSite(EditorManager.java:798)
+	at org.eclipse.ui.internal.EditorReference.createPartHelper(EditorReference.java:644)
+	at org.eclipse.ui.internal.EditorReference.createPart(EditorReference.java:462)
+	at org.eclipse.ui.internal.WorkbenchPartReference.getPart(WorkbenchPartReference.java:595)
+	at org.eclipse.ui.internal.PartPane.setVisible(PartPane.java:313)
+	at org.eclipse.ui.internal.presentations.PresentablePart.setVisible(PresentablePart.java:180)
+	at org.eclipse.ui.internal.presentations.util.PresentablePartFolder.select(PresentablePartFolder.java:270)
+	at org.eclipse.ui.internal.presentations.util.LeftToRightTabOrder.select(LeftToRightTabOrder.java:65)
+	at org.eclipse.ui.internal.presentations.util.TabbedStackPresentation.selectPart(TabbedStackPresentation.java:473)
+	at org.eclipse.ui.internal.PartStack.refreshPresentationSelection(PartStack.java:1256)
+	at org.eclipse.ui.internal.PartStack.handleDeferredEvents(PartStack.java:1224)
+	at org.eclipse.ui.internal.LayoutPart.deferUpdates(LayoutPart.java:400)
+	at org.eclipse.ui.internal.PartSashContainer.handleDeferredEvents(PartSashContainer.java:1409)
+	at org.eclipse.ui.internal.LayoutPart.deferUpdates(LayoutPart.java:400)
+	at org.eclipse.ui.internal.WorkbenchPage.handleDeferredEvents(WorkbenchPage.java:1416)
+	at org.eclipse.ui.internal.WorkbenchPage.deferUpdates(WorkbenchPage.java:1406)
+	at org.eclipse.ui.internal.WorkbenchPage.closeEditors(WorkbenchPage.java:1380)
+	at org.eclipse.ui.internal.WorkbenchPage.closeEditor(WorkbenchPage.java:1435)
+	at org.eclipse.ui.internal.EditorPane.doHide(EditorPane.java:61)
+	at org.eclipse.ui.internal.PartStack.close(PartStack.java:543)
+	at org.eclipse.ui.internal.EditorStack.close(EditorStack.java:206)
+	at org.eclipse.ui.internal.PartStack$1.close(PartStack.java:122)
+	at org.eclipse.ui.internal.presentations.util.TabbedStackPresentation$1.handleEvent(TabbedStackPresentation.java:83)
+	at org.eclipse.ui.internal.presentations.util.AbstractTabFolder.fireEvent(AbstractTabFolder.java:270)
+	at org.eclipse.ui.internal.presentations.util.AbstractTabFolder.fireEvent(AbstractTabFolder.java:279)
+	at org.eclipse.ui.internal.presentations.defaultpresentation.DefaultTabFolder.access$1(DefaultTabFolder.java:1)
+	at org.eclipse.ui.internal.presentations.defaultpresentation.DefaultTabFolder$1.closeButtonPressed(DefaultTabFolder.java:70)
+	at org.eclipse.ui.internal.presentations.PaneFolder.notifyCloseListeners(PaneFolder.java:626)
+	at org.eclipse.ui.internal.presentations.PaneFolder$3.close(PaneFolder.java:206)
+	at org.eclipse.swt.custom.CTabFolder.onMouse(CTabFolder.java:2199)
+	at org.eclipse.swt.custom.CTabFolder$1.handleEvent(CTabFolder.java:327)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1598)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1622)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1607)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1396)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3484)
+	at org.eclipse.swt.widgets.Control.sendTrackEvents(Control.java:3117)
+	at org.eclipse.swt.widgets.Control.kEventControlTrack(Control.java:2116)
+	at org.eclipse.swt.widgets.Widget.controlProc(Widget.java:375)
+	at org.eclipse.swt.widgets.Display.controlProc(Display.java:863)
+	at org.eclipse.swt.internal.carbon.OS.SendEventToEventTarget(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3051)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2405)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2369)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2221)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:500)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:493)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:113)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:194)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:368)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:592)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:559)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:514)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1311)
+!SUBENTRY 1 org.eclipse.core.filebuffers 4 0 2010-02-09 14:12:31.893
+!MESSAGE The file does not exist.
+
+!ENTRY org.eclipse.ui 2 2 2010-02-09 14:12:31.935
+!MESSAGE Ignored attempt to add saveable that was already registered
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: unknown saveable: org.eclipse.ui.internal.DefaultSaveable@556a5b from part: org.eclipse.ui.internal.ErrorEditorPart@556a5b
+	at org.eclipse.ui.internal.SaveablesList.logWarning(SaveablesList.java:187)
+	at org.eclipse.ui.internal.SaveablesList.addModel(SaveablesList.java:117)
+	at org.eclipse.ui.internal.SaveablesList.addModels(SaveablesList.java:289)
+	at org.eclipse.ui.internal.SaveablesList.postOpen(SaveablesList.java:684)
+	at org.eclipse.ui.internal.PartList.partOpened(PartList.java:234)
+	at org.eclipse.ui.internal.PartList.access$0(PartList.java:210)
+	at org.eclipse.ui.internal.PartList$1.propertyChanged(PartList.java:40)
+	at org.eclipse.ui.internal.WorkbenchPartReference.fireInternalPropertyChange(WorkbenchPartReference.java:375)
+	at org.eclipse.ui.internal.WorkbenchPartReference.getPart(WorkbenchPartReference.java:610)
+	at org.eclipse.ui.internal.PartPane.setVisible(PartPane.java:313)
+	at org.eclipse.ui.internal.presentations.PresentablePart.setVisible(PresentablePart.java:180)
+	at org.eclipse.ui.internal.presentations.util.PresentablePartFolder.select(PresentablePartFolder.java:270)
+	at org.eclipse.ui.internal.presentations.util.LeftToRightTabOrder.select(LeftToRightTabOrder.java:65)
+	at org.eclipse.ui.internal.presentations.util.TabbedStackPresentation.selectPart(TabbedStackPresentation.java:473)
+	at org.eclipse.ui.internal.PartStack.refreshPresentationSelection(PartStack.java:1256)
+	at org.eclipse.ui.internal.PartStack.handleDeferredEvents(PartStack.java:1224)
+	at org.eclipse.ui.internal.LayoutPart.deferUpdates(LayoutPart.java:400)
+	at org.eclipse.ui.internal.PartSashContainer.handleDeferredEvents(PartSashContainer.java:1409)
+	at org.eclipse.ui.internal.LayoutPart.deferUpdates(LayoutPart.java:400)
+	at org.eclipse.ui.internal.WorkbenchPage.handleDeferredEvents(WorkbenchPage.java:1416)
+	at org.eclipse.ui.internal.WorkbenchPage.deferUpdates(WorkbenchPage.java:1406)
+	at org.eclipse.ui.internal.WorkbenchPage.closeEditors(WorkbenchPage.java:1380)
+	at org.eclipse.ui.internal.WorkbenchPage.closeEditor(WorkbenchPage.java:1435)
+	at org.eclipse.ui.internal.EditorPane.doHide(EditorPane.java:61)
+	at org.eclipse.ui.internal.PartStack.close(PartStack.java:543)
+	at org.eclipse.ui.internal.EditorStack.close(EditorStack.java:206)
+	at org.eclipse.ui.internal.PartStack$1.close(PartStack.java:122)
+	at org.eclipse.ui.internal.presentations.util.TabbedStackPresentation$1.handleEvent(TabbedStackPresentation.java:83)
+	at org.eclipse.ui.internal.presentations.util.AbstractTabFolder.fireEvent(AbstractTabFolder.java:270)
+	at org.eclipse.ui.internal.presentations.util.AbstractTabFolder.fireEvent(AbstractTabFolder.java:279)
+	at org.eclipse.ui.internal.presentations.defaultpresentation.DefaultTabFolder.access$1(DefaultTabFolder.java:1)
+	at org.eclipse.ui.internal.presentations.defaultpresentation.DefaultTabFolder$1.closeButtonPressed(DefaultTabFolder.java:70)
+	at org.eclipse.ui.internal.presentations.PaneFolder.notifyCloseListeners(PaneFolder.java:626)
+	at org.eclipse.ui.internal.presentations.PaneFolder$3.close(PaneFolder.java:206)
+	at org.eclipse.swt.custom.CTabFolder.onMouse(CTabFolder.java:2199)
+	at org.eclipse.swt.custom.CTabFolder$1.handleEvent(CTabFolder.java:327)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1598)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1622)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1607)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1396)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3484)
+	at org.eclipse.swt.widgets.Control.sendTrackEvents(Control.java:3117)
+	at org.eclipse.swt.widgets.Control.kEventControlTrack(Control.java:2116)
+	at org.eclipse.swt.widgets.Widget.controlProc(Widget.java:375)
+	at org.eclipse.swt.widgets.Display.controlProc(Display.java:863)
+	at org.eclipse.swt.internal.carbon.OS.SendEventToEventTarget(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3051)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2405)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2369)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2221)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:500)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:493)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:113)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:194)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:368)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:592)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:559)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:514)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1311)
+
+!ENTRY org.eclipse.ui 4 0 2010-02-09 14:12:32.958
+!MESSAGE Unable to create editor ID org.eclipse.jdt.ui.CompilationUnitEditor: The file does not exist.
+!STACK 1
+org.eclipse.core.runtime.CoreException: The file does not exist.
+	at org.eclipse.core.internal.filebuffers.ResourceFileBuffer.create(ResourceFileBuffer.java:237)
+	at org.eclipse.core.internal.filebuffers.TextFileBufferManager.connect(TextFileBufferManager.java:113)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.createFileInfo(TextFileDocumentProvider.java:559)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitDocumentProvider.createFileInfo(CompilationUnitDocumentProvider.java:962)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.connect(TextFileDocumentProvider.java:478)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitDocumentProvider.connect(CompilationUnitDocumentProvider.java:1198)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.doSetInput(AbstractTextEditor.java:4134)
+	at org.eclipse.ui.texteditor.StatusTextEditor.doSetInput(StatusTextEditor.java:203)
+	at org.eclipse.ui.texteditor.AbstractDecoratedTextEditor.doSetInput(AbstractDecoratedTextEditor.java:1413)
+	at org.eclipse.jdt.internal.ui.javaeditor.JavaEditor.internalDoSetInput(JavaEditor.java:2552)
+	at org.eclipse.jdt.internal.ui.javaeditor.JavaEditor.doSetInput(JavaEditor.java:2525)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.doSetInput(CompilationUnitEditor.java:1371)
+	at org.eclipse.ui.texteditor.AbstractTextEditor$19.run(AbstractTextEditor.java:3115)
+	at org.eclipse.jface.operation.ModalContext.runInCurrentThread(ModalContext.java:464)
+	at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:372)
+	at org.eclipse.jface.window.ApplicationWindow$1.run(ApplicationWindow.java:759)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.jface.window.ApplicationWindow.run(ApplicationWindow.java:756)
+	at org.eclipse.ui.internal.WorkbenchWindow.run(WorkbenchWindow.java:2579)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.internalInit(AbstractTextEditor.java:3133)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.init(AbstractTextEditor.java:3160)
+	at org.eclipse.ui.internal.EditorManager.createSite(EditorManager.java:798)
+	at org.eclipse.ui.internal.EditorReference.createPartHelper(EditorReference.java:644)
+	at org.eclipse.ui.internal.EditorReference.createPart(EditorReference.java:462)
+	at org.eclipse.ui.internal.WorkbenchPartReference.getPart(WorkbenchPartReference.java:595)
+	at org.eclipse.ui.internal.PartPane.setVisible(PartPane.java:313)
+	at org.eclipse.ui.internal.presentations.PresentablePart.setVisible(PresentablePart.java:180)
+	at org.eclipse.ui.internal.presentations.util.PresentablePartFolder.select(PresentablePartFolder.java:270)
+	at org.eclipse.ui.internal.presentations.util.LeftToRightTabOrder.select(LeftToRightTabOrder.java:65)
+	at org.eclipse.ui.internal.presentations.util.TabbedStackPresentation.selectPart(TabbedStackPresentation.java:473)
+	at org.eclipse.ui.internal.PartStack.refreshPresentationSelection(PartStack.java:1256)
+	at org.eclipse.ui.internal.PartStack.handleDeferredEvents(PartStack.java:1224)
+	at org.eclipse.ui.internal.LayoutPart.deferUpdates(LayoutPart.java:400)
+	at org.eclipse.ui.internal.PartSashContainer.handleDeferredEvents(PartSashContainer.java:1409)
+	at org.eclipse.ui.internal.LayoutPart.deferUpdates(LayoutPart.java:400)
+	at org.eclipse.ui.internal.WorkbenchPage.handleDeferredEvents(WorkbenchPage.java:1416)
+	at org.eclipse.ui.internal.WorkbenchPage.deferUpdates(WorkbenchPage.java:1406)
+	at org.eclipse.ui.internal.WorkbenchPage.closeEditors(WorkbenchPage.java:1380)
+	at org.eclipse.ui.internal.WorkbenchPage.closeEditor(WorkbenchPage.java:1435)
+	at org.eclipse.ui.internal.EditorPane.doHide(EditorPane.java:61)
+	at org.eclipse.ui.internal.PartStack.close(PartStack.java:543)
+	at org.eclipse.ui.internal.EditorStack.close(EditorStack.java:206)
+	at org.eclipse.ui.internal.PartStack$1.close(PartStack.java:122)
+	at org.eclipse.ui.internal.presentations.util.TabbedStackPresentation$1.handleEvent(TabbedStackPresentation.java:83)
+	at org.eclipse.ui.internal.presentations.util.AbstractTabFolder.fireEvent(AbstractTabFolder.java:270)
+	at org.eclipse.ui.internal.presentations.util.AbstractTabFolder.fireEvent(AbstractTabFolder.java:279)
+	at org.eclipse.ui.internal.presentations.defaultpresentation.DefaultTabFolder.access$1(DefaultTabFolder.java:1)
+	at org.eclipse.ui.internal.presentations.defaultpresentation.DefaultTabFolder$1.closeButtonPressed(DefaultTabFolder.java:70)
+	at org.eclipse.ui.internal.presentations.PaneFolder.notifyCloseListeners(PaneFolder.java:626)
+	at org.eclipse.ui.internal.presentations.PaneFolder$3.close(PaneFolder.java:206)
+	at org.eclipse.swt.custom.CTabFolder.onMouse(CTabFolder.java:2199)
+	at org.eclipse.swt.custom.CTabFolder$1.handleEvent(CTabFolder.java:327)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1598)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1622)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1607)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1396)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3484)
+	at org.eclipse.swt.widgets.Control.sendTrackEvents(Control.java:3117)
+	at org.eclipse.swt.widgets.Control.kEventControlTrack(Control.java:2116)
+	at org.eclipse.swt.widgets.Widget.controlProc(Widget.java:375)
+	at org.eclipse.swt.widgets.Display.controlProc(Display.java:863)
+	at org.eclipse.swt.internal.carbon.OS.SendEventToEventTarget(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3051)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2405)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2369)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2221)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:500)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:493)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:113)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:194)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:368)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:592)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:559)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:514)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1311)
+!SUBENTRY 1 org.eclipse.core.filebuffers 4 0 2010-02-09 14:12:32.958
+!MESSAGE The file does not exist.
+
+!ENTRY org.eclipse.ui 2 2 2010-02-09 14:12:32.964
+!MESSAGE Ignored attempt to add saveable that was already registered
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: unknown saveable: org.eclipse.ui.internal.DefaultSaveable@42a495 from part: org.eclipse.ui.internal.ErrorEditorPart@42a495
+	at org.eclipse.ui.internal.SaveablesList.logWarning(SaveablesList.java:187)
+	at org.eclipse.ui.internal.SaveablesList.addModel(SaveablesList.java:117)
+	at org.eclipse.ui.internal.SaveablesList.addModels(SaveablesList.java:289)
+	at org.eclipse.ui.internal.SaveablesList.postOpen(SaveablesList.java:684)
+	at org.eclipse.ui.internal.PartList.partOpened(PartList.java:234)
+	at org.eclipse.ui.internal.PartList.access$0(PartList.java:210)
+	at org.eclipse.ui.internal.PartList$1.propertyChanged(PartList.java:40)
+	at org.eclipse.ui.internal.WorkbenchPartReference.fireInternalPropertyChange(WorkbenchPartReference.java:375)
+	at org.eclipse.ui.internal.WorkbenchPartReference.getPart(WorkbenchPartReference.java:610)
+	at org.eclipse.ui.internal.PartPane.setVisible(PartPane.java:313)
+	at org.eclipse.ui.internal.presentations.PresentablePart.setVisible(PresentablePart.java:180)
+	at org.eclipse.ui.internal.presentations.util.PresentablePartFolder.select(PresentablePartFolder.java:270)
+	at org.eclipse.ui.internal.presentations.util.LeftToRightTabOrder.select(LeftToRightTabOrder.java:65)
+	at org.eclipse.ui.internal.presentations.util.TabbedStackPresentation.selectPart(TabbedStackPresentation.java:473)
+	at org.eclipse.ui.internal.PartStack.refreshPresentationSelection(PartStack.java:1256)
+	at org.eclipse.ui.internal.PartStack.handleDeferredEvents(PartStack.java:1224)
+	at org.eclipse.ui.internal.LayoutPart.deferUpdates(LayoutPart.java:400)
+	at org.eclipse.ui.internal.PartSashContainer.handleDeferredEvents(PartSashContainer.java:1409)
+	at org.eclipse.ui.internal.LayoutPart.deferUpdates(LayoutPart.java:400)
+	at org.eclipse.ui.internal.WorkbenchPage.handleDeferredEvents(WorkbenchPage.java:1416)
+	at org.eclipse.ui.internal.WorkbenchPage.deferUpdates(WorkbenchPage.java:1406)
+	at org.eclipse.ui.internal.WorkbenchPage.closeEditors(WorkbenchPage.java:1380)
+	at org.eclipse.ui.internal.WorkbenchPage.closeEditor(WorkbenchPage.java:1435)
+	at org.eclipse.ui.internal.EditorPane.doHide(EditorPane.java:61)
+	at org.eclipse.ui.internal.PartStack.close(PartStack.java:543)
+	at org.eclipse.ui.internal.EditorStack.close(EditorStack.java:206)
+	at org.eclipse.ui.internal.PartStack$1.close(PartStack.java:122)
+	at org.eclipse.ui.internal.presentations.util.TabbedStackPresentation$1.handleEvent(TabbedStackPresentation.java:83)
+	at org.eclipse.ui.internal.presentations.util.AbstractTabFolder.fireEvent(AbstractTabFolder.java:270)
+	at org.eclipse.ui.internal.presentations.util.AbstractTabFolder.fireEvent(AbstractTabFolder.java:279)
+	at org.eclipse.ui.internal.presentations.defaultpresentation.DefaultTabFolder.access$1(DefaultTabFolder.java:1)
+	at org.eclipse.ui.internal.presentations.defaultpresentation.DefaultTabFolder$1.closeButtonPressed(DefaultTabFolder.java:70)
+	at org.eclipse.ui.internal.presentations.PaneFolder.notifyCloseListeners(PaneFolder.java:626)
+	at org.eclipse.ui.internal.presentations.PaneFolder$3.close(PaneFolder.java:206)
+	at org.eclipse.swt.custom.CTabFolder.onMouse(CTabFolder.java:2199)
+	at org.eclipse.swt.custom.CTabFolder$1.handleEvent(CTabFolder.java:327)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1598)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1622)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1607)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1396)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3484)
+	at org.eclipse.swt.widgets.Control.sendTrackEvents(Control.java:3117)
+	at org.eclipse.swt.widgets.Control.kEventControlTrack(Control.java:2116)
+	at org.eclipse.swt.widgets.Widget.controlProc(Widget.java:375)
+	at org.eclipse.swt.widgets.Display.controlProc(Display.java:863)
+	at org.eclipse.swt.internal.carbon.OS.SendEventToEventTarget(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3051)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2405)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2369)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2221)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:500)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:493)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:113)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:194)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:368)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:592)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:559)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:514)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1311)
+!SESSION 2010-02-24 08:41:36.675 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_22
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.resources 4 567 2010-02-24 08:41:41.561
+!MESSAGE Workspace restored, but some problems occurred.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2010-02-24 08:41:41.561
+!MESSAGE Could not read metadata for 'Example'.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'Example' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:714)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:797)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:777)
+	at org.eclipse.core.internal.resources.SaveManager.restore(SaveManager.java:663)
+	at org.eclipse.core.internal.resources.SaveManager.startup(SaveManager.java:1353)
+	at org.eclipse.core.internal.resources.Workspace.startup(Workspace.java:1957)
+	at org.eclipse.core.internal.resources.Workspace.open(Workspace.java:1716)
+	at org.eclipse.core.resources.ResourcesPlugin.start(ResourcesPlugin.java:379)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$1.run(BundleContextImpl.java:783)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.startActivator(BundleContextImpl.java:774)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:755)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:352)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:280)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:408)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:111)
+	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:449)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:211)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:381)
+	at org.eclipse.osgi.internal.loader.SingleSourcePackage.loadClass(SingleSourcePackage.java:33)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:454)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:410)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:398)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:105)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:252)
+	at java.lang.ClassLoader.loadClassInternal(ClassLoader.java:375)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:114)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:194)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:368)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:592)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:559)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:514)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1311)
+!SUBENTRY 2 org.eclipse.core.resources 4 567 2010-02-24 08:41:41.563
+!MESSAGE The project description file (.project) for 'Example' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+
+!ENTRY org.eclipse.core.net 1 0 2010-02-24 08:41:53.330
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2010-02-24 10:22:20.095 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_22
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2010-02-24 10:22:31.136
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2010-02-24 18:44:57.078 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_22
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2010-02-24 18:45:07.935
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2010-02-24 19:24:34.532 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_22
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2010-02-24 19:24:43.653
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2010-02-28 14:17:08.716 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_22
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2010-02-28 14:17:33.929
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2010-03-08 13:47:49.281 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_22
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2010-03-08 13:48:03.990
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2010-03-08 18:48:38.865 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_22
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2010-03-08 18:48:53.504
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2010-03-08 19:17:23.410 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_22
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2010-03-08 19:17:32.029
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2010-03-08 19:26:58.518 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_22
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2010-03-08 19:27:06.469
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2010-03-08 20:48:48.526 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_22
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2010-03-08 20:48:56.669
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2010-03-10 19:49:18.355 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_22
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2010-03-10 19:49:38.772
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2010-03-10 20:34:11.657 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_22
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2010-03-10 20:34:18.655
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2010-03-15 11:54:36.186 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_22
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2010-03-15 11:54:55.337
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2010-03-17 09:14:59.178 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_22
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2010-03-17 09:15:07.619
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2010-03-17 10:22:18.002 -----------------------------------------------
+eclipse.buildId=M20090917-0800
+java.version=1.5.0_22
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/Willy/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2010-03-17 10:22:26.099
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences

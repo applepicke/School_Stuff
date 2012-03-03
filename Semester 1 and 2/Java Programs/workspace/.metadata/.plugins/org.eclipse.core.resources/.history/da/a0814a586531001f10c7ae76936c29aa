@@ -1,0 +1,160 @@
+import java.util.Scanner;
+
+public class Planner {
+	private Event events[] = new Event[1000];
+	private Scanner input;
+	private int maxIndex;
+	private String buf;
+	private boolean isOkay;
+	
+	// For the user input of year, month and day
+	int year;
+	int month;
+	int day;
+	int hour;
+	int minute;
+	
+	public Planner(){
+		events[0] = new Event();
+	}
+	
+	//Get and Sets
+	public void setMaxIndex(int maxIndex){
+		this.maxIndex = maxIndex;
+	}
+	
+	public Event getEvent(int i) {
+		return events[i];
+	}
+	
+	public int getMaxIndex() {
+		return maxIndex;
+	}
+	
+	public int getIndex() throws Exception {
+		for (int i = 0; i < maxIndex; i++) {
+			if(day == events[i].getDate().getMonth() && month == events[i].getDate().getMonth() && year == events[i].getDate().getYear())
+				return i;
+		}
+		throw new Exception();
+	}
+	//Different input for each event
+	public void addEventInput(int i) throws Exception{
+		events[i].inputFromKeyboard();
+		for (int j = 0; j < i; j++) {
+			if (events[i].getDate() != events[j].getDate() && events[i].getTime() != events[j].getTime()) {
+				throw new Exception();
+			}
+		}
+		maxIndex++;
+		
+	}
+	
+	//Add different types of Events
+	public void addEvent(int i) throws Exception {
+		events[i] = new Event();
+		this.addEventInput(i);
+	}
+	
+	public void addMeeting(int i) throws Exception{
+		events[i] = new Meeting();
+		this.addEventInput(i);
+	}
+	
+	public void addWork(int i) throws Exception {
+		events[i] = new Work();
+		this.addEventInput(i);
+	}
+	
+	public void addSocial(int i) throws Exception{
+		events[i] = new Social();
+		this.addEventInput(i);
+	}
+	
+	public void addAssignment(int i) throws Exception {
+		events[i] = new Assignment();
+		this.addEventInput(i);
+	}
+	
+	//Remove Events
+	public void removeEvent(int index) {
+		for ( ; index < maxIndex; index++) {
+			events[index] = events[index + 1];
+		}
+		maxIndex--;
+	}
+	
+	//Change Date of Event
+	public void changeDate() throws Exception{
+		isOkay = false;
+		input = new Scanner(System.in);
+		System.out.print("\nPlease enter the date of the event you want to change (dd/mm/yyyy): ");
+		buf = new String(input.nextLine());
+		for (int i = 0; i < maxIndex; i++) {
+			if (buf.compareTo(events[i].toString()) == 0) {
+				int day = i;
+				events[day].getDate().inputFromKeyboard();
+				isOkay = true;
+				break;
+			}	
+		}
+		if (isOkay == false) throw new Exception();	
+			
+	}
+	
+	//Change Time of Event
+	public void changeTime() throws Exception{
+		isOkay = false;
+		input = new Scanner(System.in);
+		System.out.print("\nPlease enter the time of the event you want to change (hour:minute): ");
+		buf = new String(input.nextLine());
+		for (int i = 0; i < maxIndex; i++) {
+			if (buf.compareTo(events[i].toString()) == 0) {
+				int day = i;
+				events[day].getTime().inputFromKeyboard();
+				isOkay = true;
+				break;
+			}
+		}
+		if (isOkay == false) throw new Exception();
+	}
+	
+	//Display one event
+	public void display(){
+		for (int i = 0; i < maxIndex; i++) {
+			if (events[i].getDate().getYear() == year && events[i].getDate().getMonth() == month && events[i].getDate().getDay() == day) {
+				System.out.print(events[i]);
+			}
+		}
+	}
+	
+	//Display seven days of events
+	public void displaySeven() {
+		for (int i = 0; i < 7; i++){
+			this.display();
+			day++;
+		}
+		
+	}
+	
+	//Set the input of Year Month and Day from user
+	public void setUserDate() {
+		
+		input = new Scanner(System.in);
+		System.out.print("\nEnter Year of the event: ");
+		year = input.nextInt();
+		System.out.print("\nEnter Month of the event: ");
+		month = input.nextInt();
+		System.out.print("Enter Day of the event: ");
+		day = input.nextInt();
+	}
+	
+	//Set the input of Hour and minute from user
+	public void setUserTime() {
+		input = new Scanner(System.in);
+		System.out.print("\nEnter Hour of the event: ");
+		hour = input.nextInt();
+		System.out.print("Enter minute of the event: ");
+		minute = input.nextInt();
+	}
+}
