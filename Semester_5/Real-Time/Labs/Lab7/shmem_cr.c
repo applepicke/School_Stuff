@@ -42,20 +42,14 @@ int main( int argc, char *argv[] )
     ptr = mmap( 0, sizeof(prods), PROT_READ|PROT_WRITE, MAP_SHARED, fd, 0 );
     printf("shared memory created!\n");
 
-    for(i = 0; i < 10; i++){
-     	printf("%d * %d = %d\n", prods[i].x, prods[i].y, prods[i].x * prods[i].y);
-     }
-
     for (i = 0; i < 10; i++){
     	ptr[i].x = prods[i].x;
     	ptr[i].y = prods[i].y;
     }
 
-
     struct msg msg;
     MsgSend(coid, &msg, sizeof(struct msg), &msg, sizeof(struct msg));
-    printf("Sending message to server\n");
-
+    printf("Sent message to server\n");
 
     close( fd );
     munmap( ptr, sizeof(prods) );
