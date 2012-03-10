@@ -1,0 +1,25 @@
+﻿Build started 3/9/2012 2:53:50 PM.
+     1>Project "C:\Users\Public\School_Stuff\Semester_5\Game Programming\Forest\Tut06_Meshes\Meshes_2010.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Touching "Debug\Meshes.unsuccessfulbuild".
+       ClCompile:
+         All outputs are up-to-date.
+       ManifestResourceCompile:
+         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\Meshes.exe.embed.manifest.res" Debug\Meshes_manifest.rc 
+       Link:
+         c:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Public\School_Stuff\Semester_5\Game Programming\Forest\Tut06_Meshes\Debug\Meshes.exe" /INCREMENTAL /NOLOGO d3d9.lib d3dx10d.lib d3dx9d.lib dxerr.lib dxguid.lib winmm.lib comctl32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\Meshes.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Public\School_Stuff\Semester_5\Game Programming\Forest\Tut06_Meshes\Debug\Meshes.pdb" /SUBSYSTEM:WINDOWS /LARGEADDRESSAWARE:NO /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Public\School_Stuff\Semester_5\Game Programming\Forest\Tut06_Meshes\Debug\Meshes.lib" /MACHINE:X86 Debug\Meshes.exe.embed.manifest.res
+         Debug\Meshes.obj  
+       Manifest:
+         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\Meshes.exe.embed.manifest" /manifest Debug\Meshes.exe.intermediate.manifest "c:\Program Files\Microsoft Visual Studio 10.0\VC\Include\Manifest\dpiaware.manifest"
+         All outputs are up-to-date.
+       LinkEmbedManifest:
+         All outputs are up-to-date.
+         Meshes_2010.vcxproj -> C:\Users\Public\School_Stuff\Semester_5\Game Programming\Forest\Tut06_Meshes\Debug\Meshes.exe
+       FinalizeBuildStatus:
+         Deleting file "Debug\Meshes.unsuccessfulbuild".
+         Touching "Debug\Meshes.lastbuildstate".
+     1>Done Building Project "C:\Users\Public\School_Stuff\Semester_5\Game Programming\Forest\Tut06_Meshes\Meshes_2010.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.29

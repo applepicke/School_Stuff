@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+    Document   : index
+    Created on : Fri Mar 9, 2012
+    Author     : William Collins
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.prime.com.tr/ui">
+    
+    <body>
+        
+        <ui:composition template="./WEB-INF/templates/template.xhtml">
+            
+            <ui:define name="content">
+                <p:layout>
+                    <h:form id="simpleAddressForm">
+                        <p:layoutUnit position="top" width="100">
+                            <h:panelGrid columns="3">
+                                <h:outputLabel for="address"
+                                               value="${msgs.addressPrompt}" />
+                                <h:form>
+                                    <h:inputText id="address"
+                                                 required="true"
+                                                 requiredMessage="${msgs.addressRequired}"
+                                                 size="60"
+                                                 value="#{bean.address}" />
+                                </h:form>
+                                <h:message for="address"
+                                           style="color: red; font-style: italic;" />
+                            </h:panelGrid>
+                        </p:layoutUnit>
+
+                        <p:layoutUnit position="center">
+
+                            <p:gmap center="${bean.latitudeAndLongitude}"
+                                    style="width:800px;height:400px"
+                                    type="hybrid"
+                                    zoom="17">
+                                
+                            </p:gmap>
+
+                        </p:layoutUnit>
+                    </h:form>
+                </p:layout>
+            </ui:define>
+
+        </ui:composition>
+        
+    </body>
+</html>
