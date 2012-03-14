@@ -1,0 +1,46 @@
+﻿body 
+{
+    font-size: large;
+    color: Black;
+    background-color: Orange;
+}
+
+#header
+{
+    height: 100px;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: Green;
+    color: White;
+}
+
+#menu
+{
+    width: 800px;
+    height: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: Blue;
+    color: White;
+}
+
+#content
+{
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: White;
+}
+
+#footer
+{
+    height: 100px;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: Green;
+    color: White;
+    padding-top: 50px;
+    text-align: center;
+}

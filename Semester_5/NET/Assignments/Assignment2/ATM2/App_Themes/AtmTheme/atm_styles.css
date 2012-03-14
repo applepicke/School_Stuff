@@ -1,0 +1,63 @@
+﻿
+h1 
+{
+    text-align: center;
+}
+
+#header
+{
+    height: 75px;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: Green;
+    color: White;
+    padding-top: 25px;
+}
+
+#menu
+{
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: Blue;
+    color: White;
+    text-align: center;
+}
+
+#content
+{
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: White;
+}
+
+#footer
+{
+    height: 50px;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: Green;
+    color: White;
+    padding-top: 5px;
+    text-align: center;
+}
+
+a:link {
+    color: White;
+    text-decoration: none;
+}
+a:visited {
+    color: White;
+    text-decoration: none;
+}
+a:hover {
+    color: White;
+    text-decoration: none;
+}
+a:active {
+    color: White;
+    text-decoration: none;
+}

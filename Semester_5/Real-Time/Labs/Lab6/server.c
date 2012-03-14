@@ -60,6 +60,8 @@ int main(int argc, char *argv[]) {
 		msg2.product = calculate_product(msg2.x, msg2.y);
 		status2 = MsgReply(rcvid2, 0, &msg2.product, sizeof msg2.product);
 
+
+
 		//Make sure nothing bad happened
 		if (rcvid1 == -1 || rcvid2 == -1) {
 			perror("MsgReceive");
