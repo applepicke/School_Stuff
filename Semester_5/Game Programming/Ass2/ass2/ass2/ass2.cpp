@@ -7,7 +7,8 @@
 #pragma warning( default : 4996 )
 #include "resource.h"
 
-
+//Proptypes
+int loadXFile(LPWSTR);
 
 
 //-----------------------------------------------------------------------------
@@ -18,13 +19,10 @@ LPDIRECT3DDEVICE9   g_pd3dDevice = NULL; // Our rendering device
 
 LPD3DXMESH          g_pMesh = NULL; // Our mesh object in sysmem
 D3DMATERIAL9*       g_pMeshMaterials = NULL; // Materials for our mesh
-LPDIRECT3DTEXTURE9* g_pMeshTextures = NULL; // Textures for our mesh
 DWORD               g_dwNumMaterials = 0L;   // Number of mesh materials
 
-
-
-
-
+float x1 = 0;
+float x2 = 0;
 
 //-----------------------------------------------------------------------------
 // Name: InitD3D()
@@ -64,83 +62,14 @@ HRESULT InitD3D( HWND hWnd )
 }
 
 
-
-
 //-----------------------------------------------------------------------------
 // Name: InitGeometry()
 // Desc: Load the mesh and build the material and texture arrays
 //-----------------------------------------------------------------------------
 HRESULT InitGeometry()
-{
-    LPD3DXBUFFER pD3DXMtrlBuffer;
-
-    // Load the mesh from the specified file
-    if( FAILED( D3DXLoadMeshFromX( L"Tiger.x", D3DXMESH_SYSTEMMEM,
-                                   g_pd3dDevice, NULL,
-                                   &pD3DXMtrlBuffer, NULL, &g_dwNumMaterials,
-                                   &g_pMesh ) ) )
-    {
-        // If model is not in current folder, try parent folder
-        if( FAILED( D3DXLoadMeshFromX( L"..\\Tiger.x", D3DXMESH_SYSTEMMEM,
-                                       g_pd3dDevice, NULL,
-                                       &pD3DXMtrlBuffer, NULL, &g_dwNumMaterials,
-                                       &g_pMesh ) ) )
-        {
-            MessageBox( NULL, L"Could not find tiger.x", L"Meshes.exe", MB_OK );
-            return E_FAIL;
-        }
-    }
-
-    // We need to extract the material properties and texture names from the 
-    // pD3DXMtrlBuffer
-    D3DXMATERIAL* d3dxMaterials = ( D3DXMATERIAL* )pD3DXMtrlBuffer->GetBufferPointer();
-    g_pMeshMaterials = new D3DMATERIAL9[g_dwNumMaterials];
-    if( g_pMeshMaterials == NULL )
-        return E_OUTOFMEMORY;
-    g_pMeshTextures = new LPDIRECT3DTEXTURE9[g_dwNumMaterials];
-    if( g_pMeshTextures == NULL )
-        return E_OUTOFMEMORY;
-
-    for( DWORD i = 0; i < g_dwNumMaterials; i++ )
-    {
-        // Copy the material
-        g_pMeshMaterials[i] = d3dxMaterials[i].MatD3D;
-
-        // Set the ambient color for the material (D3DX does not do this)
-        g_pMeshMaterials[i].Ambient = g_pMeshMaterials[i].Diffuse;
-
-        g_pMeshTextures[i] = NULL;
-        if( d3dxMaterials[i].pTextureFilename != NULL &&
-            lstrlenA( d3dxMaterials[i].pTextureFilename ) > 0 )
-        {
-            // Create the texture
-            if( FAILED( D3DXCreateTextureFromFileA( g_pd3dDevice,
-                                                    d3dxMaterials[i].pTextureFilename,
-                                                    &g_pMeshTextures[i] ) ) )
-            {
-                // If texture is not in current folder, try parent folder
-                const CHAR* strPrefix = "..\\";
-                CHAR strTexture[MAX_PATH];
-                strcpy_s( strTexture, MAX_PATH, strPrefix );
-                strcat_s( strTexture, MAX_PATH, d3dxMaterials[i].pTextureFilename );
-                // If texture is not in current folder, try parent folder
-                if( FAILED( D3DXCreateTextureFromFileA( g_pd3dDevice,
-                                                        strTexture,
-                                                        &g_pMeshTextures[i] ) ) )
-                {
-                    MessageBox( NULL, L"Could not find texture map", L"Meshes.exe", MB_OK );
-                }
-            }
-        }
-    }
-
-    // Done with the material buffer
-    pD3DXMtrlBuffer->Release();
-
-    return S_OK;
+{  
+    return loadXFile(L"..\\bigship1.x");
 }
-
-
 
 
 //-----------------------------------------------------------------------------
@@ -152,15 +81,6 @@ VOID Cleanup()
     if( g_pMeshMaterials != NULL )
         delete[] g_pMeshMaterials;
 
-    if( g_pMeshTextures )
-    {
-        for( DWORD i = 0; i < g_dwNumMaterials; i++ )
-        {
-            if( g_pMeshTextures[i] )
-                g_pMeshTextures[i]->Release();
-        }
-        delete[] g_pMeshTextures;
-    }
     if( g_pMesh != NULL )
         g_pMesh->Release();
 
@@ -181,13 +101,10 @@ VOID SetupMatrices()
 {
     // Set up world matrix
     D3DXMATRIXA16 matWorld;
-	D3DXMatrixIdentity(&matWorld);
+	D3DXMatrixRotationY(&matWorld, (x2 - x1) / 100);
     g_pd3dDevice->SetTransform( D3DTS_WORLD, &matWorld );
 
-    // Set up our view matrix. A view matrix can be defined given an eye point,
-    // a point to lookat, and a direction for which way is up. Here, we set the
-    // eye five units back along the z-axis and up three units, look at the 
-    // origin, and define "up" to be in the y-direction.
+    // Set up our view matrix.
     D3DXVECTOR3 vEyePt( 0.0f, 3.0f,-5.0f );
     D3DXVECTOR3 vLookatPt( 0.0f, 0.0f, 0.0f );
     D3DXVECTOR3 vUpVec( 0.0f, 1.0f, 0.0f );
@@ -195,12 +112,7 @@ VOID SetupMatrices()
     D3DXMatrixLookAtLH( &matView, &vEyePt, &vLookatPt, &vUpVec );
     g_pd3dDevice->SetTransform( D3DTS_VIEW, &matView );
 
-    // For the projection matrix, we set up a perspective transform (which
-    // transforms geometry from 3D view space to 2D viewport space, with
-    // a perspective divide making objects smaller in the distance). To build
-    // a perpsective transform, we need the field of view (1/4 pi is common),
-    // the aspect ratio, and the near and far clipping planes (which define at
-    // what distances geometry should be no longer be rendered).
+	//Set up the projection matrix
     D3DXMATRIXA16 matProj;
     D3DXMatrixPerspectiveFovLH( &matProj, D3DX_PI / 4, 1.0f, 1.0f, 100.0f );
     g_pd3dDevice->SetTransform( D3DTS_PROJECTION, &matProj );
@@ -217,7 +129,7 @@ VOID Render()
 {
     // Clear the backbuffer and the zbuffer
     g_pd3dDevice->Clear( 0, NULL, D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER,
-                         D3DCOLOR_XRGB( 0, 0, 255 ), 1.0f, 0 );
+                         D3DCOLOR_XRGB( 0, 0, 0 ), 1.0f, 0 );
 
     // Begin the scene
     if( SUCCEEDED( g_pd3dDevice->BeginScene() ) )
@@ -231,7 +143,6 @@ VOID Render()
         {
             // Set the material and texture for this subset
             g_pd3dDevice->SetMaterial( &g_pMeshMaterials[i] );
-            g_pd3dDevice->SetTexture( 0, g_pMeshTextures[i] );
 
             // Draw the mesh subset
             g_pMesh->DrawSubset( i );
@@ -264,13 +175,14 @@ LRESULT WINAPI MsgProc( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam )
             return 0;
 		case WM_MOUSEMOVE:
 			if (mouseDown){
-				//Set new mouse position, and calculate x and y differentials.
-				//Then Render new graphics of new position
+				x2 = LOWORD(lParam);
+				Render();
+				x1 = x2;			
 			}
 			return 0;
 		case WM_LBUTTONDOWN:
 			mouseDown = true;
-			//Set current position of mouse
+			x1 = LOWORD(lParam);
 			return 0;
 
 		case WM_LBUTTONUP:
@@ -323,6 +235,7 @@ INT WINAPI wWinMain( HINSTANCE hInst, HINSTANCE, LPWSTR, INT )
             // Enter the message loop
             MSG msg;
             ZeroMemory( &msg, sizeof( msg ) );
+			Render();
             while( msg.message != WM_QUIT )
             {
                 if( PeekMessage( &msg, NULL, 0U, 0U, PM_REMOVE ) )
@@ -330,14 +243,56 @@ INT WINAPI wWinMain( HINSTANCE hInst, HINSTANCE, LPWSTR, INT )
                     TranslateMessage( &msg );
                     DispatchMessage( &msg );
                 }
-                else
-                    Render();
+                
             }
         }
     }
 
     UnregisterClass( L"ass2", wc.hInstance );
     return 0;
+}
+
+int loadXFile(LPWSTR name)
+{
+	LPD3DXBUFFER pD3DXMtrlBuffer;
+
+    // Load the mesh from the specified file
+    if( FAILED( D3DXLoadMeshFromX( name, D3DXMESH_SYSTEMMEM,
+                                   g_pd3dDevice, NULL,
+                                   &pD3DXMtrlBuffer, NULL, &g_dwNumMaterials,
+                                   &g_pMesh ) ) )
+    {
+		MessageBox( NULL, L"Could not find mesh", L"ass2.exe", MB_OK );
+        return E_FAIL;
+    }
+
+    // We need to extract the material properties and texture names from the 
+    // pD3DXMtrlBuffer
+    D3DXMATERIAL* d3dxMaterials = ( D3DXMATERIAL* )pD3DXMtrlBuffer->GetBufferPointer();
+
+	//Make sure to free up resources
+	if (g_pMeshMaterials != NULL){
+		delete []g_pMeshMaterials;
+	}
+
+    g_pMeshMaterials = new D3DMATERIAL9[g_dwNumMaterials];
+    if( g_pMeshMaterials == NULL )
+        return E_OUTOFMEMORY;
+
+    for( DWORD i = 0; i < g_dwNumMaterials; i++ )
+    {
+        // Copy the material
+        g_pMeshMaterials[i] = d3dxMaterials[i].MatD3D;
+
+        // Set the ambient color for the material (D3DX does not do this)
+        g_pMeshMaterials[i].Ambient = g_pMeshMaterials[i].Diffuse;
+        
+    }
+
+    // Done with the material buffer
+    pD3DXMtrlBuffer->Release();
+
+	return S_OK;
 }
 
 
