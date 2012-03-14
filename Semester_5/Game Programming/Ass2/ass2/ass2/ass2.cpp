@@ -23,7 +23,11 @@ DWORD               g_dwNumMaterials = 0L;   // Number of mesh materials
 
 float x1 = 0;
 float x2 = 0;
+float oldAngle = 0;
 
+float yy1 = 0;
+float yy2 = 0;
+float oldY = 0;
 //-----------------------------------------------------------------------------
 // Name: InitD3D()
 // Desc: Initializes Direct3D
@@ -91,7 +95,48 @@ VOID Cleanup()
         g_pD3D->Release();
 }
 
+//-----------------------------------------------------------------------------
+// Name: SetupLights()
+// Desc: Sets up the lights and materials for the scene.
+//-----------------------------------------------------------------------------
+VOID SetupLights()
+{
+    // Set up a material. The material here just has the diffuse and ambient
+    // colors set to yellow. Note that only one material can be used at a time.
+    D3DMATERIAL9 mtrl;
+    ZeroMemory( &mtrl, sizeof( D3DMATERIAL9 ) );
+    mtrl.Diffuse.r = 1.0f;
+    mtrl.Diffuse.g = 1.0f;
+    mtrl.Diffuse.b = 1.0f;
+    mtrl.Diffuse.a = 1.0f;
+    g_pd3dDevice->SetMaterial( &mtrl );
 
+    // Set up a white, directional light, with an oscillating direction.
+    // Note that many lights may be active at a time (but each one slows down
+    // the rendering of our scene). However, here we are just using one. Also,
+    // we need to set the D3DRS_LIGHTING renderstate to enable lighting
+    D3DXVECTOR3 vecDir;
+    D3DLIGHT9 light;
+    ZeroMemory( &light, sizeof( D3DLIGHT9 ) );
+	light.Type = D3DLIGHT_DIRECTIONAL;
+	light.Direction.z = 1.0f; 
+	light.Position.x = 0.0f;
+	light.Position.y = 0.0f;
+	light.Position.z = -40.0f;
+
+    light.Diffuse.r = 1.0f;
+    light.Diffuse.g = 1.0f;
+    light.Diffuse.b = 1.0f;
+    //vecDir = D3DXVECTOR3( 1.0f, 0.0f, 0.0f );
+    //D3DXVec3Normalize( ( D3DXVECTOR3* )&light.Direction, &vecDir );
+    light.Range = 1000.0f;
+    g_pd3dDevice->SetLight( 0, &light );
+    g_pd3dDevice->LightEnable( 0, TRUE );
+    g_pd3dDevice->SetRenderState( D3DRS_LIGHTING, TRUE );
+
+    // Finally, turn on some ambient light.
+    g_pd3dDevice->SetRenderState( D3DRS_AMBIENT, 0x00202020 );
+}
 
 //-----------------------------------------------------------------------------
 // Name: SetupMatrices()
@@ -101,11 +146,14 @@ VOID SetupMatrices()
 {
     // Set up world matrix
     D3DXMATRIXA16 matWorld;
-	D3DXMatrixRotationY(&matWorld, (x2 - x1) / 100);
+	D3DXMATRIXA16 matRotY;
+	D3DXMatrixRotationY(&matWorld, (oldAngle -= (x2 - x1)) / 100);
+	D3DXMatrixRotationX(&matRotY, (oldY -= (yy2 - yy1)) /100);
+	D3DXMatrixMultiply(&matWorld, &matWorld, &matRotY);
     g_pd3dDevice->SetTransform( D3DTS_WORLD, &matWorld );
 
     // Set up our view matrix.
-    D3DXVECTOR3 vEyePt( 0.0f, 3.0f,-5.0f );
+    D3DXVECTOR3 vEyePt( 0.0f, 0.0f,-20.0f );
     D3DXVECTOR3 vLookatPt( 0.0f, 0.0f, 0.0f );
     D3DXVECTOR3 vUpVec( 0.0f, 1.0f, 0.0f );
     D3DXMATRIXA16 matView;
@@ -134,6 +182,7 @@ VOID Render()
     // Begin the scene
     if( SUCCEEDED( g_pd3dDevice->BeginScene() ) )
     {
+		SetupLights();
         // Setup the world, view, and projection matrices
         SetupMatrices();
 
@@ -176,13 +225,16 @@ LRESULT WINAPI MsgProc( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam )
 		case WM_MOUSEMOVE:
 			if (mouseDown){
 				x2 = LOWORD(lParam);
+				yy2 = HIWORD(lParam);
 				Render();
-				x1 = x2;			
+				x1 = x2;	
+				yy1 = yy2;
 			}
 			return 0;
 		case WM_LBUTTONDOWN:
 			mouseDown = true;
 			x1 = LOWORD(lParam);
+			yy1 = HIWORD(lParam);
 			return 0;
 
 		case WM_LBUTTONUP:
@@ -219,7 +271,7 @@ INT WINAPI wWinMain( HINSTANCE hInst, HINSTANCE, LPWSTR, INT )
 
     // Create the application's window
     HWND hWnd = CreateWindow( L"ass2", L"Willy's X-Viewer",
-                              WS_OVERLAPPEDWINDOW, 100, 100, 300, 300,
+                              WS_OVERLAPPEDWINDOW, 100, 100, 500, 500,
 							  NULL, hMenu, wc.hInstance, NULL );
 
     // Initialize Direct3D
