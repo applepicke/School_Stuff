@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Lab6" Class="DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=WILLY-LAPTOP\SQLEXPRESS;Initial Catalog=Lab6;User ID=net" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="Lab6ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Registrant" Member="Registrants">
+    <Type Name="Registrant">
+      <Column Name="fname" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="lname" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="bday" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="occ" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="telnum" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="program" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="games" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

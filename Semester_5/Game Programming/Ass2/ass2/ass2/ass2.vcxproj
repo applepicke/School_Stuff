@@ -79,12 +79,18 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ass2.cpp" />
+    <ClCompile Include="Configuration.h" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="menu.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\..\..\..\willy\Downloads\FinalFantasy3\Objects\Light Crystal.ico" />
+    <None Include="icon1.ico" />
+    <None Include="icon2.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

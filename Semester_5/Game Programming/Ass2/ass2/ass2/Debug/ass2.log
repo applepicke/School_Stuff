@@ -1,4 +1,4 @@
-﻿Build started 3/14/2012 12:07:25 PM.
+﻿Build started 3/16/2012 2:11:52 PM.
      1>Project "C:\Users\Public\School_Stuff\Semester_5\Game Programming\Ass2\ass2\ass2\ass2.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\ass2.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -13,6 +13,7 @@
          c:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Public\School_Stuff\Semester_5\Game Programming\Ass2\ass2\Debug\ass2.exe" /INCREMENTAL /NOLOGO d3d9.lib d3dx10d.lib d3dx9d.lib dxerr.lib dxguid.lib winmm.lib comctl32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\ass2.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Public\School_Stuff\Semester_5\Game Programming\Ass2\ass2\Debug\ass2.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Public\School_Stuff\Semester_5\Game Programming\Ass2\ass2\Debug\ass2.lib" /MACHINE:X86 Debug\menu.res
          Debug\ass2.exe.embed.manifest.res
          Debug\ass2.obj
+         Debug\Configuration.obj
        Manifest:
          C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\ass2.exe.embed.manifest" /manifest Debug\ass2.exe.intermediate.manifest
          All outputs are up-to-date.
@@ -26,4 +27,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:04.34
+Time Elapsed 00:00:01.68

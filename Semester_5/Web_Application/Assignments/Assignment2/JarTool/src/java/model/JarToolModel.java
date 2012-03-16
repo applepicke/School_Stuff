@@ -105,9 +105,6 @@ public class JarToolModel implements Serializable {
         this.jarName = jarName;
     }
 
-    
-    
-    
     public void setNewJarFileName(String newJarFileName) {
         if (!newJarFileName.endsWith(".jar")){
             newJarFileName = newJarFileName + ".jar";
@@ -115,6 +112,11 @@ public class JarToolModel implements Serializable {
         this.newJarFileName = newJarFileName;
     }
        
+    /**
+     * Loads a jar file given an upload event. 
+     * @param event - the event that contains the stream and file information
+     * @throws IOException 
+     */
     public void loadJar(FileUploadEvent event) throws IOException {
         File fileToWrite = new File(event.getFile().getFileName());
         FileOutputStream oStream; //Stream to write the file to
@@ -136,6 +138,8 @@ public class JarToolModel implements Serializable {
         }
         catch (ZipException e){
             //gracefully exit
+            jarEntries = new ArrayList<JarEntry>();
+            resetTable();
             return;
         }
         
@@ -146,7 +150,14 @@ public class JarToolModel implements Serializable {
             JarEntry entry = new JarEntry(entries.nextElement());
             jarEntries.add(entry);
         }
-        manifestAttributes = new ArrayList(jar.getManifest().getMainAttributes().entrySet());
+        try{
+            manifestAttributes = new ArrayList(jar.getManifest().getMainAttributes().entrySet());
+        }
+        catch (NullPointerException e){
+            manifestAttributes = new ArrayList<Entry<String, Attribute>>();
+            resetTable();
+            return;
+        }
         jarName = jar.getName();
        
         jar.close();
@@ -155,6 +166,12 @@ public class JarToolModel implements Serializable {
 
     }
 
+    /**
+     * Save a specific file from the current jar
+     * @param name The name of the file to be saved
+     * @return the stream of the file
+     * @throws IOException 
+     */
     public StreamedContent saveFileFromJar(String name) throws IOException {
         String nameMinusPath = name.substring(name.lastIndexOf('/') + 1, name.length());
         
@@ -164,6 +181,11 @@ public class JarToolModel implements Serializable {
         return content;
     }
     
+    /**
+     * Download the entire jar file to the client
+     * @return The content stream of the file to be downloaded
+     * @throws IOException 
+     */
     public StreamedContent downloadJar() throws IOException{
         JarFile jar = new JarFile(jarName);
         FileOutputStream oStream = new FileOutputStream("temp.jar");
@@ -181,6 +203,12 @@ public class JarToolModel implements Serializable {
         return jarToDownload;
     }
     
+    /**
+     * Writes the entries to the local filesystem
+     * @param jar The jar file to write to
+     * @param jos The output stream to write the jar to.
+     * @throws IOException 
+     */
     private void writeEntriesToJarFile(JarFile jar, JarOutputStream jos) throws IOException{
         for (ZipEntry entry: jarEntries){
             jos.putNextEntry(entry);
@@ -189,6 +217,11 @@ public class JarToolModel implements Serializable {
         }
     }
 
+    /**
+     * Adds a file to the current jar
+     * @param event The event that contains the file info and stream
+     * @throws IOException 
+     */
     public void addFileToJar(FileUploadEvent event) throws IOException { 
         String fileName = event.getFile().getFileName();
         JarFile jar = new JarFile(jarName);
@@ -238,12 +271,19 @@ public class JarToolModel implements Serializable {
         resetTable();
     }
 
+    /**
+     * Run the current jar
+     * @throws IOException 
+     */
     public void runJar() throws IOException {
         JarFile jar = new JarFile(jarName);
         Runtime.getRuntime().exec("java -jar " + jar.getName());
         jar.close();
     }
     
+    /**
+     * Create a new jar with a default manifest
+     */
     public void createJar() throws IOException{
            
         if (newJarFileName.equals(jarName)){
@@ -256,13 +296,18 @@ public class JarToolModel implements Serializable {
         FileOutputStream fos = new FileOutputStream(newJarFileName);
         JarOutputStream jos = new JarOutputStream(fos);
         
-        JarEntry manifest = new JarEntry("MANIFEST/MANIFEST.MF");
+        JarEntry manifestDir = new JarEntry("META-INF/");
+        JarEntry manifest = new JarEntry("META-INF/MANIFEST.MF");
+        jos.putNextEntry(manifestDir);
+        jos.closeEntry();
         jos.putNextEntry(manifest);        
         jos.close();
-        
         jarName = newJarFileName;   
         
-        jarEntries = new ArrayList<JarEntry>();
+        jarEntries = new ArrayList<JarEntry>(); 
+        jarEntries.add(manifestDir);
+        jarEntries.add(manifest);
+
         manifestAttributes = new ArrayList<Entry<String, Attribute>>();
         
         
@@ -273,7 +318,7 @@ public class JarToolModel implements Serializable {
      * resets the jar entries table. This is to prevent an update bug caused by the
      * primefaces dataTable filtering.
      */
-    private void resetTable(){
+    public void resetTable(){
         FacesContext facesContext = FacesContext.getCurrentInstance();
         DataTable table = (DataTable) ComponentUtils.findComponent(facesContext.getViewRoot(), "jarEntries");
         table.resetValue();

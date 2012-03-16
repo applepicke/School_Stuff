@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Lab 7", ".", "{11314C24-AC02-4C98-8BDE-94F2B7F31B4F}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/Lab 7"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\..\..\..\Public\School_Stuff\Semester_5\NET\Labs\Lab 7\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Lab 7\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/Lab 7"
+		Release.AspNetCompiler.PhysicalPath = "..\..\..\..\..\Public\School_Stuff\Semester_5\NET\Labs\Lab 7\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\Lab 7\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "63238"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{11314C24-AC02-4C98-8BDE-94F2B7F31B4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11314C24-AC02-4C98-8BDE-94F2B7F31B4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

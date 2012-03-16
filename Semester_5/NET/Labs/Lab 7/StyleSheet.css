@@ -1,0 +1,12 @@
+﻿#header, #footer
+{
+    background-image: url(App_Themes/Images/background.jpg);
+    color:White;
+}
+
+#menu
+{
+    color:Blue;
+}
+
+
