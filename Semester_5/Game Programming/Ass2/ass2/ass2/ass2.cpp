@@ -89,6 +89,8 @@ HRESULT InitGeometry()
 //-----------------------------------------------------------------------------
 VOID Cleanup()
 {
+
+
     if( g_pMeshMaterials != NULL )
         delete[] g_pMeshMaterials;
 
@@ -193,6 +195,7 @@ VOID SetupMatrices()
 //-----------------------------------------------------------------------------
 VOID Render()
 {
+
     // Clear the backbuffer and the zbuffer
     g_pd3dDevice->Clear( 0, NULL, D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER,
                          D3DCOLOR_XRGB( 50, 50, 50 ), 1.0f, 0 );
@@ -258,9 +261,10 @@ LRESULT WINAPI MsgProc( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam )
     {
 		case WM_COMMAND:
 			DetermineConfiguration(hWnd, wParam);
-			InvalidateRect(hWnd, NULL, true);
 			return 0;
 		case WM_PAINT:
+			BeginPaint(hWnd, NULL);
+			EndPaint(hWnd, NULL);
 			Render();
 			return 0;
         case WM_DESTROY:
@@ -274,10 +278,8 @@ LRESULT WINAPI MsgProc( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam )
 			return 0;
 		case WM_LBUTTONDOWN:
 			mouseDown = true;
-			//if (g_config.rotateType == ROTATE_MODEL){
-				g_config.x = LOWORD(lParam);
-				g_config.y = HIWORD(lParam);
-			//}
+			g_config.x = LOWORD(lParam);
+			g_config.y = HIWORD(lParam);	
 			
 			return 0;
 
@@ -298,7 +300,6 @@ LRESULT WINAPI MsgProc( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam )
 INT WINAPI wWinMain( HINSTANCE hInst, HINSTANCE, LPWSTR, INT )
 {
     UNREFERENCED_PARAMETER( hInst );
-
 	//Load our Icon
 	HICON hIcon = LoadIcon(hInst, MAKEINTRESOURCE(IDI_ICON1));
 
@@ -369,8 +370,8 @@ void DetermineConfiguration(HWND hWnd, WPARAM wParam)
 	switch (LOWORD(wParam))
 	{
 		case ID_ABOUT_ABOUTX:
-			MessageBox( hWnd, L"X-Viewer - William Collins\nGame Programming - Winter 2012", L"About", 0 );
-			break;
+			MessageBoxW( hWnd, TEXT("X-Viewer - William Collins\nGame Programming - Winter 2012"), TEXT("About"), MB_OK);
+			return;
 		case ID_FILLMODE_POINT:
 			g_config.fillMode = D3DFILL_POINT;
 			break;
@@ -432,8 +433,11 @@ void DetermineConfiguration(HWND hWnd, WPARAM wParam)
 int loadXFile(LPWSTR name)
 {
 	LPD3DXBUFFER pD3DXMtrlBuffer;
-
 	resetPosition();
+
+	if (g_pMesh != NULL){
+		g_pMesh->Release();
+	}
 
     // Load the mesh from the specified file
     if( FAILED( D3DXLoadMeshFromX( name, D3DXMESH_SYSTEMMEM,
