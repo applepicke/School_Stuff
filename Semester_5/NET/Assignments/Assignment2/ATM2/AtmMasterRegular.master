@@ -14,16 +14,15 @@
             <h1>ATM</h1>
         </div>
         <div id="menu">
-            <asp:LinkButton PostBackUrl="~/Overview.aspx" Text="Overview | " runat="server" />
-            <asp:LinkButton PostBackUrl="~/Report.aspx" Text="Report | " runat="server" />
-            <asp:LinkButton PostBackUrl="~/DepositMoney.aspx" Text="Deposit | " runat="server" />
-            <asp:LinkButton PostBackUrl="~/WithdrawMoney.aspx" Text="Withdraw | " runat="server" />
-            <asp:LinkButton PostBackUrl="~/CloseAccount.aspx" Text="Close Account | " runat="server" />
-            <asp:LinkButton PostBackUrl="~/Default.aspx" Text="Logout" runat="server" />
+            <asp:LinkButton PostBackUrl="~/Overview.aspx" Text="Overview | " runat="server" CausesValidation="false"/>
+            <asp:LinkButton PostBackUrl="~/Report.aspx" Text="Report | " runat="server" CausesValidation="false"/>
+            <asp:LinkButton PostBackUrl="~/DepositMoney.aspx" Text="Deposit | " runat="server" CausesValidation="false"/>
+            <asp:LinkButton PostBackUrl="~/WithdrawMoney.aspx" Text="Withdraw | " runat="server" CausesValidation="false"/>
+            <asp:LinkButton PostBackUrl="~/CloseAccount.aspx" Text="Close Account | " runat="server" CausesValidation="false" />
+            <asp:LinkButton PostBackUrl="~/Default.aspx" Text="Logout" runat="server" CausesValidation="false"/>
         </div>
         <div id="content">
-            <asp:ContentPlaceHolder ID="mainContent" runat="server">
-            </asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="mainContent" runat="server" />
         </div>
         <div id="footer">
             <h5>William Collins - 040652633 - Winter 2012</h5>

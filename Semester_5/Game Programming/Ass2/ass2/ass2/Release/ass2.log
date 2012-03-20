@@ -1,13 +1,11 @@
-﻿Build started 3/16/2012 8:16:30 PM.
+﻿Build started 3/16/2012 9:05:47 PM.
      1>Project "C:\Users\Public\School_Stuff\Semester_5\Game Programming\Ass2\ass2\ass2\ass2.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
-         Creating "Release\ass2.unsuccessfulbuild" because "AlwaysCreate" was specified.
+         Touching "Release\ass2.unsuccessfulbuild".
        ClCompile:
-         c:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ass2.cpp Configuration.h
-         ass2.cpp
-         Configuration.h
+         All outputs are up-to-date.
        ResourceCompile:
-         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /D _UNICODE /D UNICODE /l"0x0409" /nologo /fo"Release\menu.res" menu.rc 
+         All outputs are up-to-date.
        Link:
          c:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Public\School_Stuff\Semester_5\Game Programming\Ass2\ass2\Release\ass2.exe" /INCREMENTAL:NO /NOLOGO d3d9.lib d3dx10d.lib d3dx9d.lib dxerr.lib dxguid.lib winmm.lib comctl32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release\ass2.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Public\School_Stuff\Semester_5\Game Programming\Ass2\ass2\Release\ass2.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Public\School_Stuff\Semester_5\Game Programming\Ass2\ass2\Release\ass2.lib" /MACHINE:X86 Release\menu.res
          Release\ass2.obj
@@ -24,4 +22,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:02.05
+Time Elapsed 00:00:01.15

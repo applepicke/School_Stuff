@@ -21,7 +21,7 @@
                 <p>Password:</p>
             </td>
             <td>
-                <asp:TextBox ID="Password" runat="server" />
+                <asp:TextBox TextMode="Password" ID="Password" runat="server" />
                 <asp:RequiredFieldValidator ValidationGroup="LoginValidation" 
                                             ControlToValidate="Password" 
                                             CssClass="errors" 
@@ -30,8 +30,8 @@
             </td>
         </tr> 
     </table>
+    <asp:Label id="errorMsg" CssClass="errors" runat="server"/><br />
     <asp:Button ValidationGroup="LoginValidation" Text="Login" OnClick="Login" runat="server" />
     <asp:Button Text="Register" PostBackUrl="~/NewUser.aspx" runat="server"/>
-    <asp:Label id="errorMsg" runat="server"/>
 
 </asp:Content>
