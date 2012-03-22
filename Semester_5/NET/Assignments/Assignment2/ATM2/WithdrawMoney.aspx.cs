@@ -23,6 +23,11 @@ public partial class WithdrawMoney : System.Web.UI.Page
         {
             trans.PersonId = ((Person)Session["Person"]).PersonId;
             trans.AmountTransferred = Decimal.Parse(Withdraw.Text);
+            if (trans.AmountTransferred < 0)
+            {
+                errors.Text = "Cannot withdraw negative amount!";
+                return;
+            }
         }
         catch (FormatException)
         {

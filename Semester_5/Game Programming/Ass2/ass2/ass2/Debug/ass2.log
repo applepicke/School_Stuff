@@ -1,4 +1,4 @@
-﻿Build started 3/16/2012 3:25:11 PM.
+﻿Build started 3/20/2012 11:42:13 AM.
      1>Project "C:\Users\Public\School_Stuff\Semester_5\Game Programming\Ass2\ass2\ass2\ass2.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\ass2.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -27,4 +27,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.95
+Time Elapsed 00:00:01.74

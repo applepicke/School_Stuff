@@ -1,11 +1,21 @@
-﻿body
-{
-    background-color: Black;
-}
-
+﻿
 h1 
 {
     text-align: center;
+}
+
+h2
+{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 35px;
+}
+
+.table
+{
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #header

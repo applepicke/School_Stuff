@@ -23,6 +23,11 @@ public partial class DepositMoney : System.Web.UI.Page
         {
             trans.PersonId = ((Person)Session["Person"]).PersonId;
             trans.AmountTransferred = Decimal.Parse(Deposit.Text);
+            if (trans.AmountTransferred < 0)
+            {
+                errors.Text = "Cannot deposit negative amount!";
+                return;
+            }
         }
         catch (FormatException)
         {

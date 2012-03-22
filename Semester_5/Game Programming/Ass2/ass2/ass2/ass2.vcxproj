@@ -92,9 +92,7 @@
     <ResourceCompile Include="menu.rc" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\..\..\..\..\willy\Downloads\FinalFantasy3\Objects\Light Crystal.ico" />
     <None Include="icon1.ico" />
-    <None Include="icon2.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

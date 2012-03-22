@@ -6,7 +6,8 @@
     <asp:GridView ID="transactionGrid"
                   AllowPaging="false"
                   AllowSorting="false"
-                  runat="server" />
+                  runat="server" 
+                  CssClass="table"/>
     <br />
     <br />     
 </asp:Content>

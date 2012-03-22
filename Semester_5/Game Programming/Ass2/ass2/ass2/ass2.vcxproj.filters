@@ -36,11 +36,5 @@
     <None Include="icon1.ico">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="icon2.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="..\..\..\..\..\..\..\willy\Downloads\FinalFantasy3\Objects\Light Crystal.ico">
-      <Filter>Resource Files</Filter>
-    </None>
   </ItemGroup>
 </Project>

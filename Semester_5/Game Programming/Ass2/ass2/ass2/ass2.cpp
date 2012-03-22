@@ -1,4 +1,17 @@
-
+/**********************************************************************
+Filename:		ass2.cpp
+Version: 		1.0                                         
+Author:			William Collins                                             
+Student No:  	040652633                                           
+Course Name/Number: Game Programming CST8237                                 
+Lab Sect: 		310                                                      
+Assignment #:	2
+Assignment name:Assignment 2	
+Due Date:		March 23, 2012                                           
+Submission Date:March 23, 2012
+Professor:		Andrew Tyler                                           
+Purpose: 		A simple x-viewer
+*********************************************************************/
 #include <Windows.h>
 #include <mmsystem.h>
 #include <d3dx9.h>
@@ -24,10 +37,12 @@ D3DMATERIAL9*       g_pMeshMaterials = NULL; // Materials for our mesh
 DWORD               g_dwNumMaterials = 0L;   // Number of mesh materials
 Configuration		g_config;
 
-//-----------------------------------------------------------------------------
-// Name: InitD3D()
-// Desc: Initializes Direct3D
-//-----------------------------------------------------------------------------
+/********************************************************************
+Function Name: 	InitD3D
+Purpose: 		Initialize the direct3d and related devices
+Version: 		1.0
+Author: 		William Collins
+**********************************************************************/
 HRESULT InitD3D( HWND hWnd )
 {
     // Create the D3D object.
@@ -62,6 +77,12 @@ HRESULT InitD3D( HWND hWnd )
     return S_OK;
 }
 
+/********************************************************************
+Function Name: 	SetupRenderState
+Purpose: 		Set the rendering states that change throughout the application
+Version: 		1.0
+Author: 		William Collins
+**********************************************************************/
 void SetupRenderState()
 {
 	// Set shading mode
@@ -73,20 +94,24 @@ void SetupRenderState()
 }
 
 
-//-----------------------------------------------------------------------------
-// Name: InitGeometry()
-// Desc: Load the mesh and build the material and texture arrays
-//-----------------------------------------------------------------------------
+/********************************************************************
+Function Name: 	InitGeometry
+Purpose: 		Initialize the object geometry for the scene. In this case, load the x-files
+Version: 		1.0
+Author: 		William Collins
+**********************************************************************/
 HRESULT InitGeometry()
 {  
     return loadXFile(L"..\\bigship1.x");
 }
 
 
-//-----------------------------------------------------------------------------
-// Name: Cleanup()
-// Desc: Releases all previously initialized objects
-//-----------------------------------------------------------------------------
+/********************************************************************
+Function Name: 	Cleanup
+Purpose: 		Release resources used in the application
+Version: 		1.0
+Author: 		William Collins
+**********************************************************************/
 VOID Cleanup()
 {
 
@@ -104,10 +129,12 @@ VOID Cleanup()
         g_pD3D->Release();
 }
 
-//-----------------------------------------------------------------------------
-// Name: SetupLights()
-// Desc: Sets up the lights and materials for the scene.
-//-----------------------------------------------------------------------------
+/********************************************************************
+Function Name: 	SetupLights
+Purpose: 		Setup the lights for the scene
+Version: 		1.0
+Author: 		William Collins
+**********************************************************************/
 VOID SetupLights()
 {
     // Set up a material. The material here just has the diffuse and ambient
@@ -159,10 +186,12 @@ VOID SetupLights()
 
 }
 
-//-----------------------------------------------------------------------------
-// Name: SetupMatrices()
-// Desc: Sets up the world, view, and projection transform matrices.
-//-----------------------------------------------------------------------------
+/********************************************************************
+Function Name: 	SetupMatrices
+Purpose: 		Setup the World, view, and transform matrices
+Version: 		1.0
+Author: 		William Collins
+**********************************************************************/
 VOID SetupMatrices()
 {
     // Set up world matrix
@@ -174,7 +203,7 @@ VOID SetupMatrices()
     g_pd3dDevice->SetTransform( D3DTS_WORLD, &matWorld );
 
     // Set up our view matrix.
-    D3DXVECTOR3 vEyePt( 0.0f, 0.0f,-30.0f );
+	D3DXVECTOR3 vEyePt( 0.0f, 0.0f, g_config.z );
     D3DXVECTOR3 vLookatPt( 0.0f, 0.0f, 0.0f );
     D3DXVECTOR3 vUpVec( 0.0f, 1.0f, 0.0f );
     D3DXMATRIXA16 matView;
@@ -183,16 +212,17 @@ VOID SetupMatrices()
 
 	//Set up the projection matrix
     D3DXMATRIXA16 matProj;
-    D3DXMatrixPerspectiveFovLH( &matProj, D3DX_PI / 4, 1.0f, 1.0f, 100.0f );
+    D3DXMatrixPerspectiveFovLH( &matProj, D3DX_PI / 4, 1.0f, 1.0f, 1000.0f );
 	
     g_pd3dDevice->SetTransform( D3DTS_PROJECTION, &matProj );
 }
 
-
-//-----------------------------------------------------------------------------
-// Name: Render()
-// Desc: Draws the scene
-//-----------------------------------------------------------------------------
+/********************************************************************
+Function Name: 	Render
+Purpose: 		Renders the direct3d scene
+Version: 		1.0
+Author: 		William Collins
+**********************************************************************/
 VOID Render()
 {
 
@@ -227,7 +257,12 @@ VOID Render()
     g_pd3dDevice->Present( NULL, NULL, NULL, NULL );
 }
 
-
+/********************************************************************
+Function Name: 	HandleRotation
+Purpose: 		Performs rotation calculations based on a mouse click event
+Version: 		1.0
+Author: 		William Collins
+**********************************************************************/
 void handleRotation(LPARAM lParam)
 {
 	float x = LOWORD(lParam);
@@ -249,10 +284,12 @@ void handleRotation(LPARAM lParam)
 	g_config.y = y;
 }
 
-//-----------------------------------------------------------------------------
-// Name: MsgProc()
-// Desc: The window's message handler
-//-----------------------------------------------------------------------------
+/********************************************************************
+Function Name: 	MsgProc
+Purpose: 		Handles messages sent by windows
+Version: 		1.0
+Author: 		William Collins
+**********************************************************************/
 LRESULT WINAPI MsgProc( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam )
 {
 	static BOOL mouseDown = false;
@@ -279,8 +316,16 @@ LRESULT WINAPI MsgProc( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam )
 		case WM_LBUTTONDOWN:
 			mouseDown = true;
 			g_config.x = LOWORD(lParam);
-			g_config.y = HIWORD(lParam);	
-			
+			g_config.y = HIWORD(lParam);				
+			return 0;
+		case WM_MOUSEWHEEL:
+			if (((short)HIWORD(wParam)) < 0) {
+				g_config.z += g_config.z * 0.1f;
+			}
+			else {
+				g_config.z += g_config.z * -0.1f;
+			}
+			Render();
 			return 0;
 
 		case WM_LBUTTONUP:
@@ -293,10 +338,12 @@ LRESULT WINAPI MsgProc( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam )
 }
 
 
-//-----------------------------------------------------------------------------
-// Name: WinMain()
-// Desc: The application's entry point
-//-----------------------------------------------------------------------------
+/********************************************************************
+Function Name: 	WinMain
+Purpose: 		Creates the application window
+Version: 		1.0
+Author: 		William Collins
+**********************************************************************/
 INT WINAPI wWinMain( HINSTANCE hInst, HINSTANCE, LPWSTR, INT )
 {
     UNREFERENCED_PARAMETER( hInst );
@@ -350,6 +397,12 @@ INT WINAPI wWinMain( HINSTANCE hInst, HINSTANCE, LPWSTR, INT )
     return 0;
 }
 
+/********************************************************************
+Function Name: 	resetPosition
+Purpose: 		Resets the object rotation
+Version: 		1.0
+Author: 		William Collins
+**********************************************************************/
 void resetPosition()
 {
 	g_config.xAngle = 0.0f;
@@ -357,10 +410,10 @@ void resetPosition()
 }
 
 /********************************************************************
-Function Name: 	DetermineMenuProps
+Function Name: 	DetermineConfiguration
 Purpose: 		Determine the menu properties based on the wParam of the 
 				event
-In parameters:	props - properties structure to modify
+In parameters:	hWnd - window to use for message boxes
 				wParam - the event code to analyze
 Version: 		1.0
 Author: 		William Collins
@@ -430,6 +483,12 @@ void DetermineConfiguration(HWND hWnd, WPARAM wParam)
 	Render();
 }
 
+/********************************************************************
+Function Name: 	loadXFile
+Purpose: 		Load an x-file as the object to view
+Version: 		1.0
+Author: 		William Collins
+**********************************************************************/
 int loadXFile(LPWSTR name)
 {
 	LPD3DXBUFFER pD3DXMtrlBuffer;

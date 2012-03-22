@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/AtmMasterNoMenu.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" Theme="AtmTheme" %>
 
 <asp:Content ContentPlaceHolderID="mainContent" runat="server">
-    
+    <h2>Login</h2>
     <table>
         <tr>
             <td>

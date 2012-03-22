@@ -22,7 +22,7 @@
             <asp:LinkButton PostBackUrl="~/Default.aspx" Text="Logout" runat="server" CausesValidation="false"/>
         </div>
         <div id="content">
-            <asp:ContentPlaceHolder ID="mainContent" runat="server" />
+            <asp:ContentPlaceHolder ID="mainContent" runat="server" ViewStateMode="Inherit" />
         </div>
         <div id="footer">
             <h5>William Collins - 040652633 - Winter 2012</h5>

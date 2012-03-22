@@ -1,9 +1,10 @@
-﻿Build started 3/16/2012 9:05:47 PM.
+﻿Build started 3/21/2012 9:15:50 AM.
      1>Project "C:\Users\Public\School_Stuff\Semester_5\Game Programming\Ass2\ass2\ass2\ass2.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
-         Touching "Release\ass2.unsuccessfulbuild".
+         Creating "Release\ass2.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
-         All outputs are up-to-date.
+         c:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ass2.cpp
+         ass2.cpp
        ResourceCompile:
          All outputs are up-to-date.
        Link:
@@ -22,4 +23,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.15
+Time Elapsed 00:00:01.34
