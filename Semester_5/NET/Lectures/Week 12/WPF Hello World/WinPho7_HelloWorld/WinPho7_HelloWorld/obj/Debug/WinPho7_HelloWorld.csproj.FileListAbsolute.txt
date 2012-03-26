@@ -1,0 +1,13 @@
+c:\users\justin\desktop\WinPho7_HelloWorld\WinPho7_HelloWorld\Bin\Debug\ApplicationIcon.png
+c:\users\justin\desktop\WinPho7_HelloWorld\WinPho7_HelloWorld\Bin\Debug\Background.png
+c:\users\justin\desktop\WinPho7_HelloWorld\WinPho7_HelloWorld\Bin\Debug\WinPho7_HelloWorld.dll
+c:\users\justin\desktop\WinPho7_HelloWorld\WinPho7_HelloWorld\Bin\Debug\WinPho7_HelloWorld.pdb
+c:\users\justin\desktop\WinPho7_HelloWorld\WinPho7_HelloWorld\Bin\Debug\AppManifest.xaml
+c:\users\justin\desktop\WinPho7_HelloWorld\WinPho7_HelloWorld\Bin\Debug\WinPho7_HelloWorld.xap
+c:\users\justin\desktop\WinPho7_HelloWorld\WinPho7_HelloWorld\obj\Debug\ResolveAssemblyReference.cache
+c:\users\justin\desktop\WinPho7_HelloWorld\WinPho7_HelloWorld\obj\Debug\App.g.i.cs
+c:\users\justin\desktop\WinPho7_HelloWorld\WinPho7_HelloWorld\obj\Debug\MainPage.g.i.cs
+c:\users\justin\desktop\WinPho7_HelloWorld\WinPho7_HelloWorld\obj\Debug\WinPho7_HelloWorld.g.resources
+c:\users\justin\desktop\WinPho7_HelloWorld\WinPho7_HelloWorld\obj\Debug\WinPho7_HelloWorld.dll
+c:\users\justin\desktop\WinPho7_HelloWorld\WinPho7_HelloWorld\obj\Debug\WinPho7_HelloWorld.pdb
+c:\users\justin\desktop\WinPho7_HelloWorld\WinPho7_HelloWorld\obj\Debug\XapCacheFile.xml

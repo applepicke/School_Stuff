@@ -1,0 +1,17 @@
+C:\Users\justin\Documents\Algonquin\Teaching\10F_CST8223\Lectures\Week 13\Data Binding\Data Binding\bin\Debug\Data Binding.exe
+C:\Users\justin\Documents\Algonquin\Teaching\10F_CST8223\Lectures\Week 13\Data Binding\Data Binding\bin\Debug\Data Binding.pdb
+C:\Users\justin\Documents\Algonquin\Teaching\10F_CST8223\Lectures\Week 13\Data Binding\Data Binding\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\justin\Documents\Algonquin\Teaching\10F_CST8223\Lectures\Week 13\Data Binding\Data Binding\obj\x86\Debug\MainWindow.baml
+C:\Users\justin\Documents\Algonquin\Teaching\10F_CST8223\Lectures\Week 13\Data Binding\Data Binding\obj\x86\Debug\MainWindow.g.cs
+C:\Users\justin\Documents\Algonquin\Teaching\10F_CST8223\Lectures\Week 13\Data Binding\Data Binding\obj\x86\Debug\App.g.cs
+C:\Users\justin\Documents\Algonquin\Teaching\10F_CST8223\Lectures\Week 13\Data Binding\Data Binding\obj\x86\Debug\Data Binding_MarkupCompile.cache
+C:\Users\justin\Documents\Algonquin\Teaching\10F_CST8223\Lectures\Week 13\Data Binding\Data Binding\obj\x86\Debug\Data Binding.g.resources
+C:\Users\justin\Documents\Algonquin\Teaching\10F_CST8223\Lectures\Week 13\Data Binding\Data Binding\obj\x86\Debug\Data_Binding.Properties.Resources.resources
+C:\Users\justin\Documents\Algonquin\Teaching\10F_CST8223\Lectures\Week 13\Data Binding\Data Binding\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\justin\Documents\Algonquin\Teaching\10F_CST8223\Lectures\Week 13\Data Binding\Data Binding\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\justin\Documents\Algonquin\Teaching\10F_CST8223\Lectures\Week 13\Data Binding\Data Binding\obj\x86\Debug\Data Binding.exe
+C:\Users\justin\Documents\Algonquin\Teaching\10F_CST8223\Lectures\Week 13\Data Binding\Data Binding\obj\x86\Debug\Data Binding.pdb
+C:\Users\justin\Documents\Algonquin\Teaching\10F_CST8223\Lectures\Week 13\Data Binding\Data Binding\bin\Debug\Data Binding.exe.config
+C:\Users\Public\School_Stuff\Semester_5\NET\Lectures\Week 13\Data Binding\Data Binding\Data Binding\bin\Debug\Data Binding.exe.config
+C:\Users\Public\School_Stuff\Semester_5\NET\Lectures\Week 13\Data Binding\Data Binding\Data Binding\obj\x86\Debug\Data Binding.exe
+C:\Users\Public\School_Stuff\Semester_5\NET\Lectures\Week 13\Data Binding\Data Binding\Data Binding\obj\x86\Debug\Data Binding.pdb

@@ -1,0 +1,29 @@
+/* 
+    Document   : user-cruds (JSF)
+    Created on : 3/23/2012
+    Author     : Willy Collins
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root { 
+    display: block;
+}
+
+.errors {
+    font-style: italic;
+    color: red;
+}
+
+body {
+    background-color: white;
+    font-family: Arial;
+}
+
+head {
+    font-family: Arial;
+}

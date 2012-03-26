@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silverlight_HelloWorld", "Silverlight_HelloWorld\Silverlight_HelloWorld.csproj", "{410BEBE1-B1C2-4B2B-8346-916F12282720}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Silverlight_HelloWorld.Web", "Silverlight_HelloWorld.Web\", "{F5274838-69BA-4A2F-85E5-0AC013ED5B59}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/Silverlight_HelloWorld.Web"
+		Debug.AspNetCompiler.PhysicalPath = "Silverlight_HelloWorld.Web\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Silverlight_HelloWorld.Web\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/Silverlight_HelloWorld.Web"
+		Release.AspNetCompiler.PhysicalPath = "Silverlight_HelloWorld.Web\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\Silverlight_HelloWorld.Web\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "52451"
+		DefaultWebSiteLanguage = "Visual C#"
+		ProjOutputReferences = "{410BEBE1-B1C2-4B2B-8346-916F12282720}|ClientBin|false;"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{410BEBE1-B1C2-4B2B-8346-916F12282720}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{410BEBE1-B1C2-4B2B-8346-916F12282720}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{410BEBE1-B1C2-4B2B-8346-916F12282720}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{410BEBE1-B1C2-4B2B-8346-916F12282720}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5274838-69BA-4A2F-85E5-0AC013ED5B59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5274838-69BA-4A2F-85E5-0AC013ED5B59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5274838-69BA-4A2F-85E5-0AC013ED5B59}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5274838-69BA-4A2F-85E5-0AC013ED5B59}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

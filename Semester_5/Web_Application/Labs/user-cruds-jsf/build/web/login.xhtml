@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+    Document   : login
+    Created on : 3/23/2012
+    Author     : Willy Collins
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <f:view>
+        <h:head>
+            <title>#{msgs.heading}</title>
+            <link rel="stylesheet" href="resources/css/stylesheet.css" type="text/css" />
+        </h:head>
+        <h:body>
+          <h:form id="LoginForm">
+            <h3>#{msgs.heading}</h3>
+            <table>
+               <tr>
+                  <td>#{msgs.username}</td>
+                  <td>
+                     <h:inputText id="username"
+                                  label="#{msgs.username}"
+                                  required="true"
+                                  value="#{loginController.username}" />
+                  </td>
+               </tr>
+               <tr>
+                  <td>#{msgs.password}</td>
+                  <td>
+                     <h:inputSecret id="password"
+                                    label="#{msgs.password}"
+                                    required="true"
+                                    value="#{loginController.password}" />
+                  </td>
+               </tr>
+            </table>
+            <h:messages errorClass="errors" />
+            <p>
+               <h:commandButton action="#{loginController.doAuthenticate}"
+                                value="#{msgs.login}" />
+            </p>
+         </h:form>
+        </h:body>
+    </f:view>
+</html>
