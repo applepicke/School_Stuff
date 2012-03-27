@@ -1,7 +1,7 @@
 ﻿<Window x:Class="Assignment3.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Willy's Media Madness" Height="350" Width="525">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition />
@@ -12,5 +12,24 @@
             <ColumnDefinition />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
+        
+        <StackPanel Grid.Row="0" Grid.Column="0">
+            <Button Width="100" Click="OpenMedia">Open Files</Button>
+            <ListView x:Name="playlist"></ListView>
+        </StackPanel>
+        
+        <MediaElement x:Name="media" Grid.Row="0" Grid.Column="1">
+            
+            
+        </MediaElement>
+        
+        <Label x:Name="currentSong" Grid.Row="1" Grid.Column="0">
+            
+        </Label>
+        
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <Button x:Name="stopButton" Width="100" Click="StopMedia">Stop</Button>
+            <Button x:Name="playButton" Width="100" Click="PlayMedia">Play</Button>
+        </StackPanel>
     </Grid>
 </Window>

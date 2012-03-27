@@ -1,0 +1,13 @@
+C:\Users\Public\School_Stuff\Semester_5\NET\Assignments\Assignment3\Assignment3\bin\Debug\Assignment3.exe
+C:\Users\Public\School_Stuff\Semester_5\NET\Assignments\Assignment3\Assignment3\bin\Debug\Assignment3.pdb
+C:\Users\Public\School_Stuff\Semester_5\NET\Assignments\Assignment3\Assignment3\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Public\School_Stuff\Semester_5\NET\Assignments\Assignment3\Assignment3\obj\x86\Debug\MainWindow.baml
+C:\Users\Public\School_Stuff\Semester_5\NET\Assignments\Assignment3\Assignment3\obj\x86\Debug\MainWindow.g.cs
+C:\Users\Public\School_Stuff\Semester_5\NET\Assignments\Assignment3\Assignment3\obj\x86\Debug\App.g.cs
+C:\Users\Public\School_Stuff\Semester_5\NET\Assignments\Assignment3\Assignment3\obj\x86\Debug\Assignment3_MarkupCompile.cache
+C:\Users\Public\School_Stuff\Semester_5\NET\Assignments\Assignment3\Assignment3\obj\x86\Debug\Assignment3.g.resources
+C:\Users\Public\School_Stuff\Semester_5\NET\Assignments\Assignment3\Assignment3\obj\x86\Debug\Assignment3.Properties.Resources.resources
+C:\Users\Public\School_Stuff\Semester_5\NET\Assignments\Assignment3\Assignment3\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Public\School_Stuff\Semester_5\NET\Assignments\Assignment3\Assignment3\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Public\School_Stuff\Semester_5\NET\Assignments\Assignment3\Assignment3\obj\x86\Debug\Assignment3.exe
+C:\Users\Public\School_Stuff\Semester_5\NET\Assignments\Assignment3\Assignment3\obj\x86\Debug\Assignment3.pdb
