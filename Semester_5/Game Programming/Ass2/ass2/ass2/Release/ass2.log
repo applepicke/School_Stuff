@@ -1,21 +1,22 @@
-﻿Build started 3/21/2012 9:15:50 AM.
+﻿Build started 3/22/2012 12:01:29 PM.
      1>Project "C:\Users\Public\School_Stuff\Semester_5\Game Programming\Ass2\ass2\ass2\ass2.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Release\ass2.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
-         c:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ass2.cpp
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Configuration.h ass2.cpp
+         Configuration.h
          ass2.cpp
        ResourceCompile:
-         All outputs are up-to-date.
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /D _UNICODE /D UNICODE /l"0x0409" /nologo /fo"Release\menu.res" menu.rc 
        Link:
-         c:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Public\School_Stuff\Semester_5\Game Programming\Ass2\ass2\Release\ass2.exe" /INCREMENTAL:NO /NOLOGO d3d9.lib d3dx10d.lib d3dx9d.lib dxerr.lib dxguid.lib winmm.lib comctl32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release\ass2.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Public\School_Stuff\Semester_5\Game Programming\Ass2\ass2\Release\ass2.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Public\School_Stuff\Semester_5\Game Programming\Ass2\ass2\Release\ass2.lib" /MACHINE:X86 Release\menu.res
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Public\School_Stuff\Semester_5\Game Programming\Ass2\ass2\Release\ass2.exe" /INCREMENTAL:NO /NOLOGO d3d9.lib d3dx10d.lib d3dx9d.lib dxerr.lib dxguid.lib winmm.lib comctl32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release\ass2.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Public\School_Stuff\Semester_5\Game Programming\Ass2\ass2\Release\ass2.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Public\School_Stuff\Semester_5\Game Programming\Ass2\ass2\Release\ass2.lib" /MACHINE:X86 Release\menu.res
          Release\ass2.obj
          Release\Configuration.obj
          Generating code
          Finished generating code
          ass2.vcxproj -> C:\Users\Public\School_Stuff\Semester_5\Game Programming\Ass2\ass2\Release\ass2.exe
        Manifest:
-         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\Public\School_Stuff\Semester_5\Game Programming\Ass2\ass2\Release\ass2.exe;#1" /manifest Release\ass2.exe.intermediate.manifest
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\Public\School_Stuff\Semester_5\Game Programming\Ass2\ass2\Release\ass2.exe;#1" /manifest Release\ass2.exe.intermediate.manifest
        FinalizeBuildStatus:
          Deleting file "Release\ass2.unsuccessfulbuild".
          Touching "Release\ass2.lastbuildstate".
@@ -23,4 +24,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.34
+Time Elapsed 00:00:03.90
