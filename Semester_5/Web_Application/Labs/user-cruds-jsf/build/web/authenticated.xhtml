@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+    Document   : authenticated
+    Created on : 3/23/2012
+    Author     : William Collins
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Login Success</title>
+        <link rel="stylesheet" href="resources/css/stylesheet.css" type="text/css" />
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:form rendered="#{loginController.isAuthenticated}" >
+                <h2>#{msgs.username} #{loginController.username}</h2>
+                <h3>Status: authenticated</h3>
+                <h:commandButton action="#{loginController.doLogout}"
+                                 value="#{msgs.logout}" />
+            </h:form>
+
+            <h:form rendered="#{loginController.isAuthenticated == false}" >
+                <h2>Status: NOT AUTHENTICATED!!!</h2>
+                <h:commandButton action="#{loginController.doLogin}"
+                                 value="#{msgs.login}" />
+            </h:form>
+
+        </f:view>
+    </h:body>
+</html>

@@ -1,0 +1,357 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- Document: index.xhtml
+     Created on: 3/15/2012
+     Author: William Collins -->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.prime.com.tr/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <link href="./resources/css/cssJarTool.css" rel="stylesheet" type="text/css" />
+        <title>#{msg.title}</title>
+        <meta name="author" content="#{about.studentName}"/>
+    </h:head>
+    <h:body>
+        
+        <h:form id="dialogForm">
+            <p:poll autoStart="true"
+                    interval="1"
+                    action="jarTable.filter()"/>
+            <!-- DETAILS -->
+            <p:dialog id="detailsDialog"
+                      modal="true"
+                      header="#{msg.jar_entry_details_dialog}"
+                      widgetVar="details" 
+                      minWidth="500"
+                      minHeight="200"
+                      >
+
+                <h:panelGrid columns="2"
+                             id="details">
+                    <h:outputLabel value="#{msg.column_jar_entry}: "/>
+                    <h:outputText id="name" value="#{controller.model.detailEntry.name}"/> 
+                    <h:outputLabel value="#{msg.column_size}:"/>
+                    <h:outputText id="size" value="#{controller.model.detailEntry.size}">
+                        <f:convertNumber pattern="000000"/>
+                    </h:outputText>
+                    <h:outputLabel value="#{msg.column_compressed_size}: "/>
+                    <h:outputText id="compressedSize" value="#{controller.model.detailEntry.compressedSize}">
+                        <f:convertNumber pattern="000000"/>
+                    </h:outputText> 
+                    <h:outputLabel value="#{msg.column_modification_time}: "/>
+                    <h:outputText id="time" value="#{controller.model.detailEntry.time}">
+                        <f:convertDateTime pattern="MMM d, yyyy (h:mm:ss a)"
+                                           timeZone="EST"
+                                           type="both" />
+                    </h:outputText>
+                </h:panelGrid>
+
+            </p:dialog>
+
+            <!-- NEW JAR -->
+            <p:dialog id="newJarDialog"
+                      header="#{msg.menu_jar_new_dialog}"
+                      modal="true"
+                      widgetVar="newJar">
+                <h:outputLabel value="#{msg.menu_jar_new_jarname}"/>
+                <h:inputText value="#{controller.model.newJarFileName}"/>               
+                <p:commandButton id="newJarButton"
+                                 value="#{msg.menu_jar_new_newbutton}"
+                                 onclick="newJar.hide();confirmClobber.show()"
+                                 update="jarForm:jarEntries,jarForm:mainMenu"/>
+            </p:dialog>
+
+            <!-- CONFIRM OVERWRITE DIALOG -->
+            <p:confirmDialog id="confirmDialog"
+                             message="#{msg.new_jar_confirm_dialog_message} "
+                             widgetVar="confirmClobber">              
+                <p:commandButton value="#{msg.new_jar_confirm_dialog_yes}"
+                                 actionListener="#{controller.model.createJar}"
+                                 onclick="confirmClobber.hide()"
+                                 update="jarForm:jarEntries,jarForm:mainMenu"/>
+                <p:commandButton value="#{msg.new_jar_confirm_dialog_no}"
+                                 onclick="confirmClobber.hide()"/>
+            </p:confirmDialog>
+
+            <!-- JAR UPLOAD -->
+            <p:dialog id="jarUploadDialog"
+                      header="#{msg.menu_jar_open_dialog}"
+                      modal="true"
+                      widgetVar="upload"
+                      width="400">
+                <p:fileUpload label="#{msg.contents_addfile_browse}"   
+                              description="(*.jar)"
+                              allowTypes="*.jar;"
+                              fileUploadListener="#{controller.model.loadJar}"
+                              update="jarForm:jarEntries,jarForm:manifestAttributes,jarForm:runButton,jarForm:mainMenu"
+                              auto="true"/>         
+            </p:dialog>
+
+            <!-- OPTIONS -->
+            <p:dialog id="optionsDialog" 
+                      header="#{msg.menu_options_dialog}" 
+                      modal="true" 
+                      widgetVar="options"> 
+                <h:panelGrid id="options" columns="2">
+                    <h:selectBooleanCheckbox value="#{controller.model.options.controlColumn}">
+                        <p:ajax update="jarForm:jarEntries"/>
+                    </h:selectBooleanCheckbox>
+                    <h:outputLabel value="#{msg.menu_options_controlcolumn}" />  
+
+                    <h:selectBooleanCheckbox value="#{controller.model.options.detailColumns}">
+                        <p:ajax update="jarForm:jarEntries"/>
+                    </h:selectBooleanCheckbox>
+                    <h:outputLabel value="#{msg.menu_options_detailcolumns}" />  
+
+                    <h:selectBooleanCheckbox value="#{controller.model.options.filters}">
+                        <p:ajax update="jarForm:jarEntries"/>
+                    </h:selectBooleanCheckbox>
+                    <h:outputLabel value="#{msg.menu_options_filters}" />
+                </h:panelGrid>
+            </p:dialog>
+
+            <!-- ABOUT -->
+            <p:dialog id="aboutDialog"
+                      header="#{msg.menu_about_dialog}"
+                      modal="true"
+                      widgetVar="about"
+                      width="700">
+                <h:panelGrid border="3" columns="2">
+                    <h:outputLabel id="courseLabel"
+                                   for="course"
+                                   value="${about.courseLabel}" />
+                    <h:outputText id="course"
+                                  value="${about.course}" />
+                    <h:outputLabel id="professorLabel"
+                                   for="professor"
+                                   value="${about.professorLabel}" />
+                    <h:outputLink value="mailto:${about.professor}">
+                        <h:outputText id="professor" value="${about.professor}" />
+                    </h:outputLink>
+                    <h:outputLabel id="studentNameLabel"
+                                   for="studentName"
+                                   value="${about.studentNameLabel}" />
+                    <h:outputText id="studentName"
+                                  value="${about.studentName}" />
+                    <h:outputLabel id="studentNumberLabel"
+                                   for="studentNumber"
+                                   value="${about.studentNumberLabel}" />
+                    <h:outputText id="studentNumber"
+                                  value="${about.studentNumber}" />
+                    <h:outputLabel id="studentUsernameLabel"
+                                   for="studentUsername"
+                                   value="${about.studentUsernameLabel}" />
+                    <h:outputText id="studentUsername"
+                                  value="${about.studentUsername}" />
+                    <h:outputLabel id="studentEmailLabel"
+                                   for="studentEmail"
+                                   value="${about.studentEmailLabel}" />
+                    <h:outputLink value="mailto:${about.studentEmail}">
+                        <h:outputText id="studentEmail" value="${about.studentEmail}" />
+                    </h:outputLink>
+                </h:panelGrid>
+            </p:dialog>
+
+        </h:form>
+
+        <h:form id="jarForm">
+
+            <!-- MENU -->
+            <p:menubar id="mainMenu">
+                <p:submenu label="#{msg.menu_jar}">
+                    <p:menuitem value="#{msg.menu_jar_new}" onclick="newJar.show()"/>
+                    <p:menuitem value="#{msg.menu_jar_open}" onclick="upload.show()"/>
+                    <p:menuitem id="downloadButton"
+                                value="#{msg.menu_jar_dl}"
+                                ajax="false"
+                                rendered="#{controller.model.jarEntries.size() > 0}">       
+                        <h:commandLink value="#{msg.menu_jar_dl}">
+                            <p:fileDownload value="#{controller.model.downloadJar()}"/>
+                        </h:commandLink>
+                    </p:menuitem>
+                </p:submenu>
+                <p:menuitem value="#{msg.menu_options}" onclick="options.show()"/>
+                <p:menuitem value="#{msg.menu_about}" onclick="about.show()"/>
+            </p:menubar>   
+
+
+            <!-- JAR TOOL AREA -->
+            <p:tabView id="tabView"
+                       dynamic="true">
+
+                <p:tab title="#{msg.contents}">
+
+                    <!-- ADD FILES PANEL -->
+                    <p:panel id="newFilePanel"
+                             header="#{msg.contents_addfile}">
+                        <h:panelGrid columns="3">
+                            <p:fileUpload label="#{msg.contents_addfile_browse}"   
+                                          fileUploadListener="#{controller.model.addFileToJar}"
+                                          update="jarEntries,manifestEntries,mainMenu"/>
+                            <h:outputText value="#{msg.contents_addfile_compression}"/>
+                            <h:selectBooleanCheckbox value="#{controller.model.options.compression}">
+                                <p:ajax/>
+                            </h:selectBooleanCheckbox>
+                        </h:panelGrid>
+                    </p:panel>
+
+                    <!-- CONTENTS OF JAR -->
+
+                    <p:dataTable id="jarEntries" 
+                                 var="entry"
+                                 value="#{controller.model.jarEntries}"
+                                 paginator="true"
+                                 emptyMessage="#{msg.empty_list}"
+                                 rows="10"
+                                 paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"  
+                                 rowsPerPageTemplate="5,10,15"
+                                 widgetVar="jarTable">
+                        
+                        <!-- SEARCH BAR -->
+                        <f:facet name="header">
+
+                            <p:outputPanel>
+                                <h:panelGrid columns="2" class="table">
+                                    <h:panelGroup style="float: right">
+                                        <h:outputLabel for="globalFilter"
+                                                       value="#{msg.search_label} "/>
+                                        <p:inputText id="globalFilter"
+                                                     onkeyup="jarTable.filter()"/>
+                                    </h:panelGroup>
+                                    <p:commandButton id="hideControlColumn"
+                                                   title="#{msg.toggle_control_column}"
+                                                   actionListener="#{controller.toggleControlColumn}"
+                                                   image="ui-icon-gear"
+                                                   update="jarEntries,dialogForm:options"/>
+                                </h:panelGrid>
+
+                            </p:outputPanel>
+
+
+                        </f:facet>
+
+                        <!-- SIZE -->
+                        <p:column headerText="#{msg.column_size}"
+                                  filterBy="#{entry.size}"
+                                  filterStyle="#{controller.filterStyle}"
+                                  rendered="#{controller.model.options.detailColumns}"
+                                  >
+                            <h:outputText value="#{entry.size}"
+                                          styleClass="#{controller.getEntryCssStyle(entry)}">
+                                <f:convertNumber pattern="000000"/>
+                            </h:outputText>
+                        </p:column>
+
+                        <!-- COMPRESSED SIZE -->
+                        <p:column headerText="#{msg.column_compressed_size}"
+                                  filterBy="#{entry.compressedSize}"
+                                  filterStyle="#{controller.filterStyle}"
+                                  rendered="#{controller.model.options.detailColumns}">
+                            <h:outputText value="#{entry.compressedSize}"
+                                          styleClass="#{controller.getEntryCssStyle(entry)}">
+                                <f:convertNumber pattern="000000"/>
+                            </h:outputText>
+                        </p:column>
+
+                        <!-- MODIFICATION TIME -->
+                        <p:column headerText="#{msg.column_modification_time}"
+                                  filterBy="#{entry.time}"
+                                  filterStyle="#{controller.filterStyle}"
+                                  rendered="#{controller.model.options.detailColumns}">
+                            <h:outputText value="#{entry.time}" 
+                                          styleClass="#{controller.getEntryCssStyle(entry)}">
+                                <f:convertDateTime pattern="MMM d, yyyy (h:mm:ss a)"
+                                                   timeZone="EST"
+                                                   type="both" />
+                            </h:outputText>
+                        </p:column>
+
+                        <!-- ENTRIES -->
+                        <p:column headerText="#{msg.column_jar_entry}"
+                                  filterBy="#{entry.name}"
+                                  filterStyle="#{controller.filterStyle}"
+                                  sortBy="#{entry.name}">                           
+                            <h:outputText value="#{entry.name}"
+                                          styleClass="#{controller.getEntryCssStyle(entry)}" />
+                        </p:column>
+
+
+
+                        <!-- CONTROL COLUMN -->
+                        <p:column style="width: 10%"
+                                  rendered="#{controller.model.options.controlColumn}">
+
+                            <h:panelGrid columns="3">
+                                <p:commandLink id="jarToolDetails"
+                                               styleClass="ui-icon ui-icon-search"
+                                               title="View"
+                                               onclick="details.show()"
+                                               actionListener="#{controller.model.setDetailEntry(entry)}"
+                                               update="dialogForm:details" > 
+                                </p:commandLink>
+
+                                <h:commandLink id="jarToolSave"
+                                               styleClass="ui-icon ui-icon-disk"
+                                               title="Save"
+                                               rendered="#{entry.directory == false}"
+                                               >
+                                    <p:fileDownload value="#{controller.model.saveFileFromJar(entry.name)}"/>
+                                </h:commandLink>
+
+                                <p:commandLink id="jarToolDelete"
+                                               styleClass="ui-icon ui-icon-trash"
+                                               title="Delete"
+                                               update="jarForm:jarEntries,downloadButton"
+                                               rendered="#{entry.directory == false and entry.name.equalsIgnoreCase(msg.manifest_entry) == false}" 
+                                               actionListener="#{controller.model.resetTable}"
+                                               >
+                                    <p:collector removeFrom="#{controller.model.jarEntries}"
+                                                 value="#{entry}"/>
+
+                                </p:commandLink>
+                            </h:panelGrid>  
+                        </p:column>
+
+                        <f:facet name="footer">
+                            <h:outputLabel value="#{msg.table_number_of_entries} " />
+                            <h:outputText value="#{controller.model.jarEntries.size()}"/>
+                        </f:facet>
+
+                    </p:dataTable>
+
+                </p:tab>
+
+                <!-- MANIFEST TAB -->
+                <p:tab title="#{msg.manifest}">
+                    <p:dataTable id="manifestAttributes"
+                                 var="attrib"
+                                 value="#{controller.model.manifestAttributes}"
+                                 emptyMessage="#{msg.manifest_empty_message}">
+
+                        <p:column headerText="#{msg.manifest_main_attribute}">
+                            <h:outputText value="#{attrib.key}"/>
+                        </p:column>
+                        <p:column headerText="#{msg.manifest_value}">
+                            <h:outputText value="#{attrib.value}"/>
+                        </p:column>
+
+                        <f:facet name="footer">
+                            <h:outputLabel value="#{msg.manifest_number_of_attributes} "/>
+                            <h:outputText value="#{controller.model.manifestAttributes.size()}"/>
+                        </f:facet>
+
+                    </p:dataTable>
+
+                    <p:commandButton value="#{msg.manifest_run}"
+                                     id="runButton"
+                                     disabled="#{controller.run == false}"
+                                     actionListener="#{controller.model.runJar}" />
+
+                </p:tab>            
+            </p:tabView>
+
+        </h:form>
+    </h:body>
+</html>
+

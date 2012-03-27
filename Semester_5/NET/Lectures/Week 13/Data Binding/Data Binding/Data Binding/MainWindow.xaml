@@ -1,0 +1,35 @@
+﻿<Window x:Class="Data_Binding.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" 
+        Height="250" 
+        Width="750">
+    
+    <Grid Name="RootLayout">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <ComboBox Name="comboBox" Grid.Column="0" Height="35" VerticalAlignment="Top">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Path=ProgramName}" />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+        <ListView Name="listView" Grid.Column="1">
+        </ListView>
+
+        <DataGrid Name="dataGrid" Grid.Column="2" AutoGenerateColumns="True" />
+        
+        <TextBlock Grid.Row="1" Grid.ColumnSpan="3" Text="{Binding ElementName=RootLayout, Path=ActualWidth}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{Binding ElementName=comboBox, Path=Height}" />
+    </Grid>
+</Window>

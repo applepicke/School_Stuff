@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data Binding", "Data Binding\Data Binding.csproj", "{70BD39AE-5823-481D-A481-F0B12D3305AB}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ASP Example", "ASP Example\", "{B3F0B98E-B698-45EA-8C64-BEB561169FC7}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/ASP Example"
+		Debug.AspNetCompiler.PhysicalPath = "ASP Example\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\ASP Example\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/ASP Example"
+		Release.AspNetCompiler.PhysicalPath = "ASP Example\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\ASP Example\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "3356"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{70BD39AE-5823-481D-A481-F0B12D3305AB}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{70BD39AE-5823-481D-A481-F0B12D3305AB}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{70BD39AE-5823-481D-A481-F0B12D3305AB}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{70BD39AE-5823-481D-A481-F0B12D3305AB}.Debug|x86.ActiveCfg = Debug|x86
+		{70BD39AE-5823-481D-A481-F0B12D3305AB}.Debug|x86.Build.0 = Debug|x86
+		{70BD39AE-5823-481D-A481-F0B12D3305AB}.Release|Any CPU.ActiveCfg = Release|x86
+		{70BD39AE-5823-481D-A481-F0B12D3305AB}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{70BD39AE-5823-481D-A481-F0B12D3305AB}.Release|Mixed Platforms.Build.0 = Release|x86
+		{70BD39AE-5823-481D-A481-F0B12D3305AB}.Release|x86.ActiveCfg = Release|x86
+		{70BD39AE-5823-481D-A481-F0B12D3305AB}.Release|x86.Build.0 = Release|x86
+		{B3F0B98E-B698-45EA-8C64-BEB561169FC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3F0B98E-B698-45EA-8C64-BEB561169FC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3F0B98E-B698-45EA-8C64-BEB561169FC7}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{B3F0B98E-B698-45EA-8C64-BEB561169FC7}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{B3F0B98E-B698-45EA-8C64-BEB561169FC7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B3F0B98E-B698-45EA-8C64-BEB561169FC7}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3F0B98E-B698-45EA-8C64-BEB561169FC7}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{B3F0B98E-B698-45EA-8C64-BEB561169FC7}.Release|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{B3F0B98E-B698-45EA-8C64-BEB561169FC7}.Release|Mixed Platforms.Build.0 = Debug|Any CPU
+		{B3F0B98E-B698-45EA-8C64-BEB561169FC7}.Release|x86.ActiveCfg = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

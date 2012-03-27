@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ATM" Class="ProgramDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=playdoh.algonquincollege.com;Initial Catalog=ATM;Persist Security Info=True;User ID=ATM" SettingsObjectName="Data_Binding.Properties.Settings" SettingsPropertyName="ATMConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Programs" Member="Programs">
+    <Type Name="Program">
+      <Column Name="StartDate" Type="System.DateTime" DbType="DateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ProgramCode" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ProgramName" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
