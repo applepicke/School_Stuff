@@ -1,22 +1,22 @@
-
-#
-#	Makefile for time project
-#
-
+# build option variables
 DEBUG = -g
+
+# specification of compiler and linker  
 CC = qcc
 LD = qcc
 
+# specifications for target platform and compiler version
 TARGET = -Vgcc_ntox86
-#TARGET = -Vgcc_ntoppcbe
 
-CFLAGS += $(DEBUG) $(TARGET) -w9
-LDFLAGS+= $(DEBUG) $(TARGET)
+# compile and link options
+CFLAGS += $(TARGET) $(DEBUG) -w9
+LDFLAGS+= $(TARGET) $(DEBUG)
 
-BINS = event_server_soln event_client_soln
+#Binaries to be built
+BINS = server client
 
+#Make target build all
 all: $(BINS)
 
-clean:
-	rm -f *.o $(BINS) *.tmp
-
+server.o: server.c my_hdr.h
+client.o: client.c my_hdr.h

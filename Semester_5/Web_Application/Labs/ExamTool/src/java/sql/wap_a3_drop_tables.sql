@@ -1,0 +1,2 @@
+DROP TABLE Exams;
+DROP TABLE Questions;

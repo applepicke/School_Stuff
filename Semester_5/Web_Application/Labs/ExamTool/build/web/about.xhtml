@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <body>
+        <h:panelGrid border="3" columns="2">
+            <h:outputLabel id="courseLabel"
+                           for="course"
+                           value="${about.courseLabel}" />
+            <h:outputText id="course"
+                          value="${about.course}" />
+            <h:outputLabel id="professorLabel"
+                           for="professor"
+                           value="${about.professorLabel}" />
+            <h:outputLink value="mailto:${about.professor}">
+                <h:outputText id="professor" value="${about.professor}" />
+            </h:outputLink>
+            <h:outputLabel id="studentNameLabel"
+                           for="studentName"
+                           value="${about.studentNameLabel}" />
+            <h:outputText id="studentName"
+                          value="${about.studentName}" />
+            <h:outputLabel id="studentNumberLabel"
+                           for="studentNumber"
+                           value="${about.studentNumberLabel}" />
+            <h:outputText id="studentNumber"
+                          value="${about.studentNumber}" />
+            <h:outputLabel id="studentUsernameLabel"
+                           for="studentUsername"
+                           value="${about.studentUsernameLabel}" />
+            <h:outputText id="studentUsername"
+                          value="${about.studentUsername}" />
+            <h:outputLabel id="studentEmailLabel"
+                           for="studentEmail"
+                           value="${about.studentEmailLabel}" />
+            <h:outputLink value="mailto:${about.studentEmail}">
+                <h:outputText id="studentEmail" value="${about.studentEmail}" />
+            </h:outputLink>
+        </h:panelGrid>
+
+    </body>
+</html>

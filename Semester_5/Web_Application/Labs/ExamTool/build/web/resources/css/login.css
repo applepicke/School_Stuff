@@ -1,0 +1,21 @@
+/* 
+    Document   : login
+    Created on : Apr 2, 2012, 2:22:46 PM
+    Author     : willy
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+.loginArea {
+    margin-left: auto;
+    margin-right: auto;
+    width: 450px;
+    margin-top: 20%;
+    margin-bottom: 20%;
+    text-align: center;
+}
+
+#aboutlink {
+    margin-right: 20px;
+    margin-bottom: 20px;
+}

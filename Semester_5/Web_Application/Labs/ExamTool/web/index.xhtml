@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.prime.com.tr/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>${msgs.title}</title>
+        <link href="./resources/css/login.css" rel="stylesheet" type="text/css"/>
+    </h:head>
+    <h:body>
+        <h:form id="loginForm">
+            <div class="loginArea">
+                
+                <h:outputLabel id="usernameLabel" for="username" value="${msgs.username} "/>
+                <p:inputText id="username"/>
+                <p/>
+                <h:outputLabel id="passwordLabel" for="password" value="${msgs.password} "/>
+                <p:password id="password" feedback="false" minLength="6" />
+                <p/>
+                <p:commandButton id="loginButton" value="${msgs.login}"/>
+                <p:commandButton id="aboutlink" value="${msgs.about}" onclick="about.show()"/>
+
+            </div>
+
+            <p:dialog id="aboutDialog"
+                      widgetVar="about"
+                      width="500"
+                      >
+                <ui:include src="about.xhtml"/>
+            </p:dialog>
+            
+        </h:form>
+    </h:body>
+</html>
+
