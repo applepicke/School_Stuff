@@ -13,9 +13,39 @@
     margin-top: 20%;
     margin-bottom: 20%;
     text-align: center;
+    
+    padding: 20px;
+    border: 2px solid darkslategrey;
+    border-radius: 10px;
 }
 
 #aboutlink {
     margin-right: 20px;
     margin-bottom: 20px;
+}
+
+.label {
+    font-weight: bold;
+    color: darkslategrey;
+    font-size: 15px;
+}
+
+.about {
+    border: 2px solid darkslategrey;
+    border-radius: 10px;
+    
+    color: darkslategrey;
+    font-size: 15px;
+}
+
+.header {
+    font-weight: bold;
+}
+
+table.about td {
+    border: 0;
+}
+
+.errors {
+    font-size: 12px;
 }

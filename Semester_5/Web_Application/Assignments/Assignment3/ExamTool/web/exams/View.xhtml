@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewExamsTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewExamsLabel_examTitle}"/>
+                    <h:outputText value="#{examsController.selected.examTitle}" title="#{bundle.ViewExamsTitle_examTitle}"/>
+                    <h:outputText value="#{bundle.ViewExamsLabel_description}"/>
+                    <h:outputText value="#{examsController.selected.description}" title="#{bundle.ViewExamsTitle_description}"/>
+                    <h:outputText value="#{bundle.ViewExamsLabel_examDate}"/>
+                    <h:outputText value="#{examsController.selected.examDate}" title="#{bundle.ViewExamsTitle_examDate}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewExamsLabel_duration}"/>
+                    <h:outputText value="#{examsController.selected.duration}" title="#{bundle.ViewExamsTitle_duration}">
+                        <f:convertDateTime pattern="HH:mm:ss" />
+                    </h:outputText>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{examsController.destroyAndView}" value="#{bundle.ViewExamsDestroyLink}"/>
+                <br />
+                <br />
+                <h:commandLink action="Edit" value="#{bundle.ViewExamsEditLink}"/>
+                <br />
+                <h:commandLink action="#{examsController.prepareCreate}" value="#{bundle.ViewExamsCreateLink}" />
+                <br />
+                <h:commandLink action="#{examsController.prepareList}" value="#{bundle.ViewExamsShowAllLink}"/>
+                <br />
+                <br />
+                <h:commandLink value="#{bundle.ViewExamsIndexLink}" action="/index" immediate="true" />
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

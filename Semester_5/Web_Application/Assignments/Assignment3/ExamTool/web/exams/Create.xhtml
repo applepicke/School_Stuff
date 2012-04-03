@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateExamsTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateExamsLabel_examTitle}" for="examTitle" />
+                    <h:inputText id="examTitle" value="#{examsController.selected.examTitle}" title="#{bundle.CreateExamsTitle_examTitle}" required="true" requiredMessage="#{bundle.CreateExamsRequiredMessage_examTitle}"/>
+                    <h:outputLabel value="#{bundle.CreateExamsLabel_description}" for="description" />
+                    <h:inputText id="description" value="#{examsController.selected.description}" title="#{bundle.CreateExamsTitle_description}" />
+                    <h:outputLabel value="#{bundle.CreateExamsLabel_examDate}" for="examDate" />
+                    <h:inputText id="examDate" value="#{examsController.selected.examDate}" title="#{bundle.CreateExamsTitle_examDate}" required="true" requiredMessage="#{bundle.CreateExamsRequiredMessage_examDate}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateExamsLabel_duration}" for="duration" />
+                    <h:inputText id="duration" value="#{examsController.selected.duration}" title="#{bundle.CreateExamsTitle_duration}" required="true" requiredMessage="#{bundle.CreateExamsRequiredMessage_duration}">
+                        <f:convertDateTime pattern="HH:mm:ss" />
+                    </h:inputText>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{examsController.create}" value="#{bundle.CreateExamsSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{examsController.prepareList}" value="#{bundle.CreateExamsShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:commandLink value="#{bundle.CreateExamsIndexLink}" action="/index" immediate="true" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

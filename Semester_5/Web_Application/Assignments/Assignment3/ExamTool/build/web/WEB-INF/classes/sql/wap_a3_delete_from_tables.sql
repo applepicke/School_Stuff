@@ -1,0 +1,3 @@
+DELETE FROM Questions;
+DELETE FROM Exams;
+DELETE FROM Users;

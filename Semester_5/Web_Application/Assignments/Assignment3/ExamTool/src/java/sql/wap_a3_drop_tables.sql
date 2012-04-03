@@ -1,2 +1,3 @@
-DROP TABLE Exams;
 DROP TABLE Questions;
+DROP TABLE Exams;
+DROP TABLE Users;
