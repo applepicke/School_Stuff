@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore">
+  <widgets xsi:type="model:Browser" id="1" x="88" y="57" width="857" height="1435" text="Entries Listing&#xD;&#xA;http://www.ncrdrugtrends.org/secure/EditEntry.aspx" measuredWidth="857" measuredHeight="1435"/>
+  <widgets xsi:type="model:Panel" id="2" x="160" y="108" width="689" height="1380" measuredWidth="689" measuredHeight="1380"/>
+  <widgets xsi:type="model:Placeholder" id="3" x="160" y="108" width="113" height="69" text="Logo" measuredWidth="113" measuredHeight="69"/>
+  <widgets xsi:type="model:Label" id="4" x="272" y="124" width="550" text="NCR Drug Trend Mapping System " measuredWidth="550" measuredHeight="53">
+    <font size="24"/>
+  </widgets>
+  <widgets xsi:type="model:ButtonBar" id="5" x="160" y="176" width="689" text="Entries, Zones, Reports, Contributors, About, Administration" measuredWidth="689" measuredHeight="27" selection="0">
+    <font/>
+    <items x="0" y="0" width="93" height="27" text="Entries"/>
+    <items x="93" y="0" width="87" height="27" text="Zones"/>
+    <items x="180" y="0" width="101" height="27" text="Reports"/>
+    <items x="281" y="0" width="146" height="27" text="Contributors"/>
+    <items x="427" y="0" width="89" height="27" text="About"/>
+    <items x="516" y="0" width="173" height="27" text="Administration"/>
+  </widgets>
+  <widgets xsi:type="model:Breadcrumbs" id="6" x="170" y="202" text="Home, Entries, Edit Entries" measuredWidth="169" measuredHeight="23">
+    <font/>
+    <items x="0" y="0" width="33" height="23" text="Home"/>
+    <items x="53" y="0" width="35" height="23" text="Entries"/>
+    <items x="108" y="0" width="58" height="23" text="Edit Entries"/>
+  </widgets>
+  <widgets xsi:type="model:HLine" id="7" x="160" y="224" width="689" measuredWidth="689" measuredHeight="6"/>
+  <widgets xsi:type="model:Group" id="34" x="173" y="408" width="666" height="269" text="Zone" measuredWidth="666" measuredHeight="269">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Map" id="31" x="192" y="437" width="609" measuredWidth="609" measuredHeight="200"/>
+  <widgets xsi:type="model:Label" id="32" x="209" y="644" text="Zone Name:" measuredWidth="70" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="33" x="191" y="243" text="Edit Entry" measuredWidth="106" measuredHeight="40">
+    <font size="18"/>
+  </widgets>
+  <widgets xsi:type="model:Combo" id="36" x="283" y="644" width="174" text="Zones" measuredWidth="174" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Group" id="37" x="173" y="282" width="666" height="111" text="Contribution Info" measuredWidth="666" measuredHeight="111">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="38" x="183" y="306" text="Organization:" measuredWidth="76" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="41" x="183" y="332" text="Contributor:" measuredWidth="70" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="42" x="304" y="306" text="Organization Name" measuredWidth="108" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="43" x="304" y="332" text="Contributor Name" measuredWidth="102" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="44" x="183" y="358" text="Date of Contribution:" measuredWidth="117" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:DateField" id="47" x="304" y="358" width="117" text="  MM/DD/YYYY" measuredWidth="117" measuredHeight="23"/>
+  <widgets xsi:type="model:Group" id="48" x="173" y="688" width="666" height="89" text="Source Demographic" measuredWidth="666" measuredHeight="89">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="49" x="183" y="712" text="Gender:" measuredWidth="46" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="50" x="183" y="738" text="Age:" measuredWidth="29" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Combo" id="57" x="272" y="712" width="140" text="Combo" measuredWidth="140" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Combo" id="58" x="272" y="738" width="140" text="Combo" measuredWidth="140" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Group" id="59" x="173" y="792" width="666" height="225" text="Drug Information" measuredWidth="666" measuredHeight="225">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="60" x="183" y="816" text="Drug Type:" measuredWidth="63" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="61" x="183" y="842" text="Drug:" measuredWidth="34" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Combo" id="62" x="299" y="816" width="140" text="Combo" measuredWidth="140" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Combo" id="63" x="299" y="842" width="140" text="Combo" measuredWidth="140" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="64" x="183" y="870" text="Drug Street Name:" measuredWidth="102" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="65" x="183" y="896" text="Drug Form: " measuredWidth="68" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Combo" id="66" x="299" y="870" width="140" text="Combo" measuredWidth="140" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Combo" id="67" x="299" y="896" width="140" text="Combo" measuredWidth="140" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="68" x="183" y="924" text="Drug Colour: " measuredWidth="76" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="69" x="183" y="950" text="Pill Stamp: " measuredWidth="64" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Combo" id="70" x="299" y="924" width="140" text="Combo" measuredWidth="140" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Combo" id="71" x="299" y="950" width="140" text="Combo" measuredWidth="140" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="72" x="183" y="977" text="Pill Shape: " measuredWidth="62" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Combo" id="73" x="299" y="977" width="140" text="Combo" measuredWidth="140" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Group" id="74" x="173" y="1024" width="666" height="409" text="Additional Information" measuredWidth="666" measuredHeight="409">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="75" x="183" y="1048" text="Side Effects: " measuredWidth="71" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:List" id="76" x="191" y="1120" height="122" text="Item One&#xA;Item Three&#xA;Multiple&#xA;Selection&#xA;Works like this&#xA;For List, Table and Tree" measuredWidth="149" measuredHeight="122" verticalScrollbar="true">
+    <font/>
+    <items x="0" y="2" width="132" height="21" text="Item One"/>
+    <items x="0" y="23" width="132" height="21" text="Item Three"/>
+    <items x="0" y="44" width="132" height="21" text="Multiple"/>
+    <items x="0" y="65" width="132" height="21" text="Selection"/>
+    <items x="0" y="86" width="132" height="21" text="Works like this"/>
+    <items x="0" y="107" width="132" height="21" text="For List, Table and Tree"/>
+  </widgets>
+  <widgets xsi:type="model:SearchField" id="77" x="192" y="1095" width="147" text="Search, Add+" measuredWidth="147" measuredHeight="24"/>
+  <widgets xsi:type="model:List" id="78" x="392" y="1095" width="145" height="148" text="Something&#xA;Item Two&#xA;" measuredWidth="145" measuredHeight="148" verticalScrollbar="true">
+    <font/>
+    <items x="0" y="2" width="128" height="21" text="Something"/>
+    <items x="0" y="23" width="128" height="21" text="Item Two"/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="80" x="354" y="1157" text=">" measuredWidth="28" measuredHeight="25">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="82" x="352" y="1192" text="&lt;" measuredWidth="28" measuredHeight="25">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="83" x="194" y="1073" text="Available:" measuredWidth="56" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="84" x="392" y="1073" text="Selected:" measuredWidth="52" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:HLine" id="85" x="183" y="1069" width="639" measuredWidth="639" measuredHeight="6"/>
+  <widgets xsi:type="model:Label" id="86" x="183" y="1259" text="Comments" measuredWidth="64" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:HLine" id="87" x="183" y="1280" width="639" measuredWidth="639" measuredHeight="6"/>
+  <widgets xsi:type="model:TextArea" id="88" x="192" y="1295" width="630" height="106" text="A *paragraph* of text&#xA;A _second_ row of text" measuredWidth="630" measuredHeight="106">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="89" x="672" y="1440" text="Save Changes" measuredWidth="93" measuredHeight="25">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="90" x="783" y="1440" text="Cancel" measuredWidth="56" measuredHeight="25">
+    <font/>
+  </widgets>
+  <hRuler/>
+  <vRuler>
+    <guides position="822"/>
+  </vRuler>
+  <font/>
+</model:Screen>
