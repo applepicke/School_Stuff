@@ -1,0 +1,30 @@
+/* 
+    Document   : examlist
+    Created on : Apr 3, 2012, 2:17:24 PM
+    Author     : willy
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+.examListSection {
+    width: 300px;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    text-align: center;
+    
+    color: darkslategrey;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.headerText {
+    font-size: 60px;  
+    font-weight: bolder;
+}
+
+.buttons {
+    font-size: 14px;
+}
+

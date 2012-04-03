@@ -4,8 +4,12 @@
  */
 package jpa.session;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import jpa.entities.Exams;
 
@@ -22,7 +26,24 @@ public class ExamsFacade extends AbstractFacade<Exams> {
     protected EntityManager getEntityManager() {
         return em;
     }
+    
+    public List<String> findAllExamsTitles() {
+        List<String> examList = new ArrayList<String>();
+        
+        try {
+            Iterator<Exams> results = em.createNamedQuery("Exams.findAll").getResultList().iterator();
+            
+            while (results.hasNext()){
+                examList.add(results.next().getExamTitle());
+            }
+            
+        } catch (NoResultException e) {
+            examList = new ArrayList<String>();
+        }
 
+        return examList;
+    }
+    
     public ExamsFacade() {
         super(Exams.class);
     }

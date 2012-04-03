@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:p="http://primefaces.prime.com.tr/ui"
+      xmlns:p="http://primefaces.org/ui"
       xmlns:ui="http://java.sun.com/jsf/facelets">
     <h:head>
         <title>${msgs.title}</title>
@@ -15,10 +15,10 @@
                     <p:messages id="loginErrors"/>
                 </div>
                 <h:outputLabel id="usernameLabel" class="label" for="username" value="${msgs.username} "/>
-                <p:inputText id="username"/>
+                <p:inputText id="username" value="#{login.username}" />
                 <p/>
                 <h:outputLabel id="passwordLabel" class="label" for="password" value="${msgs.password} "/>
-                <p:password id="password" feedback="false" minLength="6"/>
+                <p:password id="password" value="#{login.password}" feedback="false"/>
                 <p/>
                 <p:commandButton id="loginButton" 
                                  value="${msgs.login}" 

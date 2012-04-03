@@ -1,12 +1,37 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
     <h:head>
-        <title>Facelet Title</title>
+        <title>${msgs.title}</title>
+        <link href="./resources/css/examlist.css" rel="stylesheet" type="text/css"/>
     </h:head>
     <h:body>
-        Hello from Facelets
+        <h:form id="examSelectForm">
+
+            <!-- Test for authentication -->
+            <f:event type="preRenderView" listener="#{login.testAuthentication}"/>
+
+            <!-- Display a list of exams for the user to take -->
+            <div class="examListSection">
+                <h:outputText class="headerText" value="#{msgs.exams}"/>
+                <br/>
+                <p:selectOneListbox id="examList" value="#{examList.examToTake}" style="width:300px;height:300px">
+                    <f:selectItems value="#{examList.exams}" />
+                </p:selectOneListbox>
+                <br/>
+                <div class="buttons">
+                    <p:commandButton id="selectExamButton" value="${msgs.select_exam}" />
+                    <p:commandButton id="logoutButton" 
+                                     value="${msgs.logout}" 
+                                     action="#{login.logout}"
+                                     ajax="false"/>
+                </div>
+            </div>
+
+        </h:form>
     </h:body>
 </html>
 
