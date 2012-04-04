@@ -1,37 +1,41 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:f="http://java.sun.com/jsf/core">
-    <h:head>
-        <title>${msgs.title}</title>
-        <link href="./resources/css/examlist.css" rel="stylesheet" type="text/css"/>
-    </h:head>
-    <h:body>
-        <h:form id="examSelectForm">
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
 
-            <!-- Test for authentication -->
-            <f:event type="preRenderView" listener="#{login.testAuthentication}"/>
+    <body>
 
-            <!-- Display a list of exams for the user to take -->
-            <div class="examListSection">
-                <h:outputText class="headerText" value="#{msgs.exams}"/>
-                <br/>
-                <p:selectOneListbox id="examList" value="#{examList.examToTake}" style="width:300px;height:300px">
-                    <f:selectItems value="#{examList.exams}" />
-                </p:selectOneListbox>
-                <br/>
-                <div class="buttons">
-                    <p:commandButton id="selectExamButton" value="${msgs.select_exam}" />
-                    <p:commandButton id="logoutButton" 
-                                     value="${msgs.logout}" 
-                                     action="#{login.logout}"
-                                     ajax="false"/>
-                </div>
-            </div>
+        <ui:composition template="./WEB-INF/templates/loggedInTemplate.xhtml">
 
-        </h:form>
-    </h:body>
+            <ui:define name="content">
+                <h:body>
+                    <h:form id="examSelectForm">
+
+                        <!-- Display a list of exams for the user to take -->
+                        <div class="examListSection">
+                            <h:outputText class="headerText" value="#{msgs.exams}"/>
+                            <br/>
+                            <p:selectOneListbox id="examList" value="#{examList.examToTake}" style="width:300px;height:300px">
+                                <f:selectItems value="#{examList.exams}" />
+                            </p:selectOneListbox>
+                            <br/>
+                            <div class="buttons">
+                                <p:commandButton id="selectExamButton" value="${msgs.select_exam}" />
+                                <p:commandButton id="logoutButton" 
+                                                 value="${msgs.logout}" 
+                                                 action="#{login.logout}"
+                                                 ajax="false"/>
+                            </div>
+                        </div>
+
+                    </h:form>
+                </h:body>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
 </html>
-

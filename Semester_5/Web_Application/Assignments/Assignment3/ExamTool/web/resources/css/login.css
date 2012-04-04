@@ -10,13 +10,14 @@
     margin-left: auto;
     margin-right: auto;
     width: 450px;
-    margin-top: 20%;
-    margin-bottom: 20%;
+    margin-top: 15%;
     text-align: center;
     
     padding: 20px;
     border: 2px solid darkslategrey;
     border-radius: 10px;
+    
+    background-color: #eff5fa;
 }
 
 #aboutlink {
