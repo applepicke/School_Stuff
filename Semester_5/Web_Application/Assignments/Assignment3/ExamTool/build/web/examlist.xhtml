@@ -11,28 +11,30 @@
         <ui:composition template="./WEB-INF/templates/loggedInTemplate.xhtml">
 
             <ui:define name="content">
-                <h:body>
                     <h:form id="examSelectForm">
 
                         <!-- Display a list of exams for the user to take -->
                         <div class="examListSection">
                             <h:outputText class="headerText" value="#{msgs.exams}"/>
                             <br/>
-                            <p:selectOneListbox id="examList" value="#{examList.examToTake}" style="width:300px;height:300px">
-                                <f:selectItems value="#{examList.exams}" />
+                            <p:selectOneListbox id="examList" value="#{exam.examName}" style="width:300px;height:300px">
+                                <f:selectItems value="#{examList.exams}" 
+                                                />
                             </p:selectOneListbox>
                             <br/>
                             <div class="buttons">
-                                <p:commandButton id="selectExamButton" value="${msgs.select_exam}" />
+                                <p:commandButton id="selectExamButton" 
+                                                 value="${msgs.select_exam}"
+                                                 action="#{exam.takeExam}"/>
                                 <p:commandButton id="logoutButton" 
                                                  value="${msgs.logout}" 
                                                  action="#{login.logout}"
                                                  ajax="false"/>
                             </div>
+                            <p:messages id="examSelectionErrors"/>
                         </div>
 
                     </h:form>
-                </h:body>
             </ui:define>
 
         </ui:composition>

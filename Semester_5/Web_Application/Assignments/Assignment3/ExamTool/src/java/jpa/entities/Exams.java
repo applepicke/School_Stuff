@@ -27,6 +27,16 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "Exams.findByExamDate", query = "SELECT e FROM Exams e WHERE e.examDate = :examDate"),
     @NamedQuery(name = "Exams.findByDuration", query = "SELECT e FROM Exams e WHERE e.duration = :duration")})
 public class Exams implements Serializable {
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "EXAM_DATE")
+    @Temporal(TemporalType.DATE)
+    private Date examDate;
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 8)
+    @Column(name = "DURATION")
+    private String duration;
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
@@ -37,16 +47,6 @@ public class Exams implements Serializable {
     @Size(max = 500)
     @Column(name = "DESCRIPTION")
     private String description;
-    @Basic(optional = false)
-    @NotNull
-    @Column(name = "EXAM_DATE")
-    @Temporal(TemporalType.DATE)
-    private Date examDate;
-    @Basic(optional = false)
-    @NotNull
-    @Column(name = "DURATION")
-    @Temporal(TemporalType.TIME)
-    private Date duration;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "examTitle")
     private Collection<Questions> questionsCollection;
 
@@ -57,7 +57,7 @@ public class Exams implements Serializable {
         this.examTitle = examTitle;
     }
 
-    public Exams(String examTitle, Date examDate, Date duration) {
+    public Exams(String examTitle, Date examDate, String duration) {
         this.examTitle = examTitle;
         this.examDate = examDate;
         this.duration = duration;
@@ -85,14 +85,6 @@ public class Exams implements Serializable {
 
     public void setExamDate(Date examDate) {
         this.examDate = examDate;
-    }
-
-    public Date getDuration() {
-        return duration;
-    }
-
-    public void setDuration(Date duration) {
-        this.duration = duration;
     }
 
     @XmlTransient
@@ -127,6 +119,14 @@ public class Exams implements Serializable {
     @Override
     public String toString() {
         return "jpa.entities.Exams[ examTitle=" + examTitle + " ]";
+    }
+
+    public String getDuration() {
+        return duration;
+    }
+
+    public void setDuration(String duration) {
+        this.duration = duration;
     }
     
 }

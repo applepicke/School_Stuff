@@ -6,7 +6,7 @@ CREATE TABLE Exams (
         exam_title  VARCHAR(50) NOT NULL
        ,description VARCHAR(500)
        ,exam_date   DATE        NOT NULL
-       ,duration    TIME        NOT NULL
+       ,duration    CHAR(8)     NOT NULL
        
        ,CONSTRAINT pk_exam_title    PRIMARY KEY ( exam_title )
 );

@@ -44,6 +44,18 @@ public class ExamsFacade extends AbstractFacade<Exams> {
         return examList;
     }
     
+    public Exams findByExamTitle(String examTitle){
+        Exams exam;
+        
+        try {
+            exam = (Exams)em.createNamedQuery("Exams.findByExamTitle").setParameter("examTitle", examTitle).getSingleResult();
+        } catch (NoResultException e){
+            exam = null;
+        }
+        
+        return exam;
+    }
+    
     public ExamsFacade() {
         super(Exams.class);
     }
