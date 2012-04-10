@@ -9,7 +9,7 @@ INSERT INTO Exams (exam_title,description,exam_date,duration)
             VALUES('Horse Exam'
                   ,'A sweet exam about horses.'
                   ,CURRENT_DATE
-                  ,'02:30:00');
+                  ,'00:01:00');
 
 INSERT INTO Questions (exam_title,question,a,b,answer,q_type)
                 VALUES('Horse Exam'
@@ -17,7 +17,7 @@ INSERT INTO Questions (exam_title,question,a,b,answer,q_type)
                       ,'true'
                       ,'false'
                       ,'false'
-                      ,'TRUE_OR_FALSE' );
+                      ,'MC_2');
 
 INSERT INTO Questions (exam_title,question,a,b,c,d,answer,q_type)
                 VALUES('Horse Exam'

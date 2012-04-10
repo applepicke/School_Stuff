@@ -73,7 +73,7 @@ public class Questions implements Serializable {
     @JoinColumn(name = "EXAM_TITLE", referencedColumnName = "EXAM_TITLE")
     @ManyToOne(optional = false)
     private Exams examTitle;
-
+    
     public Questions() {
     }
 

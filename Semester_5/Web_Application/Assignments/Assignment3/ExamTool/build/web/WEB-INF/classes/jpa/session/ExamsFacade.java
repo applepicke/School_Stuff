@@ -56,6 +56,7 @@ public class ExamsFacade extends AbstractFacade<Exams> {
         return exam;
     }
     
+    
     public ExamsFacade() {
         super(Exams.class);
     }
