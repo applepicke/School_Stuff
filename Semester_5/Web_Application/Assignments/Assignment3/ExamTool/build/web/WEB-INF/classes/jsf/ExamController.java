@@ -4,10 +4,11 @@
  */
 package jsf;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
+import java.io.UnsupportedEncodingException;
+import java.util.*;
 import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
@@ -16,7 +17,10 @@ import javax.faces.context.FacesContext;
 import jpa.entities.Exams;
 import jpa.entities.Questions;
 import jpa.session.ExamsFacade;
+import model.Grade;
 import model.Timer;
+import org.primefaces.model.DefaultStreamedContent;
+import org.primefaces.model.StreamedContent;
 
 /**
  *
@@ -24,7 +28,7 @@ import model.Timer;
  */
 @ManagedBean (name = "exam")
 @SessionScoped
-public class ExamController implements Serializable{
+public class ExamController implements Serializable, Comparator {
     
     public static final String MC_4 = "MC_4";
     public static final String MC_5 = "MC_5";
@@ -46,11 +50,12 @@ public class ExamController implements Serializable{
     private boolean lastQuestion;
     private boolean firstQuestion;
     
+    private Grade userGrade;
+    
     public ExamController(){
         exam = null;
         timer = null;
         questionIndex=0;
-        userAnswers = new String[100];
         started = false;
     }
 
@@ -80,6 +85,8 @@ public class ExamController implements Serializable{
     
     public boolean setExam(String examName) throws IOException{
         
+        cleanup();
+        
         if (examName == null) {
             FacesContext context = FacesContext.getCurrentInstance();
             FacesMessage message = new FacesMessage( FacesMessage.SEVERITY_ERROR ,"No exam selected!", null);
@@ -98,7 +105,10 @@ public class ExamController implements Serializable{
         }
         
         exam = examToTake;
+        exam.setQuestionsCollection(randomizeQuestionsAndAnswers());
         timer = new Timer(exam.getDuration());
+        userAnswers = new String[100];
+        finished = false;
         return true;
     }
     
@@ -134,19 +144,99 @@ public class ExamController implements Serializable{
         checkQuestionLocation();
     }
     
-    public void finishExam() throws IOException,InterruptedException {
+    /**
+     * Randomize all the questions and answers of the exam
+     * @return A collection of all the questions in the exam, randomized
+     */
+    private Collection<Questions> randomizeQuestionsAndAnswers(){
+        List<Questions> newCollection = new ArrayList<Questions>(exam.getQuestionsCollection());
+        
+        //Sort a couple of times for super randomness
+        Collections.sort(newCollection, this);
+        Collections.sort(newCollection, this);
+        Collections.sort(newCollection, this);
+        
+        for (Questions q : newCollection) {
+            List<String> answersList = new ArrayList<String>();
+            answersList.add(q.getA());
+            answersList.add(q.getB());
+            if (q.getQType().equals(MC_4) || q.getQType().equals(MC_5)) {
+                answersList.add(q.getC());
+                answersList.add(q.getD());
+            }
+            if (q.getQType().equals(MC_5)){
+                answersList.add(q.getE());
+            }
+            
+            Collections.sort(answersList, this);
+            
+            q.setA(answersList.get(0));
+            q.setB(answersList.get(1));
+            
+            if (q.getQType().equals(MC_4) || q.getQType().equals(MC_5)) {
+                q.setC(answersList.get(2));
+                q.setD(answersList.get(3));
+            }
+            if (q.getQType().equals(MC_5)){
+                q.setE(answersList.get(4));
+            }           
+        }
+        
+        
+        return newCollection;
+    }
+    
+    public void finishExam() throws IOException {
         started = false;
-        exam = null;
+        finished = true;
+        gradeExam();
         timer = null;
         questionIndex = 0;
         FacesContext.getCurrentInstance().getExternalContext().redirect("grades.xhtml");
     }
     
+    private void gradeExam(){
+        
+        Questions[] questions = new Questions[exam.getQuestionsCollection().size()];
+        exam.getQuestionsCollection().toArray(questions);
+        boolean[] results = new boolean[questions.length];
+        
+        for (int i = 0; i < questions.length; i++){
+            results[i] = questions[i].getAnswer().equals(userAnswers[i]);
+        }
+        
+        userGrade = new Grade(results);
+        
+        finished = false;
+        
+    }
+    
+    public void cleanup(){
+        exam = null;
+        userAnswers = null;
+        userGrade = null;
+        timer = null;
+        questionIndex = 0;
+        finished = false;
+        started = false;
+    }
+    
     public void testForExam() throws IOException{
+        if (finished){
+            FacesContext.getCurrentInstance().getExternalContext().redirect("grades.xhtml");
+        }
         if (exam == null){
             FacesContext.getCurrentInstance().getExternalContext().redirect("examlist.xhtml");
         }
+        
     }
+    
+    public void testForExamStarted() throws IOException{
+        if (started){
+            FacesContext.getCurrentInstance().getExternalContext().redirect("exam.xhtml");
+        }
+    }
+   
     
     public void nextQuestion(){
         if (questionIndex < exam.getQuestionsCollection().size()-1)            
@@ -164,6 +254,36 @@ public class ExamController implements Serializable{
         if (questionIndex == 0){
             firstQuestion = true;
         }
+    }
+    
+    public StreamedContent downloadResults() throws UnsupportedEncodingException{
+        ArrayList<Integer> resultList = new ArrayList<Integer>();
+        Questions[] questions = new Questions[exam.getQuestionsCollection().size()];
+        exam.getQuestionsCollection().toArray(questions);
+        
+        for (int i = 0; i < exam.getQuestionsCollection().size(); i++){
+            if (questions[i].getAnswer().equals(userAnswers[i])){
+                resultList.add(Integer.valueOf(1));
+            }
+            else resultList.add(Integer.valueOf(0));
+        }
+        
+        StringBuilder builder = new StringBuilder();
+        builder.append(exam.getExamTitle());
+        builder.append(",");
+        for (int i: resultList){
+            builder.append(i);
+            builder.append(",");
+        }
+        builder.append(userGrade.getNumCorrect());
+        builder.append(",");
+        builder.append(userGrade.getPercentage());
+        builder.append(",");
+        builder.append(userGrade.getLetterGrade());
+        
+        StreamedContent content = new DefaultStreamedContent(new ByteArrayInputStream(builder.toString().getBytes("UTF-8")), "txt/plain" ,"results.csv");
+        
+        return content;
     }
     
     public void prevQuestion(){       
@@ -188,9 +308,9 @@ public class ExamController implements Serializable{
         this.finished = finished;
     }
     
-    public void testExamStarted() throws IOException{
-        if (started){
-            FacesContext.getCurrentInstance().getExternalContext().redirect("exam.xhtml");
+    public void testForNullGrade() throws IOException{
+        if (userGrade == null){
+            FacesContext.getCurrentInstance().getExternalContext().redirect("examlist.xhtml");
         }
     }
 
@@ -213,8 +333,39 @@ public class ExamController implements Serializable{
     public int getQuestionIndex() {
         return questionIndex;
     }
+
+    public Grade getUserGrade() {
+        return userGrade;
+    }
     
-    
+    public String getQuestionImage(Questions question){
+        int i;
+        Questions questions[] = new Questions[exam.getQuestionsCollection().size()];
+        exam.getQuestionsCollection().toArray(questions);
+        
+        for (i = 0; i < exam.getQuestionsCollection().size(); i++){
+            if (questions[i].getQuestion().equals(question.getQuestion())){
+                break;
+            }
+        }
+        
+        if (i == exam.getQuestionsCollection().size())
+            return "resources/images/error.gif";
+        
+
+        if (question.getAnswer().equals(userAnswers[i]))
+            return "resources/images/checkmark.gif";
+        
+        
+        return "resources/images/error.gif";
+        
+    }
+
+    @Override
+    public int compare(Object o1, Object o2) {
+        Random random = new Random();
+        return random.nextInt();
+    }
     
     
 }

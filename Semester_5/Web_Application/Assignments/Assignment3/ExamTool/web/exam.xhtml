@@ -13,7 +13,7 @@
                 <h:form id="examForm" styleClass="form">
 
                     <!-- Make sure user doesn't try spoof to the exam page -->
-                    <f:event type="preRenderView" listener="#{exam.testForExam()}"/>
+                    <f:event type="preRenderView" listener="#{exam.testForExam}"/>
 
                     <p:layout id="examLayout" fullPage="false" style="min-width:600px;min-height:600px;padding-top: 5px">   
 
@@ -111,7 +111,7 @@
                                 <br/>
                             </div>
                             <p:progressBar id="progressBar" ajax="true" widgetVar="progress" value="#{exam.timer.progress}" styleClass="progress" labelTemplate="{value}%">
-                                <p:poll interval="1" update="timeRemaining,growl" listener="#{exam.timer.checkTime}" widgetVar="poll" autoStart="#{exam.started}"/> 
+                                <p:poll interval="1" update="timeRemaining,growl" async ="true" global="false" listener="#{exam.timer.checkTime}" widgetVar="poll" autoStart="#{exam.started}"/> 
                                 <p:ajax event="complete" listener="#{exam.finishExam}"/>
                             </p:progressBar> 
                         </p:layoutUnit> 

@@ -3,13 +3,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:ui="http://java.sun.com/jsf/facelets">
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
     <h:head>
         <title>${msgs.title}</title>
         <link href="./resources/css/login.css" rel="stylesheet" type="text/css"/>
     </h:head>
     <h:body>
         <h:form id="loginForm">
+            <f:event type="preRenderView" listener="#{exam.testForExamStarted}"/>
             <div class="loginArea">
                 <div class="errors">
                     <p:messages id="loginErrors"/>

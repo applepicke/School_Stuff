@@ -4,7 +4,8 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:p="http://primefaces.org/ui"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core">
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
 
     <body>
 
@@ -12,11 +13,17 @@
 
             <ui:define name="content">
                 <h:form id="gradeForm">
-                    <f:event type="preRenderView" listener="#{exam.testForNullGrade}"/>
-
-                    <br/>
-                    <br/>
+                    <f:event type="preRenderView" listener="#{exam.testForExamStarted}"/>
                     
+                    <br/>
+                    <div class="topButtons">
+                        <p:commandButton value="${msgs.download}" ajax="false">
+                            <p:fileDownload value="#{exam.downloadResults()}" />
+                        </p:commandButton>
+                        <p:commandButton value="${msgs.logout}" actionListener="#{login.logout}"/>
+                    </div>
+                    <br/>
+
                     <div class="results">
                         <h:outputText value="${msgs.results}" styleClass="resultsTitle"/>
                         <br/>
@@ -26,6 +33,28 @@
                         <br/>
                         <h:outputText value="#{exam.userGrade.letterGrade}"/>
                     </div>
+
+                    <c:forEach var="question" items="${exam.exam.questionsCollection}">
+                        <div class="questionResults">
+
+
+                            <img src="#{exam.getQuestionImage(question)}" class="gradedImages"/>
+
+
+                            <h:outputText value=" Q. #{question.question}"/> 
+                            <br/>
+                            <h:outputText value="a. #{question.a}" />
+                            <br/>
+                            <h:outputText value="b. #{question.b}" />
+                            <br/>
+                            <h:outputText value="c. #{question.c}" rendered="#{question.QType == 'MC_4' || question.QType == 'MC_5'}"/>
+                            <c:if test="#{question.QType == 'MC_4' || question.QType == 'MC_5'}"><br/></c:if> 
+                            <h:outputText value="d. #{question.d}" rendered="#{question.QType == 'MC_4' || question.QType == 'MC_5'}"/>
+                            <c:if test="#{question.QType == 'MC_5'}"><br/></c:if> 
+                            <h:outputText value="e. #{question.e}" rendered="#{question.QType == 'MC_5'}"/>
+                        </div>
+                    </c:forEach>
+
 
                 </h:form>
             </ui:define>

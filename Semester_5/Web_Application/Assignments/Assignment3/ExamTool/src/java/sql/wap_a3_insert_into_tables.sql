@@ -28,3 +28,43 @@ INSERT INTO Questions (exam_title,question,a,b,c,d,answer,q_type)
                       ,'4'
                       ,'1'
                       ,'MC_4');
+
+INSERT INTO Questions (exam_title,question,a,b,answer,q_type)
+                VALUES('Horse Exam'
+                      ,'If a horse died, would it still be alive?'
+                      ,'yes'
+                      ,'no'
+                      ,'no'
+                      ,'MC_2');
+
+INSERT INTO Questions (exam_title,question,a,b,c,d,e,answer,q_type)
+                VALUES('Horse Exam'
+                      ,'How many legs does a horse have?'
+                      ,'1'
+                      ,'2'
+                      ,'3'
+                      ,'4'
+                      ,'5'
+                      ,'4'
+                      ,'MC_5');
+
+INSERT INTO Questions (exam_title,question,a,b,c,d,e,answer,q_type)
+                VALUES('Horse Exam'
+                      ,'What do horses eat most?'
+                      ,'Lead'
+                      ,'Giraffes'
+                      ,'Peanut Butter'
+                      ,'Carrots'
+                      ,'Pencils'
+                      ,'Carrots'
+                      ,'MC_5');
+
+INSERT INTO Questions (exam_title,question,a,b,c,d,answer,q_type)
+                VALUES('Horse Exam'
+                      ,'What colour of pony should I get?'
+                      ,'Blue'
+                      ,'Black'
+                      ,'Rainbow'
+                      ,'Orange'
+                      ,'Rainbow'
+                      ,'MC_4');

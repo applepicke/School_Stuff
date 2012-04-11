@@ -14,7 +14,7 @@
                     <h:form id="examSelectForm">
 
                         <!-- Make sure user doesn't try to come back here if exam is started -->
-                        <f:event type="preRenderView" listener="#{exam.testExamStarted}"/>
+                        <f:event type="preRenderView" listener="#{exam.testForExamStarted}"/>
                         
                         <!-- Display a list of exams for the user to take -->
                         <div class="examListSection">
