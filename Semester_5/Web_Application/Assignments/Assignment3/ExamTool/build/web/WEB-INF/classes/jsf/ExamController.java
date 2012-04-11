@@ -152,9 +152,9 @@ public class ExamController implements Serializable, Comparator {
         List<Questions> newCollection = new ArrayList<Questions>(exam.getQuestionsCollection());
         
         //Sort a couple of times for super randomness
-        Collections.sort(newCollection, this);
-        Collections.sort(newCollection, this);
-        Collections.sort(newCollection, this);
+        for (Questions q : newCollection){
+            Collections.sort(newCollection, this);
+        }
         
         for (Questions q : newCollection) {
             List<String> answersList = new ArrayList<String>();
@@ -168,7 +168,9 @@ public class ExamController implements Serializable, Comparator {
                 answersList.add(q.getE());
             }
             
-            Collections.sort(answersList, this);
+            for (String s: answersList){
+                Collections.sort(answersList, this);
+            }
             
             q.setA(answersList.get(0));
             q.setB(answersList.get(1));
@@ -224,9 +226,6 @@ public class ExamController implements Serializable, Comparator {
     public void testForExam() throws IOException{
         if (finished){
             FacesContext.getCurrentInstance().getExternalContext().redirect("grades.xhtml");
-        }
-        if (exam == null){
-            FacesContext.getCurrentInstance().getExternalContext().redirect("examlist.xhtml");
         }
         
     }

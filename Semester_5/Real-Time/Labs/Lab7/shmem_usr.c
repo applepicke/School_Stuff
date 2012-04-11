@@ -8,8 +8,14 @@
 #include <sys/stat.h>
 #include <sys/iofunc.h>
 #include <sys/dispatch.h>
+#include <semaphore.h>
+#include <signal.h>
 #include "prod.h"
 
+void sig_handler(int sigval){
+	printf("Recieved signal %d...cannot increment semaphore.\n", sigval);
+	exit(0);
+}
 
 int main( int argc, char *argv[] )
 {
@@ -52,6 +58,9 @@ int main( int argc, char *argv[] )
     close( fd );
 
     munmap( ptr, sizeof(ptr) );
+    signal(SIGSEGV, sig_handler);
+    sem_post(NULL);
+
     printf("unmapped!\n");
     name_detach(attach, 0);
 

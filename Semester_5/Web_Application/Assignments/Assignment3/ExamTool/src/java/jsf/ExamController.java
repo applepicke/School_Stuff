@@ -227,9 +227,6 @@ public class ExamController implements Serializable, Comparator {
         if (finished){
             FacesContext.getCurrentInstance().getExternalContext().redirect("grades.xhtml");
         }
-        if (exam == null){
-            FacesContext.getCurrentInstance().getExternalContext().redirect("examlist.xhtml");
-        }
         
     }
     

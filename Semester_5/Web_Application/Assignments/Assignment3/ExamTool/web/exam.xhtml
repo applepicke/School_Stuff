@@ -93,7 +93,7 @@
                                                  action="#{exam.finishExam}"
                                                  onclick="poll.stop();progress.stop()"
                                                  update="examForm:examLayout"
-                                                 rendered="#{exam.started}"/>
+                                                 rendered="#{exam.lastQuestion}"/>
                                 <p:commandButton value="${msgs.next_question}" 
                                                  id="nextButton"
                                                  rendered="#{exam.renderNextButton}"

@@ -1,0 +1,15 @@
+C:\Users\Public\School_Stuff\Semester_5\NET\Labs\Lab10\Lab10\bin\Debug\Lab10.exe
+C:\Users\Public\School_Stuff\Semester_5\NET\Labs\Lab10\Lab10\bin\Debug\Lab10.pdb
+C:\Users\Public\School_Stuff\Semester_5\NET\Labs\Lab10\Lab10\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Public\School_Stuff\Semester_5\NET\Labs\Lab10\Lab10\obj\x86\Debug\MainWindow.baml
+C:\Users\Public\School_Stuff\Semester_5\NET\Labs\Lab10\Lab10\obj\x86\Debug\MainWindow.g.cs
+C:\Users\Public\School_Stuff\Semester_5\NET\Labs\Lab10\Lab10\obj\x86\Debug\App.g.cs
+C:\Users\Public\School_Stuff\Semester_5\NET\Labs\Lab10\Lab10\obj\x86\Debug\Lab10_MarkupCompile.cache
+C:\Users\Public\School_Stuff\Semester_5\NET\Labs\Lab10\Lab10\obj\x86\Debug\Lab10.g.resources
+C:\Users\Public\School_Stuff\Semester_5\NET\Labs\Lab10\Lab10\obj\x86\Debug\Lab10.Properties.Resources.resources
+C:\Users\Public\School_Stuff\Semester_5\NET\Labs\Lab10\Lab10\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Public\School_Stuff\Semester_5\NET\Labs\Lab10\Lab10\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Public\School_Stuff\Semester_5\NET\Labs\Lab10\Lab10\obj\x86\Debug\Lab10.exe
+C:\Users\Public\School_Stuff\Semester_5\NET\Labs\Lab10\Lab10\obj\x86\Debug\Lab10.pdb
+C:\Users\Public\School_Stuff\Semester_5\NET\Labs\Lab10\Lab10\obj\x86\Debug\Window1.baml
+C:\Users\Public\School_Stuff\Semester_5\NET\Labs\Lab10\Lab10\obj\x86\Debug\Window1.g.cs

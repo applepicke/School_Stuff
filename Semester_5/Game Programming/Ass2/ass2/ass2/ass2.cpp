@@ -272,7 +272,6 @@ void handleRotation(LPARAM lParam)
 	{
 		g_config.xAngle -= (x - g_config.x) / 50;
 		g_config.yAngle -= (y - g_config.y) / 50;
-
 	}
 	else if(g_config.rotateType == ROTATE_LIGHT)
 	{
