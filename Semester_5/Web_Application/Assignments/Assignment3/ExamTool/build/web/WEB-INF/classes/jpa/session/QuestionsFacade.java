@@ -9,10 +9,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import jpa.entities.Questions;
 
-/**
- *
- * @author willy
- */
 @Stateless
 public class QuestionsFacade extends AbstractFacade<Questions> {
     @PersistenceContext(unitName = "ExamToolPU")

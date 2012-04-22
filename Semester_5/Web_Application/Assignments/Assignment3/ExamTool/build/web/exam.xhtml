@@ -1,10 +1,16 @@
 <?xml version='1.0' encoding='UTF-8' ?>
+<!--
+Document: exam.xhtml
+Created on: 4/12/2012
+Author: William Collins
+-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:p="http://primefaces.org/ui"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core">
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
 
     <body>
 
@@ -12,113 +18,129 @@
             <ui:define name="content">
                 <h:form id="examForm" styleClass="form">
 
-                    <!-- Make sure user doesn't try spoof to the exam page -->
-                    <f:event type="preRenderView" listener="#{exam.testForExam}"/>
+                    <c:if test="#{!exam.finished}">
+                        <!-- Make sure user doesn't try spoof to the exam page -->
+                        <f:event type="preRenderView" listener="#{exam.testForExam}"/>
 
-                    <p:layout id="examLayout" fullPage="false" style="min-width:600px;min-height:600px;padding-top: 5px">   
+                        <p:layout id="examLayout" fullPage="false" style="min-width:600px;min-height:600px;padding-top: 5px">   
 
-                        <p:layoutUnit position="west" size="400" styleClass="examSection" >  
+                            <p:layoutUnit position="west" size="400" styleClass="examSection" >  
 
-                            <div class="titles">
-                                <h:outputText value="${msgs.exam_info}"/>
-                            </div>
+                                <div class="titles">
+                                    <h:outputText value="${msgs.exam_info}"/>
+                                </div>
 
-                            <div class="examInfo">
-                                <h:outputText value="${msgs.exam_title}: " styleClass="head" />
-                                <h:outputText value="#{exam.exam.examTitle}"/>
+                                <div class="examInfo">
+                                    <h:outputText value="${msgs.exam_title}: " styleClass="head" />
+                                    <h:outputText value="#{exam.exam.examTitle}"/>
+                                    <br/>
+                                    <h:outputText value="${msgs.exam_description}: " styleClass="head"/>
+                                    <h:outputText value="#{exam.exam.description}"/>
+                                    <br/>
+                                    <h:outputText value="${msgs.exam_date}: " styleClass="head"/>
+                                    <h:outputText value="#{exam.exam.examDate}"/>
+                                    <br/>
+                                    <h:outputText value="${msgs.exam_duration}: " styleClass="head"/>
+                                    <h:outputText value="#{exam.exam.duration}"/>
+                                    <br/>
+
+                                </div>
+
+                            </p:layoutUnit>  
+
+                            <p:layoutUnit position="center" styleClass="question">
+                                <div class="titles">
+                                    <h:outputText value="${msgs.question} "/>
+                                </div>
                                 <br/>
-                                <h:outputText value="${msgs.exam_description}: " styleClass="head"/>
-                                <h:outputText value="#{exam.exam.description}"/>
                                 <br/>
-                                <h:outputText value="${msgs.exam_date}: " styleClass="head"/>
-                                <h:outputText value="#{exam.exam.examDate}"/>
-                                <br/>
-                                <h:outputText value="${msgs.exam_duration}: " styleClass="head"/>
-                                <h:outputText value="#{exam.exam.duration}"/>
-                                <br/>
-
-                            </div>
-
-                        </p:layoutUnit>  
-
-                        <p:layoutUnit position="center" styleClass="question">
-                            <div class="titles">
-                                <h:outputText value="${msgs.question} "/>
-                            </div>
-                            <br/>
-                            <br/>
-                            <p:panel id="questionPanel" rendered="#{exam.started}">
-                                <h:outputText value="#{exam.currentQuestion.question}"/>
-                                <br/>
-                                <p:outputPanel>
-                                    <p:selectOneRadio id="radioQuestions" value="#{exam.userAnswer}" layout="custom">
-                                        <f:selectItem itemValue="#{exam.currentQuestion.a}"/>
-                                        <f:selectItem itemValue="#{exam.currentQuestion.b}"/>
-                                        <f:selectItem itemValue="#{exam.currentQuestion.c}"/>
-                                        <f:selectItem itemValue="#{exam.currentQuestion.d}"/>
-                                        <f:selectItem itemValue="#{exam.currentQuestion.e}"/>
-                                    </p:selectOneRadio>
-                                    <h:panelGrid columns="3">  
-                                        <p:radioButton id="opt1" for="radioQuestions" itemIndex="0"/>  
-                                        <h:outputLabel for="opt1" value="#{exam.currentQuestion.a}" />  
-                                        <br/>
-                                        <p:radioButton id="opt2" for="radioQuestions" itemIndex="1"/>  
-                                        <h:outputLabel for="opt2" value="#{exam.currentQuestion.b}" />  
-                                        <br/>
-                                        <p:radioButton id="opt3" for="radioQuestions" itemIndex="2" rendered="#{exam.MC4 || exam.MC5}"/>  
-                                        <h:outputLabel for="opt3" value="#{exam.currentQuestion.c}" rendered="#{exam.MC4 || exam.MC5}"/> 
-                                        <br/>
-                                        <p:radioButton id="opt4" for="radioQuestions" itemIndex="3" rendered="#{exam.MC4 || exam.MC5}"/>  
-                                        <h:outputLabel for="opt4" value="#{exam.currentQuestion.d}" rendered="#{exam.MC4 || exam.MC5}"/> 
-                                        <br/>
-                                        <p:radioButton id="opt5" for="radioQuestions" itemIndex="4" rendered="#{exam.MC5}"/>  
-                                        <h:outputLabel for="opt5" value="#{exam.currentQuestion.e}" rendered="#{exam.MC5}"/> 
-                                    </h:panelGrid>  
-                                </p:outputPanel>  
-                            </p:panel>
-                            <p:panel id="panel" styleClass="buttonPanel" >
-                                <p:commandButton id="prevButton"
-                                                 value="${msgs.previous_question}" 
-                                                 rendered="#{exam.renderPrevButton}"
-                                                 action="#{exam.prevQuestion}"
-                                                 update="questionPanel,panel"/>
-                                <p:commandButton id="startButton"
-                                                 value="${msgs.start_exam}" 
-                                                 action="#{exam.startExam}" 
-                                                 onclick="progress.start()"
-                                                 update="examForm:examLayout"
-                                                 rendered="#{!exam.started}"/>
-                                <p:commandButton value="${msgs.finish_exam}"
-                                                 id="gradeButton"
-                                                 action="#{exam.finishExam}"
-                                                 onclick="poll.stop();progress.stop()"
-                                                 update="examForm:examLayout"
-                                                 rendered="#{exam.lastQuestion}"/>
-                                <p:commandButton value="${msgs.next_question}" 
-                                                 id="nextButton"
-                                                 rendered="#{exam.renderNextButton}"
-                                                 action="#{exam.nextQuestion}"
-                                                 update="questionPanel,panel"/>
-                            </p:panel>
+                                <p:panel id="questionPanel" rendered="#{exam.started}">
+                                    <h:outputText value="#{exam.currentQuestion.question}"/>
+                                    <br/>
+                                    <p:outputPanel>
+                                        <p:selectOneRadio id="radioQuestions" value="#{exam.userAnswer}" layout="custom">
+                                            <f:selectItem itemValue="#{exam.currentQuestion.a}"/>
+                                            <f:selectItem itemValue="#{exam.currentQuestion.b}"/>
+                                            <f:selectItem itemValue="#{exam.currentQuestion.c}"/>
+                                            <f:selectItem itemValue="#{exam.currentQuestion.d}"/>
+                                            <f:selectItem itemValue="#{exam.currentQuestion.e}"/>
+                                        </p:selectOneRadio>
+                                        <h:panelGrid columns="3">  
+                                            <p:radioButton id="opt1" for="radioQuestions" itemIndex="0"/>  
+                                            <h:outputLabel for="opt1" value="#{exam.currentQuestion.a}" />  
+                                            <br/>
+                                            <p:radioButton id="opt2" for="radioQuestions" itemIndex="1"/>  
+                                            <h:outputLabel for="opt2" value="#{exam.currentQuestion.b}" />  
+                                            <br/>
+                                            <p:radioButton id="opt3" for="radioQuestions" itemIndex="2" rendered="#{exam.MC4 || exam.MC5}"/>  
+                                            <h:outputLabel for="opt3" value="#{exam.currentQuestion.c}" rendered="#{exam.MC4 || exam.MC5}"/> 
+                                            <br/>
+                                            <p:radioButton id="opt4" for="radioQuestions" itemIndex="3" rendered="#{exam.MC4 || exam.MC5}"/>  
+                                            <h:outputLabel for="opt4" value="#{exam.currentQuestion.d}" rendered="#{exam.MC4 || exam.MC5}"/> 
+                                            <br/>
+                                            <p:radioButton id="opt5" for="radioQuestions" itemIndex="4" rendered="#{exam.MC5}"/>  
+                                            <h:outputLabel for="opt5" value="#{exam.currentQuestion.e}" rendered="#{exam.MC5}"/> 
+                                        </h:panelGrid>  
+                                    </p:outputPanel>  
+                                </p:panel>
+                                <p:panel id="panel" styleClass="buttonPanel" >
+                                    <p:commandButton id="prevButton"
+                                                     value="${msgs.previous_question}" 
+                                                     rendered="#{exam.renderPrevButton}"
+                                                     action="#{exam.prevQuestion}"
+                                                     onclick="progress.setValue(${exam.progress})"
+                                                     update="questionPanel,panel"/>
+                                    <p:commandButton id="startButton"
+                                                     value="${msgs.start_exam}" 
+                                                     action="#{exam.startExam}" 
+                                                     onclick="progress.start()"
+                                                     update="examForm:examLayout"
+                                                     rendered="#{!exam.started}"/>
+                                    <p:commandButton value="${msgs.finish_exam}"
+                                                     id="gradeButton"
+                                                     action="#{exam.finishExam}"
+                                                     onclick="poll.stop();progress.stop()"
+                                                     update="examForm:examLayout"
+                                                     rendered="#{exam.lastQuestion}"/>
+                                    <p:commandButton value="${msgs.next_question}" 
+                                                     id="nextButton"
+                                                     rendered="#{exam.renderNextButton}"
+                                                     action="#{exam.nextQuestion}"
+                                                     onclick="progress.setValue(${exam.progress})"
+                                                     update="questionPanel,panel"/>
+                                </p:panel>
 
 
-                        </p:layoutUnit>  
+                            </p:layoutUnit>  
 
-                        <p:layoutUnit position="south" header="Progress" collapsible="true">  
-                            <div class="timeRemaining">
-                                <h:outputText value="${msgs.time_remaining}: " styleClass="head"/>
-                                <h:outputText id="timeRemaining" value="#{exam.timer.hour}:#{exam.timer.minute}:#{exam.timer.second}"/>
-                                <br/>
-                            </div>
-                            <p:progressBar id="progressBar" ajax="true" widgetVar="progress" value="#{exam.timer.progress}" styleClass="progress" labelTemplate="{value}%">
-                                <p:poll interval="1" update="timeRemaining,growl" async ="true" global="false" listener="#{exam.timer.checkTime}" widgetVar="poll" autoStart="#{exam.started}"/> 
-                                <p:ajax event="complete" listener="#{exam.finishExam}"/>
-                            </p:progressBar> 
-                        </p:layoutUnit> 
+                            <p:layoutUnit position="south" header="Progress" collapsible="true">  
+                                <div class="timeRemaining">
+                                    <h:outputText value="${msgs.time_remaining}: " styleClass="head"/>
+                                    <h:outputText id="timeRemaining" value="#{exam.timer.hour}:#{exam.timer.minute}:#{exam.timer.second}"/>
+                                    <br/>
+                                </div>
 
-                        <p:growl id="growl"/>
-                    </p:layout>  
+                                <p:progressBar id="progressBar" 
+                                               ajax="true" 
+                                               widgetVar="progress" 
+                                               value="#{exam.progress}" 
+                                               styleClass="progress" 
+                                               labelTemplate="{value}%"/>
 
+                                <p:poll interval="1" 
+                                        update="timeRemaining" 
+                                        async="true" 
+                                        global="false" 
+                                        listener="#{exam.checkTime}" 
+                                        widgetVar="poll"
+                                        autoStart="#{exam.started}">
+                                </p:poll> 
+                            </p:layoutUnit> 
+
+                            <p:growl id="growl" autoUpdate="true" globalOnly="true"/>
+                        </p:layout>  
+
+                    </c:if>
 
                 </h:form>
             </ui:define>

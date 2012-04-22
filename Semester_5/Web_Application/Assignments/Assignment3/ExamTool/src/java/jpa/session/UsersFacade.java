@@ -4,6 +4,8 @@
  */
 package jpa.session;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
@@ -20,12 +22,20 @@ public class UsersFacade extends AbstractFacade<Users> {
     @PersistenceContext(unitName = "ExamToolPU")
     private EntityManager em;
 
+    public static final Logger log;
+    
+    static {
+        log = Logger.getLogger("UsersLogger");
+        log.setLevel(Level.ALL);
+    }
+    
     @Override
     protected EntityManager getEntityManager() {
         return em;
     }
 
     public Users findByUsername(String username) {
+        log.log(Level.INFO, "Retreiving user from database:" + username);
         Users user = null;
 
         try {

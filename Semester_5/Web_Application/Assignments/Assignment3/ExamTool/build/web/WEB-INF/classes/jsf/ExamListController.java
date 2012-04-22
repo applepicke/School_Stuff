@@ -1,7 +1,18 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+/*******************************************************************/
+/**                                                               **/
+/**                                                               **/
+/**    Student Name                :  William Collins             **/
+/**    EMail Address               :  coll0300@algonquinlive.com  **/
+/**    Student Number              :  040652633                   **/
+/**    Student User ID             :  coll0300                    **/
+/**    Course Number               :  CST 8218                    **/
+/**    Lab Section Number          :  310                         **/
+/**    Professor Name              :  Hurdleg                     **/
+/**    Assignment Name/Number/Date :  Exam Tool / 3 / 4/13/2012   **/
+/**    Optional Comments           :  I like pie                  **/
+/**                                                               **/
+/**                                                               **/
+/*******************************************************************/
 package jsf;
 
 import java.io.Serializable;

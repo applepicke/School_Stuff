@@ -1,9 +1,18 @@
-//-----------------------------------------------------------------------------
-// File: VR.cpp
-// A tutorial-level example of VR.
-// A Virtual Reality to use as a base application for assignment #3, built on the code in Tut06_Meshes
-// Doesn't contain protective code to deal with a lost device.
-//-----------------------------------------------------------------------------
+/**********************************************************************
+Filename:		ass3.cpp
+Version: 		1.0                                         
+Author:			William Collins                                             
+Student No:  	040652633                                           
+Course Name/Number: Game Programming CST8237                                 
+Lab Sect: 		310                                                      
+Assignment #:	3
+Assignment name:Flight Simulator	
+Due Date:		April 14, 2012                                           
+Submission Date:April 13, 2012
+Professor:		Andrew Tyler                                           
+Purpose: 		A simple flight simulator. Most of the code has been 
+				duplicated from VR by Andrew Tyler
+*********************************************************************/
 #include <Windows.h>
 #include <mmsystem.h>
 #include <d3dx9.h>
@@ -11,7 +20,9 @@
 #include <strsafe.h>
 #pragma warning( default : 4996 )
 #include <math.h>
-
+#define _CRTDBG_MAP_ALLOC
+#include <stdlib.h>
+#include <crtdbg.h>
 #pragma comment(lib,"d3d9.lib")
 #pragma comment(lib,"d3dx10d.lib")
 #pragma comment(lib,"d3dx9d.lib")
@@ -38,17 +49,29 @@ D3DMATERIAL9*       g_pMeshMaterialsTerrain = NULL; // Materials for our mesh
 LPDIRECT3DTEXTURE9* g_pMeshTexturesTerrain = NULL; // Textures for our mesh
 DWORD               g_dwNumMaterialsTerrain = 0L;   // Number of mesh materials
 
+LPDIRECT3DTEXTURE9 g_pTextureLandingStrip = NULL; //Texture for landing strip 
+LPDIRECT3DVERTEXBUFFER9 g_pVBLandingStrip = NULL; // Buffer to hold vertices for landing strip
+
+struct CUSTOMVERTEX
+{
+    D3DXVECTOR3 position; // The position
+    FLOAT tu, tv;   // The texture coordinates
+};
+#define D3DFVF_CUSTOMVERTEX (D3DFVF_XYZ|D3DFVF_TEX1)
+
 #define g_numTrees 500
 
 // Need global access to the eye direction used by the callback to sort trees
 D3DXVECTOR3 g_vDir;
-float g_phi = 1.0f;
-float g_theta = 1.0f;
+float g_phi = 11.1f;
+float g_theta = 3.15f;
 
 // Simple function to define "hilliness" for terrain
 inline FLOAT HeightField( FLOAT x, FLOAT z )
 {
-    return 9*(cosf(x/20+0.2f)*cosf(z/15-0.2f)+1.0f);	// 0 <= HeightField <= 18
+	if (x >= -10.0f && x <= 10.0f)
+		return 0.0f;	
+    return 7*(cosf(x/15+0.2f)*cosf(z/10-0.2f)+1.0f);	// 0 <= HeightField <= 18
 }
 
 // Custom vertex type for the trees
@@ -91,7 +114,7 @@ LPDIRECT3DTEXTURE9			g_pTreeTextures[NUMTREETEXTURES];	// Tree images
 D3DXMATRIXA16				g_matBillboardMatrix;				// Used for billboard orientation
 Tree						g_Trees[g_numTrees];				// Array of tree info
 
-D3DXVECTOR3					g_vEyePt(0.0f, 5.0, 0.0 );							// Camera position
+D3DXVECTOR3					g_vEyePt(0.0f, 0.2f, -90.0f);							// Camera position
 
  // Main objects used for creating and rendering the 3D scene
     D3DCAPS9          g_d3dCaps;           // Caps for the device
@@ -143,6 +166,10 @@ bool IsTreePositionValid( DWORD iTree )
 {
     FLOAT x = g_Trees[iTree].vPos.x;
     FLOAT z = g_Trees[iTree].vPos.z;
+
+	//Make sure no trees populate the landing strip
+	if (g_Trees[iTree].vPos.x >= -8.0f && g_Trees[iTree].vPos.x <= 8.0f)
+			return false;
 
     for( DWORD i=0; i < iTree; i++ )
     {
@@ -246,9 +273,49 @@ HRESULT InitGeometry()
         }
     }
 
+
     // Done with the material buffer
     pD3DXMtrlBufferTerrain->Release();
 	
+	//Create landing strip
+    if( FAILED( D3DXCreateTextureFromFile( g_pd3dDevice, L"seafloor.jpg", &g_pTextureLandingStrip ) ) )
+    {       
+		MessageBox( NULL, L"Could not find seafloor.jpg", L"Error", MB_OK );
+        return E_FAIL;
+    }
+
+	// Create the vertex buffer.
+    if( FAILED( g_pd3dDevice->CreateVertexBuffer( 4 * sizeof( CUSTOMVERTEX ),
+                                                  0, D3DFVF_CUSTOMVERTEX,
+												  D3DPOOL_DEFAULT, &g_pVBLandingStrip, NULL ) ) )
+    {
+        return E_FAIL;
+    }
+
+	// Fill the vertex buffer. We are setting the tu and tv texture
+    // coordinates, which range from 0.0 to 1.0
+    CUSTOMVERTEX* pVertices;
+    if( FAILED( g_pVBLandingStrip->Lock( 0, 0, ( void** )&pVertices, 0 ) ) )
+        return E_FAIL;
+
+    pVertices[0].position = D3DXVECTOR3( -5.0f, 0.1f, 100.0f );
+    pVertices[0].tu = -0.1f;
+    pVertices[0].tv = 0.0f;
+
+	pVertices[1].position = D3DXVECTOR3( 5.0f, 0.1f, 100.0f );
+    pVertices[1].tu = 1.1f;
+    pVertices[1].tv = 0.0f;
+
+	pVertices[2].position = D3DXVECTOR3( -5.0f, 0.1f, -100.0f );
+    pVertices[2].tu = -0.1f;
+    pVertices[2].tv = 1.0f;
+
+	pVertices[3].position = D3DXVECTOR3( 5.0f, 0.1f, -100.0f );
+    pVertices[3].tu = 1.1f;
+    pVertices[3].tv = 1.0f;
+
+	g_pVBLandingStrip->Unlock();
+
 	// Load Skybox	
 	D3DXLoadMeshFromX( TEXT("SkyBox.x"), D3DXMESH_SYSTEMMEM, g_pd3dDevice, NULL, &pD3DXMtrlBufferSkyBox, NULL, &g_dwNumMaterialsSkyBox, &g_pMeshSkyBox );
 	
@@ -378,6 +445,15 @@ VOID Cleanup()
                 g_pTreeTextures[i]->Release();
     }
 
+	if ( g_pTextureLandingStrip )
+	{
+		g_pTextureLandingStrip->Release();
+	}
+
+	if ( g_pVBLandingStrip )
+	{
+		g_pVBLandingStrip->Release();
+	}
 	    
 	if( g_pTreeVB != NULL)
 		g_pTreeVB->Release();
@@ -491,9 +567,12 @@ VOID SetupMatrices()
 	D3DXVECTOR3 vLookatPt;
 	D3DXVECTOR3 vUpVec( 0.0f, 1.0f, 0.0f );
 	
-	D3DXVECTOR3 dirVec( sin(g_phi) * sin(g_theta), cos(g_phi), sin(g_phi ) * cos(g_theta) );
+	D3DXVECTOR3 dirVec;
+	dirVec.x = sin(g_phi) * sin(g_theta);
+	dirVec.y = cos(g_phi);
+	dirVec.z = sin(g_phi ) * cos(g_theta);
 
-	D3DXVECTOR3 delta = dirVec * 0.2f;
+	D3DXVECTOR3 delta = dirVec * 0.4f;
 
 	g_vEyePt += delta;
 	vLookatPt = g_vEyePt + delta;
@@ -594,6 +673,13 @@ VOID Render()
 		
 		// Draw the trees
         DrawTrees();
+
+		// Draw the landing strip
+		g_pd3dDevice->SetTexture( 0, g_pTextureLandingStrip );
+
+        g_pd3dDevice->SetStreamSource( 0, g_pVBLandingStrip, 0, sizeof( CUSTOMVERTEX ) );
+        g_pd3dDevice->SetFVF( D3DFVF_CUSTOMVERTEX );
+        g_pd3dDevice->DrawPrimitive( D3DPT_TRIANGLESTRIP, 0, 4 );
 				
         // End the scene
         g_pd3dDevice->EndScene();
@@ -630,8 +716,8 @@ LRESULT WINAPI MsgProc( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam )
 			if (mouseDown){
 				x = LOWORD(lParam) - oldx;
 				y = HIWORD(lParam) -oldy;
-				g_theta += x * 0.01f;	
-				g_phi += y * 0.01f;
+				g_theta += x * 0.007f;	
+				g_phi += y * 0.005f;
 				oldx = LOWORD(lParam);
 				oldy = HIWORD(lParam);
 			}
@@ -697,6 +783,7 @@ INT WINAPI wWinMain( HINSTANCE hInst, HINSTANCE, LPWSTR, INT )
             }
         }
     }
+	
 
     UnregisterClass( TEXT("VR"), wc.hInstance );
     return 0;

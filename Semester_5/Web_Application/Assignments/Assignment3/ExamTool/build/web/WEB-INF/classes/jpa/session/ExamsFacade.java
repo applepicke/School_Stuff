@@ -7,6 +7,8 @@ package jpa.session;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
@@ -22,12 +24,20 @@ public class ExamsFacade extends AbstractFacade<Exams> {
     @PersistenceContext(unitName = "ExamToolPU")
     private EntityManager em;
 
+    public static final Logger log;
+    
+    static {
+        log = Logger.getLogger("ExamLogger");
+        log.setLevel(Level.ALL);
+    }
+    
     @Override
     protected EntityManager getEntityManager() {
         return em;
     }
     
     public List<String> findAllExamsTitles() {
+        log.log(Level.INFO, "Searching database for exam titles");
         List<String> examList = new ArrayList<String>();
         
         try {
@@ -45,6 +55,7 @@ public class ExamsFacade extends AbstractFacade<Exams> {
     }
     
     public Exams findByExamTitle(String examTitle){
+        log.log(Level.INFO, "Retrieving exam from database: " + examTitle);
         Exams exam;
         
         try {

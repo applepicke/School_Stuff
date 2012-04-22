@@ -1,4 +1,9 @@
 <?xml version='1.0' encoding='UTF-8' ?>
+<!--
+Document: grades.xhtml
+Created on: 4/12/2012
+Author: William Collins
+-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
@@ -12,51 +17,53 @@
         <ui:composition template="./WEB-INF/templates/loggedInTemplate.xhtml">
 
             <ui:define name="content">
-                <h:form id="gradeForm">
-                    <f:event type="preRenderView" listener="#{exam.testForExamStarted}"/>
-                    
-                    <br/>
-                    <div class="topButtons">
-                        <p:commandButton value="${msgs.download}" ajax="false">
-                            <p:fileDownload value="#{exam.downloadResults()}" />
-                        </p:commandButton>
-                        <p:commandButton value="${msgs.logout}" actionListener="#{login.logout}"/>
-                    </div>
-                    <br/>
+                <c:if test="#{exam.finished}">
+                    <h:form id="gradeForm">
+                        <f:event type="preRenderView" listener="#{exam.testForExamStarted}"/>
 
-                    <div class="results">
-                        <h:outputText value="${msgs.results}" styleClass="resultsTitle"/>
                         <br/>
-                        <h:outputText value="#{exam.userGrade.numCorrect} / #{exam.userGrade.numQuestions}"/>
-                        <br/>
-                        <h:outputText value="#{exam.userGrade.percentage}%"/>
-                        <br/>
-                        <h:outputText value="#{exam.userGrade.letterGrade}"/>
-                    </div>
-
-                    <c:forEach var="question" items="${exam.exam.questionsCollection}">
-                        <div class="questionResults">
-
-
-                            <img src="#{exam.getQuestionImage(question)}" class="gradedImages"/>
-
-
-                            <h:outputText value=" Q. #{question.question}"/> 
-                            <br/>
-                            <h:outputText value="a. #{question.a}" />
-                            <br/>
-                            <h:outputText value="b. #{question.b}" />
-                            <br/>
-                            <h:outputText value="c. #{question.c}" rendered="#{question.QType == 'MC_4' || question.QType == 'MC_5'}"/>
-                            <c:if test="#{question.QType == 'MC_4' || question.QType == 'MC_5'}"><br/></c:if> 
-                            <h:outputText value="d. #{question.d}" rendered="#{question.QType == 'MC_4' || question.QType == 'MC_5'}"/>
-                            <c:if test="#{question.QType == 'MC_5'}"><br/></c:if> 
-                            <h:outputText value="e. #{question.e}" rendered="#{question.QType == 'MC_5'}"/>
+                        <div class="topButtons">
+                            <p:commandButton value="${msgs.download}" ajax="false">
+                                <p:fileDownload value="#{exam.downloadResults()}" />
+                            </p:commandButton>
+                            <p:commandButton value="${msgs.logout}" actionListener="#{login.logout}"/>
                         </div>
-                    </c:forEach>
+                        <br/>
+
+                        <div class="results">
+                            <h:outputText value="${msgs.results}" styleClass="resultsTitle"/>
+                            <br/>
+                            <h:outputText value="#{exam.userGrade.numCorrect} / #{exam.userGrade.numQuestions}"/>
+                            <br/>
+                            <h:outputText value="#{exam.userGrade.percentage}%"/>
+                            <br/>
+                            <h:outputText value="#{exam.userGrade.letterGrade}"/>
+                        </div>
+
+                        <c:forEach var="question" items="${exam.exam.questionsCollection}">
+                            <div class="questionResults">
 
 
-                </h:form>
+                                <img src="#{exam.getQuestionImage(question)}" class="gradedImages"/>
+
+
+                                <h:outputText value=" Q. #{question.question}"/> 
+                                <br/>
+                                <h:outputText value="a. #{question.a}" />
+                                <br/>
+                                <h:outputText value="b. #{question.b}" />
+                                <br/>
+                                <h:outputText value="c. #{question.c}" rendered="#{question.QType == 'MC_4' || question.QType == 'MC_5'}"/>
+                                <c:if test="#{question.QType == 'MC_4' || question.QType == 'MC_5'}"><br/></c:if> 
+                                <h:outputText value="d. #{question.d}" rendered="#{question.QType == 'MC_4' || question.QType == 'MC_5'}"/>
+                                <c:if test="#{question.QType == 'MC_5'}"><br/></c:if> 
+                                <h:outputText value="e. #{question.e}" rendered="#{question.QType == 'MC_5'}"/>
+                            </div>
+                        </c:forEach>
+
+
+                    </h:form>
+                </c:if>
             </ui:define>
 
         </ui:composition>
