@@ -16,8 +16,9 @@ dir
 echo Now running the Test Harrness
 echo ----------------------------------------------------------------------------
 java -cp ".\bin;.\junit4.10\junit-4.10.jar" org.junit.runner.JUnitCore TestMath
-java -cp ".\bin;.\junit4.10\junit-4.10.jar" org.junit.runner.JUnitCore LastZeroTest_defect
 java -cp ".\bin;.\junit4.10\junit-4.10.jar" org.junit.runner.JUnitCore LastZeroTest_correct
+java -cp ".\bin;.\junit4.10\junit-4.10.jar" org.junit.runner.JUnitCore LastZeroTest_defect
+
 
 
 pause

@@ -1,0 +1,86 @@
+
+E:\dev\School_Stuff\Semester_6\QA\Lab1>echo off 
+Lab 1 Example Test Harness 
+Running the tests
+ Volume in drive E is Willy
+ Volume Serial Number is 5A74-14F2
+
+ Directory of E:\dev\School_Stuff\Semester_6\QA\Lab1
+
+09/13/2012  11:22 AM    <DIR>          .
+09/13/2012  11:22 AM    <DIR>          ..
+09/13/2012  10:25 AM               422 .classpath
+09/13/2012  10:25 AM               380 .project
+09/13/2012  10:25 AM    <DIR>          .settings
+09/13/2012  10:26 AM    <DIR>          bin
+09/13/2012  10:25 AM    <DIR>          junit4.10
+09/13/2012  11:08 AM               139 README.txt
+09/13/2012  11:22 AM                81 results.text
+09/13/2012  11:21 AM             3,882 results.txt
+09/13/2012  10:25 AM    <DIR>          src
+09/13/2012  10:26 AM    <DIR>          test
+09/13/2012  11:21 AM               894 test_harness.bat
+09/13/2012  10:56 AM               527 test_plan.txt
+               7 File(s)          6,325 bytes
+               7 Dir(s)  132,863,307,776 bytes free
+Now running the Test Harrness
+----------------------------------------------------------------------------
+JUnit version 4.10
+..
+Time: 0.004
+
+OK (2 tests)
+
+JUnit version 4.10
+....
+Time: 0.005
+
+OK (4 tests)
+
+JUnit version 4.10
+....E
+Time: 0.006
+There was 1 failure:
+1) testLastZeroWithMultipleZeros(LastZeroTest_defect)
+java.lang.AssertionError: Zero should be element 2
+	at org.junit.Assert.fail(Assert.java:93)
+	at org.junit.Assert.assertTrue(Assert.java:43)
+	at LastZeroTest_defect.testLastZeroWithMultipleZeros(LastZeroTest_defect.java:56)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.junit.runners.Suite.runChild(Suite.java:128)
+	at org.junit.runners.Suite.runChild(Suite.java:24)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:157)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:136)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:117)
+	at org.junit.runner.JUnitCore.runMain(JUnitCore.java:98)
+	at org.junit.runner.JUnitCore.runMainAndExit(JUnitCore.java:53)
+	at org.junit.runner.JUnitCore.main(JUnitCore.java:45)
+
+FAILURES!!!
+Tests run: 4,  Failures: 1
+
+Press any key to continue . . . 
