@@ -4,7 +4,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 
-public class LastZeroTest {
+public class LastZeroTest_defect {
 
 	@Before
 	public void setUp() {
@@ -19,7 +19,7 @@ public class LastZeroTest {
 	@Test
 	public void testLastZeroWithNoZeros() {
 		int[] testArray = { 1, 2, 3 };		
-		int result = lastZero.lastZero_correct(testArray);
+		int result = lastZero.lastZero_defect(testArray);
 		assertTrue("No zero in list should return -1", result == -1);
 		
 	}
@@ -29,9 +29,9 @@ public class LastZeroTest {
 		int[] testArray1 = { 2, 0, 8 };
 		int[] testArray2 = { 0, 1, 2 };
 		int[] testArray3 = { 1, 2, 0 };
-		int result1 = lastZero.lastZero_correct(testArray1);
-		int result2 = lastZero.lastZero_correct(testArray2);
-		int result3 = lastZero.lastZero_correct(testArray3);
+		int result1 = lastZero.lastZero_defect(testArray1);
+		int result2 = lastZero.lastZero_defect(testArray2);
+		int result3 = lastZero.lastZero_defect(testArray3);
 		assertTrue("Zero should be element 1", result1 == 1);
 		assertTrue("Zero should be element 0", result2== -0);
 		assertTrue("Zero should be element 2", result3 == 2);
@@ -41,7 +41,7 @@ public class LastZeroTest {
 	public void testLastZeroWithNull(){
 		boolean thrown = false;
 		try {
-			lastZero.lastZero_correct(null);
+			lastZero.lastZero_defect(null);
 		}
 		catch (NullPointerException e) {
 			thrown = true;
@@ -52,7 +52,7 @@ public class LastZeroTest {
 	@Test
 	public void testLastZeroWithMultipleZeros() {
 		int[] testArray = { 0, 3, 0, 3 };
-		int result = lastZero.lastZero_correct(testArray);
+		int result = lastZero.lastZero_defect(testArray);
 		assertTrue("Zero should be element 2", result == 2);
 	}
 	

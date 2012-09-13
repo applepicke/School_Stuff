@@ -1,0 +1,14 @@
+TEST PLAN
+~~~~~~~~~~
+
+
+lastzero.java
+--------------
+
+case	|	TEST 		|	input							| returns
+ ___________________________________________________________________________________
+|1		|	no zeros 	| array with no zeros in it			| -1					|
+|2		| 	one zeros 	| array with one zero in it 		| index of zeros 		|
+|3 		| 	null		| null								| NullPointerException	|
+|4		| 	mult zeros	| array with many zeros in it 		| index of last zeros 	|
+ ___________________________________________________________________________________
