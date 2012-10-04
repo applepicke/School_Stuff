@@ -30,7 +30,6 @@ int intensity_g = 0;
 int intensity_b = 0;
 int increment = 1;
 
-int colour = 0;
 
 void loop() {
   
@@ -59,40 +58,14 @@ void loop() {
   }
   
   if ( digitalRead( BUTTON_CHG_COL ) == LOW ) {
-    if ( colour == 0 ) {
-      red();
-    }
-    if ( colour == 1 ) {
-      green();
-    }
-    if ( colour == 2 ) {
-      blue();           
-    }
-    colour = ( colour < 2 ) ? colour+1: 0;
-    delay( 250 );
+    randomColour();
+    delay( 500 );
   }
 }
 
-void red() {
-  digitalWrite( LED_R, HIGH );
-  digitalWrite( LED_G, LOW );
-  digitalWrite( LED_B, LOW );
+void randomColour() {
+  analogWrite( LED_R, random( MAX_INTENSITY ) );
+  analogWrite( LED_G, random( MAX_INTENSITY ) );
+  analogWrite( LED_B, random( MAX_INTENSITY ) );
 }
 
-void green() {
-  digitalWrite( LED_R, LOW );
-  digitalWrite( LED_G, HIGH );
-  digitalWrite( LED_B, LOW );
-}
-
-void blue() {
-  digitalWrite( LED_R, LOW );
-  digitalWrite( LED_G, LOW );
-  digitalWrite( LED_B, HIGH );  
-}
-
-void dark() {
-  digitalWrite( LED_R, LOW );
-  digitalWrite( LED_G, LOW );
-  digitalWrite( LED_B, LOW );
-}
