@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore">
+  <widgets xsi:type="model:Browser" id="1" x="88" y="57" width="857" height="750" text="View Entry&#xD;&#xA;http://www.ncrdrugtrends.org/secure/Zones.aspx" measuredWidth="857" measuredHeight="750"/>
+  <widgets xsi:type="model:Panel" id="2" x="160" y="109" width="689" height="693" measuredWidth="689" measuredHeight="693"/>
+  <widgets xsi:type="model:Placeholder" id="3" x="160" y="108" width="113" height="69" text="Logo" measuredWidth="113" measuredHeight="69"/>
+  <widgets xsi:type="model:Label" id="4" x="272" y="124" width="550" text="NCR Drug Trend Mapping System " measuredWidth="550" measuredHeight="53">
+    <font size="24"/>
+  </widgets>
+  <widgets xsi:type="model:ButtonBar" id="5" x="160" y="176" width="689" text="Entries, Zones, Reports, Contributors, About, Administration" measuredWidth="689" measuredHeight="27" selection="1">
+    <font/>
+    <items x="0" y="0" width="93" height="27" text="Entries"/>
+    <items x="93" y="0" width="87" height="27" text="Zones"/>
+    <items x="180" y="0" width="101" height="27" text="Reports"/>
+    <items x="281" y="0" width="146" height="27" text="Contributors"/>
+    <items x="427" y="0" width="89" height="27" text="About"/>
+    <items x="516" y="0" width="173" height="27" text="Administration"/>
+  </widgets>
+  <widgets xsi:type="model:Breadcrumbs" id="6" x="170" y="202" text="Home, Zones" measuredWidth="88" measuredHeight="23">
+    <font/>
+    <items x="0" y="0" width="33" height="23" text="Home"/>
+    <items x="53" y="0" width="32" height="23" text="Zones"/>
+  </widgets>
+  <widgets xsi:type="model:HLine" id="7" x="160" y="224" width="689" measuredWidth="689" measuredHeight="6"/>
+  <widgets xsi:type="model:Map" id="9" x="189" y="306" width="630" measuredWidth="630" measuredHeight="200"/>
+  <widgets xsi:type="model:Label" id="10" x="206" y="513" text="Zone Name:" measuredWidth="70" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="11" x="186" y="238" text="Zones" measuredWidth="70" measuredHeight="40">
+    <font size="18"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="29" x="285" y="513" text="Zone" measuredWidth="32" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Link" id="30" x="667" y="284" text="View Report Based on Zones" measuredWidth="152" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Group" id="37" x="188" y="538" width="650" height="111" text="Recent Entries in This Zone" measuredWidth="650" measuredHeight="111">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Table" id="38" x="206" y="569" width="622" height="72" text="Organization, Zone, Date, Drug,Actions&#xA;RCMP, Rideau-Vanier, 6/8/2011, Cocaine,[View]&#xA;RCMP, Rideau-Vanier, &#x9;6/7/2011, Marijuana,[View]&#xA;" measuredWidth="622" measuredHeight="72" selection="" alpha="128" alternative="#cccccc">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Link" id="40" x="640" y="547" text="View More Entries in this Zone" measuredWidth="162" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Tooltip" id="41" x="792" y="513" text="REMOVE THIS: This redirects to a search in entries listing" measuredWidth="306" measuredHeight="40">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Group" id="42" x="186" y="664" width="650" height="127" text="Recent Entries in This Zone" measuredWidth="650" measuredHeight="127">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Table" id="43" x="204" y="695" width="622" height="86" text="Organization, UserName,Actions&#xA;pork inc, Kanata North,[View] [Delete]&#xA;" measuredWidth="622" measuredHeight="86" selection="" alpha="128" alternative="#cccccc">
+    <font/>
+  </widgets>
+  <hRuler/>
+  <vRuler/>
+  <font/>
+</model:Screen>

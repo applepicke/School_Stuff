@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore">
+  <widgets xsi:type="model:Browser" id="1" x="88" y="57" width="857" height="664" text="Entries Listing&#xD;&#xA;http://www.ncrdrugtrends.org/secure/listing.aspx" measuredWidth="857" measuredHeight="664"/>
+  <widgets xsi:type="model:Panel" id="2" x="160" y="108" width="689" height="613" measuredWidth="689" measuredHeight="613"/>
+  <widgets xsi:type="model:Placeholder" id="3" x="160" y="108" width="113" height="69" text="Logo" measuredWidth="113" measuredHeight="69"/>
+  <widgets xsi:type="model:Label" id="4" x="272" y="124" width="550" text="NCR Drug Trend Mapping System " measuredWidth="550" measuredHeight="53">
+    <font size="24"/>
+  </widgets>
+  <widgets xsi:type="model:ButtonBar" id="5" x="160" y="176" width="689" text="Entries, Zones, Reports, Contributors, About, Administration" measuredWidth="689" measuredHeight="27" selection="0">
+    <font/>
+    <items x="0" y="0" width="93" height="27" text="Entries"/>
+    <items x="93" y="0" width="87" height="27" text="Zones"/>
+    <items x="180" y="0" width="101" height="27" text="Reports"/>
+    <items x="281" y="0" width="146" height="27" text="Contributors"/>
+    <items x="427" y="0" width="89" height="27" text="About"/>
+    <items x="516" y="0" width="173" height="27" text="Administration"/>
+  </widgets>
+  <widgets xsi:type="model:Breadcrumbs" id="6" x="170" y="202" text="Home, Entries" measuredWidth="91" measuredHeight="23">
+    <font/>
+    <items x="0" y="0" width="33" height="23" text="Home"/>
+    <items x="53" y="0" width="35" height="23" text="Entries"/>
+  </widgets>
+  <widgets xsi:type="model:HLine" id="7" x="160" y="224" width="689" measuredWidth="689" measuredHeight="6"/>
+  <widgets xsi:type="model:Table" id="8" x="170" y="392" width="669" height="329" text="Organization, Zone, Date, Drug,Actions&#xA;pork inc, Kanata North, 2/20/2012, World of Warcraft,[Edit] [View] [Delete]&#xA;RCMP, Rideau-Vanier, 6/8/2011, Cocaine,[Edit] [View] [Delete]&#xA;RCMP, Rideau-Vanier, &#x9;6/7/2011, Marijuana,[Edit] [View] [Delete]&#xA;" measuredWidth="669" measuredHeight="329" selection="" alpha="128" alternative="#cccccc">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Group" id="9" x="170" y="257" width="669" height="136" text="Search" measuredWidth="669" measuredHeight="136">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="10" x="403" y="274" text="By Drug:" measuredWidth="50" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="13" x="180" y="275" text="By Organization:" measuredWidth="92" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="14" x="735" y="235" text="New Entry" measuredWidth="74" measuredHeight="25">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="16" x="403" y="303" text="By Drug Form:" measuredWidth="81" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Combo" id="17" x="489" y="273" width="105" text="Drugs" measuredWidth="105" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Combo" id="18" x="279" y="276" width="117" text="Organization" measuredWidth="117" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Combo" id="19" x="489" y="302" width="105" text="Drug Form" measuredWidth="105" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="20" x="403" y="333" text="By Drug Colour: " measuredWidth="92" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Combo" id="21" x="488" y="333" width="105" text="Drug Colour" measuredWidth="105" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="22" x="180" y="302" text="From Date:" measuredWidth="63" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="24" x="180" y="332" text="To Date:" measuredWidth="49" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="26" x="602" y="277" text="By Pill Stamp:" measuredWidth="77" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="27" x="602" y="306" text="By Pill Shape: " measuredWidth="78" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Combo" id="28" x="688" y="276" width="105" text="Drugs" measuredWidth="105" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Combo" id="29" x="688" y="305" width="105" text="Drug Form" measuredWidth="105" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="30" x="602" y="336" text="By Side Effects: " measuredWidth="87" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Combo" id="31" x="687" y="336" width="105" text="Drug Colour" measuredWidth="105" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:DateField" id="32" x="279" y="303" text="  MM/DD/YYYY  " measuredWidth="117" measuredHeight="23"/>
+  <widgets xsi:type="model:DateField" id="33" x="279" y="333" width="117" text="  MM/DD/YYYY" measuredWidth="117" measuredHeight="23"/>
+  <widgets xsi:type="model:Button" id="34" x="734" y="363" text="Search" measuredWidth="55" measuredHeight="25">
+    <font/>
+  </widgets>
+  <hRuler/>
+  <vRuler/>
+  <font/>
+</model:Screen>

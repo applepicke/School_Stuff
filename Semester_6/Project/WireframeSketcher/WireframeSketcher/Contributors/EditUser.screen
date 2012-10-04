@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore">
+  <widgets xsi:type="model:Browser" id="1" x="88" y="57" width="857" height="664" text="Admin Page&#xD;&#xA;http://www.ncrdrugtrends.org/secure/Admin/editdetails.aspx" measuredWidth="857" measuredHeight="664"/>
+  <widgets xsi:type="model:Panel" id="2" x="160" y="108" width="689" height="605" measuredWidth="689" measuredHeight="605"/>
+  <widgets xsi:type="model:Placeholder" id="3" x="160" y="108" width="113" height="69" text="Logo" measuredWidth="113" measuredHeight="69"/>
+  <widgets xsi:type="model:Label" id="4" x="272" y="124" width="550" text="NCR Drug Trend Mapping System " measuredWidth="550" measuredHeight="53">
+    <font size="24"/>
+  </widgets>
+  <widgets xsi:type="model:ButtonBar" id="5" x="160" y="176" width="689" text="Entries, Zones, Reports, Contributors, About, Administration" measuredWidth="689" measuredHeight="27" selection="5">
+    <font/>
+    <items x="0" y="0" width="93" height="27" text="Entries"/>
+    <items x="93" y="0" width="87" height="27" text="Zones"/>
+    <items x="180" y="0" width="101" height="27" text="Reports"/>
+    <items x="281" y="0" width="146" height="27" text="Contributors"/>
+    <items x="427" y="0" width="89" height="27" text="About"/>
+    <items x="516" y="0" width="173" height="27" text="Administration"/>
+  </widgets>
+  <widgets xsi:type="model:Breadcrumbs" id="6" x="170" y="202" text="Home, Admin, Drug Type, Edit" measuredWidth="207" measuredHeight="23">
+    <font/>
+    <items x="0" y="0" width="33" height="23" text="Home"/>
+    <items x="53" y="0" width="36" height="23" text="Admin"/>
+    <items x="109" y="0" width="55" height="23" text="Drug Type"/>
+    <items x="184" y="0" width="20" height="23" text="Edit"/>
+  </widgets>
+  <widgets xsi:type="model:HLine" id="7" x="160" y="224" width="689" measuredWidth="689" measuredHeight="6"/>
+  <widgets xsi:type="model:Group" id="8" x="170" y="248" width="663" height="457" text="Edit Details" measuredWidth="663" measuredHeight="457">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="9" x="180" y="272" text="Name: " measuredWidth="43" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:TextField" id="11" x="328" y="272" width="489" text="name" measuredWidth="489" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="13" x="696" y="672" text="Submit" measuredWidth="58" measuredHeight="25">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="14" x="761" y="672" text="Cancel" measuredWidth="56" measuredHeight="25">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="15" x="180" y="304" text="Email:" measuredWidth="37" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:TextField" id="16" x="328" y="304" width="489" text="Email" measuredWidth="489" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="17" x="180" y="334" text="New Password:" measuredWidth="85" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:TextField" id="18" x="328" y="334" width="489" text="*************" measuredWidth="489" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="19" x="180" y="363" text="Confirm Pass:" measuredWidth="78" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:TextField" id="20" x="328" y="363" width="489" text="*************" measuredWidth="489" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="24" x="180" y="392" text="Zone:" measuredWidth="35" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Table" id="29" x="328" y="392" width="489" height="132" text="Orléans&#xA;Innes&#xA;Barrhaven&#xA;Kanata North&#xA;West Carleton-March&#xA;Stittsville&#xA;Bay&#xA;College&#xA;Knoxdale-Merivale&#xA;Gloucester-Southgate&#xA;Beacon Hill-Cyrville&#xA;Rideau-Vanier&#xA;Rideau-Rockcliffe&#xA;Somerset&#xA;Kitchissippi&#xA;River&#xA;Capital&#xA;Alta Vista&#xA;Cumberland&#xA;Osgoode&#xA;Rideau-Goulbourn&#xA;Gloucester-South Nepean&#xA;Kanata South" measuredWidth="489" measuredHeight="132" selection="" verticalScrollbar="true" alternative="#eeeeee" header="false">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Tooltip" id="30" x="672" y="363" text="Contains Check Boxes" measuredWidth="126" measuredHeight="40">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Tooltip" id="31" x="680" y="414" text="Should be alphabetical, currently isn't" measuredWidth="208" measuredHeight="40">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="32" x="180" y="544" width="133" text="Do you wish to receive\n a monthly newsletter via \ne-mail? " measuredWidth="133" measuredHeight="53">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:RadioButton" id="33" x="328" y="559" text="Yes" measuredWidth="38" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:RadioButton" id="34" x="384" y="559" text="No" measuredWidth="36" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="35" x="180" y="609" width="133" text="Would you like to receive \nnew messages notification \nvia email? " measuredWidth="133" measuredHeight="53">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:RadioButton" id="36" x="328" y="624" text="Yes" measuredWidth="38" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:RadioButton" id="37" x="384" y="624" text="No" measuredWidth="36" measuredHeight="23">
+    <font/>
+  </widgets>
+  <hRuler/>
+  <vRuler/>
+  <font/>
+</model:Screen>

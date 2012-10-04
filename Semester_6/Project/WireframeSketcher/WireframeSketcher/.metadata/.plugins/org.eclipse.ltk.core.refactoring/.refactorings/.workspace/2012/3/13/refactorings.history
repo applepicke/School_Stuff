@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;RCMP&apos; to &apos;Administrator Page&apos;" description="Rename resource &apos;RCMP&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/RCMP" name="Administrator Page" stamp="1332806712837" updateReferences="true"/>
+</session>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ResourcesSelectionDialog">
+		<item value="false" key="showFilesInAllProjects"/>
+	</section>
+	<section name="ColorChooserDialog">
+	</section>
+	<section name="SaveAsImageDialogSettings">
+		<item value="AUTO" key="orientation"/>
+		<item value="false" key="highlightLinks"/>
+		<item value="FIT_TO_PAGE" key="pdfFormat"/>
+		<item value="LETTER" key="pageSize"/>
+		<item value="false" key="hideAnnotations"/>
+		<item value="false" key="hideExportScreenflow"/>
+		<list key="folderHistory">
+			<item value="C:\Users\Hussain64"/>
+		</list>
+		<list key="fileNameHistory">
+			<item value="Admin"/>
+		</list>
+	</section>
+</section>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore">
+  <widgets xsi:type="model:Browser" id="1" x="88" y="57" width="857" height="577" text="Admin Page&#xD;&#xA;http://www.ncrdrugtrends.org/secure/editdetails.aspx" measuredWidth="857" measuredHeight="577"/>
+  <widgets xsi:type="model:Panel" id="2" x="160" y="108" width="689" height="525" measuredWidth="689" measuredHeight="525"/>
+  <widgets xsi:type="model:Placeholder" id="3" x="160" y="108" width="113" height="69" text="Logo" measuredWidth="113" measuredHeight="69"/>
+  <widgets xsi:type="model:Label" id="4" x="272" y="124" width="550" text="NCR Drug Trend Mapping System " measuredWidth="550" measuredHeight="53">
+    <font size="24"/>
+  </widgets>
+  <widgets xsi:type="model:ButtonBar" id="5" x="160" y="176" width="689" text="Entries, Zones, Reports, Contributors, About, Administration" measuredWidth="689" measuredHeight="27" selection="5">
+    <font/>
+    <items x="0" y="0" width="93" height="27" text="Entries"/>
+    <items x="93" y="0" width="87" height="27" text="Zones"/>
+    <items x="180" y="0" width="101" height="27" text="Reports"/>
+    <items x="281" y="0" width="146" height="27" text="Contributors"/>
+    <items x="427" y="0" width="89" height="27" text="About"/>
+    <items x="516" y="0" width="173" height="27" text="Administration"/>
+  </widgets>
+  <widgets xsi:type="model:Breadcrumbs" id="6" x="170" y="202" text="Home, Admin, Drug Type, Edit" measuredWidth="207" measuredHeight="23">
+    <font/>
+    <items x="0" y="0" width="33" height="23" text="Home"/>
+    <items x="53" y="0" width="36" height="23" text="Admin"/>
+    <items x="109" y="0" width="55" height="23" text="Drug Type"/>
+    <items x="184" y="0" width="20" height="23" text="Edit"/>
+  </widgets>
+  <widgets xsi:type="model:HLine" id="7" x="160" y="224" width="689" measuredWidth="689" measuredHeight="6"/>
+  <widgets xsi:type="model:Group" id="14" x="170" y="248" width="663" height="281" text="Edit Details" measuredWidth="663" measuredHeight="281">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="15" x="180" y="272" text="Name: " measuredWidth="43" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="16" x="180" y="304" text="Description:" measuredWidth="68" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:TextField" id="17" x="272" y="272" width="545" text="name" measuredWidth="545" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:TextArea" id="18" x="272" y="304" width="545" height="169" text="A *paragraph* of text&#xA;A _second_ row of text" measuredWidth="545" measuredHeight="169">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="19" x="696" y="488" text="Submit" measuredWidth="58" measuredHeight="25">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="20" x="761" y="488" text="Cancel" measuredWidth="56" measuredHeight="25">
+    <font/>
+  </widgets>
+  <hRuler/>
+  <vRuler/>
+  <font/>
+</model:Screen>
