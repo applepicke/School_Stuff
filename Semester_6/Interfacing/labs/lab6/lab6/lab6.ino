@@ -1,4 +1,6 @@
 
+#include <math.h>
+
 // Pin Assignments
 int L_A = 15;
 int L_B = 16;
@@ -12,8 +14,10 @@ int L_DP = 6;
 int L1_CA = 12;
 int L2_CA = 10;
 
-int BUTTON = 0;
-int BUTTON_CYCLE = 1;
+//Decimal Point LED
+int LED = 18;
+int VOM_OUT = 17;
+int VOM_IN = 19;
 
 // Voltage Per Segmant constant (255 / 8)
 int VPS = 31;
@@ -62,6 +66,14 @@ int ALPHANUM_CODES[] = {
   0x5E, 0x7C, 0x42, 0x6D, 0x47, 0x23, 0x15, 0x2B, 0x76, 0x75, 0x52
 };
 
+int LED_CODES[] = {
+  0x80, 0x40, 0x20, 0x10, 0x08, 0x04, 0x02, 0x01   
+};
+
+int NUM_BAR_LEDS = 14;
+
+int counter = 0;
+
 void setup() {
   pinMode( L_A, OUTPUT );
   pinMode( L_B, OUTPUT );
@@ -74,73 +86,73 @@ void setup() {
  
   pinMode( L1_CA, OUTPUT );
   pinMode( L2_CA, OUTPUT );
- 
-  pinMode( BUTTON, INPUT_PULLUP );
-  pinMode( BUTTON_CYCLE, INPUT_PULLUP );
+
+  pinMode( LED, OUTPUT );  
+  pinMode( VOM_OUT, OUTPUT );
+  pinMode( VOM_IN, INPUT );
   
+  Serial.begin( 9400 );
+
 }
+
+int MODE_CYLON = 0;
+int MODE_GRAPH = 1;
+int MODE_SENSE = 2;
 
 void loop() {
-  static int index1 = 0;
-  static int index2 = 0;
-  static int oldTime = millis();
-  int newTime;
-  static int mode = HEX_MODE;
-  boolean change = false;
-  static boolean stopNumbers = false;
-  
-  newTime = millis();
-  if ( (newTime - oldTime) >= 500 ) {
-    oldTime = newTime;
-    change = true;
-  }
-  
-  if ( mode == ALPHA_MODE ) {
-    if ( change ) {
-      index1 = ( index1 == 35 ) ? 0: index1 + 1;
-    }       
-    writeTo7Segment( L1_CA, ALPHANUM_CODES[index1] );
-    writeTo7Segment( L2_CA, 0 );
-  }
-  
-  if ( mode == HEX_MODE ) {    
-    if ( change )  {
-      if ( index1 == 15 ) {
-        index1 = -1;
-        index2 = ( index2 == 15 ) ? 0: index2+1; 
-      }    
-      index1++;    
-    }    
-    writeTo7Segment( L1_CA, HEX_CODES[index2] );
-    writeTo7Segment( L2_CA, HEX_CODES[index1] );
-  }
-  
-  if ( mode == GRADE_MODE ) {    
-    if ( digitalRead( BUTTON_CYCLE ) == LOW ) {
-       stopNumbers = ( stopNumbers == false ) ? true: false;
-       delay( 250 );
-    }
-    if ( !stopNumbers ) {
-      if ( index1 == 9 ) {
-        index1 = -1;
-        index2 = ( index2 == 9 ) ? 0: index2+1;
-      }    
-      index1++;
-    }
-    writeTo7Segment( L1_CA, HEX_CODES[index2] );
-    writeTo7Segment( L2_CA, HEX_CODES[index1] );
-  }
-  
-  if ( digitalRead( BUTTON ) == LOW ) {
-    mode = ( mode == 2 ) ? 0: mode + 1; 
-    index1 = 0;
-    index2 = 0;
-    delay( 250 ); 
-  }
-   
+  measureVoltage();
 }
 
-void writeTo7Segment( int pin, int hex ) {
+void measureVoltage() { 
+  static int voltage;
+  static int decimal;
+  static int dig1;
+  static int dig2;
+  static int dig3;
+  
+  digitalWrite( VOM_OUT, HIGH );
+  voltage = (analogRead( VOM_IN ) * 500L) / 1023;
+  Serial.println( voltage, DEC ); 
+  Serial.println( decimalPlace(voltage), DEC );
+ 
+  decimal = decimalPlace( voltage );
+  if ( decimal == 1 ) voltage = intRound(voltage);
+  dig1 = voltage / 100;
+  dig2 = (voltage % 100) / 10;
+  dig3 = voltage % 10;
+  
+  //Red LED is the decimal
+  if ( decimal == 0 ){
+    digitalWrite( LED, HIGH );
+    writeTo7Segment( L1_CA, HEX_CODES[dig2], false );
+    writeTo7Segment( L2_CA, HEX_CODES[dig3], false ); 
+  } 
+  //Decimal in the middle
+  if ( decimal == 1 ) {
+    digitalWrite( LED, LOW );
+    writeTo7Segment( L1_CA, HEX_CODES[dig1], true );
+    writeTo7Segment( L2_CA, HEX_CODES[dig2], false );     
+  }
+}
+
+int intRound( int voltage ) {
+  if ( (voltage % 10) >= 5 ) {
+    voltage -= voltage % 10; 
+    voltage += 10; 
+  }
+  return voltage;
+}
+
+int decimalPlace( int voltage ) {
+  if ( (voltage / 100) > 0 ) {
+    return 1; 
+  }
+  else {
+    return 0; 
+  }
+}
+
+void writeTo7Segment( int pin, int hex, boolean dec ) {
   static int state;
   int numSegments;
 
@@ -158,7 +170,7 @@ void writeTo7Segment( int pin, int hex ) {
   digitalWrite( L_F, state );
   state = hex & MASK_G ? LOW: HIGH;
   digitalWrite( L_G, state );
-  state = hex & MASK_DP ? LOW: HIGH;
+  state = dec ? LOW: HIGH;
   digitalWrite( L_DP, state );
   
   for ( hex; hex != 0; hex >>= 1 ) {
@@ -166,9 +178,9 @@ void writeTo7Segment( int pin, int hex ) {
       numSegments++;
   }  
   analogWrite( pin, VPS * numSegments );
-  delay( 2 );
+  delay( 5 );
   analogWrite( pin, 0 );
-  delay( 3 );    
+  delay( 5 );    
 }
 
 
