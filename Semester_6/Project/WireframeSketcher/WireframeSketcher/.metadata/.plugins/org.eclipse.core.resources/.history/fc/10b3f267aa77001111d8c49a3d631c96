@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore">
+  <widgets xsi:type="model:Browser" id="1" x="88" y="57" width="857" height="664" text="Entries Listing&#xD;&#xA;http://www.ncrdrugtrends.org/secure/listing.aspx" measuredWidth="857" measuredHeight="664"/>
+  <widgets xsi:type="model:Panel" id="2" x="160" y="108" width="689" height="613" measuredWidth="689" measuredHeight="613"/>
+  <widgets xsi:type="model:Placeholder" id="3" x="160" y="108" width="113" height="69" text="Logo" measuredWidth="113" measuredHeight="69"/>
+  <widgets xsi:type="model:Label" id="4" x="272" y="124" width="550" text="NCR Drug Trend Mapping System " measuredWidth="550" measuredHeight="53">
+    <font size="24"/>
+  </widgets>
+  <widgets xsi:type="model:ButtonBar" id="5" x="160" y="176" width="689" text="Entries, Zones, Reports, Contributors, About, Administration" measuredWidth="689" measuredHeight="27" selection="0">
+    <font/>
+    <items x="0" y="0" width="93" height="27" text="Entries"/>
+    <items x="93" y="0" width="87" height="27" text="Zones"/>
+    <items x="180" y="0" width="101" height="27" text="Reports"/>
+    <items x="281" y="0" width="146" height="27" text="Contributors"/>
+    <items x="427" y="0" width="89" height="27" text="About"/>
+    <items x="516" y="0" width="173" height="27" text="Administration"/>
+  </widgets>
+  <widgets xsi:type="model:Breadcrumbs" id="6" x="170" y="202" text="Home, Entries" measuredWidth="91" measuredHeight="23">
+    <font/>
+    <items x="0" y="0" width="33" height="23" text="Home"/>
+    <items x="53" y="0" width="35" height="23" text="Entries"/>
+  </widgets>
+  <widgets xsi:type="model:HLine" id="7" x="160" y="224" width="689" measuredWidth="689" measuredHeight="6"/>
+  <widgets xsi:type="model:Table" id="8" x="170" y="352" width="669" height="369" text="Name, Organization, Zone,Actions&#xA;Hussain Farbotko-Merabaksh, pork inc, Kanata North,[Message] [Edit]&#xA;Vanessa Cote, RCMP, Rideau-Vanier,[Message] [Edit]&#xA;" measuredWidth="669" measuredHeight="369" selection="" alpha="128" alternative="#cccccc">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Group" id="9" x="170" y="257" width="669" height="88" text="Search" measuredWidth="669" measuredHeight="88">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="11" x="180" y="275" text="By Organization:" measuredWidth="92" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="12" x="735" y="235" text="New Entry" measuredWidth="74" measuredHeight="25">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Combo" id="15" x="279" y="276" width="234" text="Organization" measuredWidth="234" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="21" x="520" y="276" text="By Name:" measuredWidth="56" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="29" x="728" y="312" text="Search" measuredWidth="55" measuredHeight="25">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:SearchField" id="31" x="575" y="276" width="208" text="Name" measuredWidth="208" measuredHeight="24"/>
+  <hRuler/>
+  <vRuler/>
+  <font/>
+</model:Screen>
