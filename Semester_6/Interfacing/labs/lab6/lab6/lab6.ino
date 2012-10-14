@@ -14,6 +14,12 @@ int L_DP = 6;
 int L1_CA = 12;
 int L2_CA = 10;
 
+//Measuring Internals
+int VR_COMMON = 20;
+int R_220 = 5;
+int R_1K = 4;
+int R_10K = 3;
+
 //Decimal Point LED
 int LED = 18;
 int VOM_OUT = 17;
@@ -91,6 +97,11 @@ void setup() {
   pinMode( VOM_OUT, OUTPUT );
   pinMode( VOM_IN, INPUT );
   
+  //pinMode( VR_COMMON, OUTPUT );
+  //pinMode( R_220, INPUT );
+  //pinMode( R_1K, OUTPUT );
+  //pinMode( R_10K, INPUT );
+  
   Serial.begin( 9400 );
 
 }
@@ -100,6 +111,10 @@ int MODE_GRAPH = 1;
 int MODE_SENSE = 2;
 
 void loop() {
+  //digitalWrite( R_10K, LOW );
+  //digitalWrite( R_1K, HIGH );
+  //digitalWrite( R_220, HIGH );
+  //digitalWrite( VR_COMMON, LOW );
   measureVoltage();
 }
 
@@ -178,9 +193,9 @@ void writeTo7Segment( int pin, int hex, boolean dec ) {
       numSegments++;
   }  
   analogWrite( pin, VPS * numSegments );
-  delay( 5 );
+  delay( 3 );
   analogWrite( pin, 0 );
-  delay( 5 );    
+  delay( 3 );    
 }
 
 
