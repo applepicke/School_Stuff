@@ -36,7 +36,7 @@ public class stackFunc {
       	}
       	while (!theStack.isEmpty()) {
         	 int newN = theStack.pop(); 
-         	ans += newN; 
+         	ans -= newN; 
       	}
     	
    	}

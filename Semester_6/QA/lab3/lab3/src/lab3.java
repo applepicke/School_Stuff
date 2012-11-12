@@ -39,7 +39,7 @@ class lab3 {
 	public static void main(String[] args)
 		throws IOException {
     	int num = 40;
-    	int stackSize = 10000;
+    	int stackSize = 1000;
        	int stkOpr = 0, strOpr=0;
        	char peekOpr=' ';    
     	
